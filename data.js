@@ -1,5 +1,5 @@
 const DATA = {
- "generated": "2026-06-10 (verified on aircanada.com same evening)",
+ "generated": "2026-06-10 (Aeroplan verified on aircanada.com; Flying Blue taxes exact from FB pricing)",
  "trip": {
   "travelers": "Mom &amp; Ben",
   "origin": "JFK",
@@ -13,8 +13,9 @@ const DATA = {
  "goal": 400000,
  "cap": 450000,
  "cheapest": 300000,
- "verified_summary": "All six Aeroplan dates (out: Oct 5, 6, 7 \u00b7 return: Oct 12, 13, 20) were confirmed LIVE on aircanada.com, signed in, with seat counts \u2014 every 300k trip is bookable as of the evening of Jun 10, 2026.",
- "note_volatile": "Seat counts were live on aircanada.com the evening of Jun 10, 2026 and can change at any time. Re-check just before transferring Amex points (transfers are instant and non-reversible).",
+ "fx_note": "CAD\u2192USD at 0.73 (Aeroplan bills in CAD for US residents)",
+ "verified_summary": "All six Aeroplan dates (out: Oct 5, 6, 7 \u00b7 return: Oct 12, 13, 20) confirmed LIVE on aircanada.com, signed in, with seat counts and exact CAD fees. Flying Blue legs carry exact USD taxes from Flying Blue's own pricing (today); their seat space is not yet re-verified on airfrance.us.",
+ "note_volatile": "Seat counts and fees were live the evening of Jun 10, 2026 and can change at any time. Re-check just before transferring Amex points (transfers are instant and non-reversible).",
  "delta_nonstop": {
   "program": "Delta / Virgin Atlantic (Amex)",
   "aircraft": "Airbus A330-900neo",
@@ -37,7 +38,8 @@ const DATA = {
     "longhaul": "Swiss A330-300",
     "lieflat": true,
     "connector": "ITA A320neo",
-    "fees": 93,
+    "fees": 92.64,
+    "fee_display": "CA$126.90 (\u2248$93 USD)",
     "verified": {
      "status": "confirmed",
      "when": "2026-06-10 evening",
@@ -45,10 +47,10 @@ const DATA = {
      "flight": "19:25 JFK\u2192GVA\u2192FCO 13:05 (+1)",
      "duration": "11h40m",
      "carriers": "Swiss A330-300 + ITA A320neo",
-     "fee_cad": 127,
+     "fee_cad": 126.9,
      "alts": [
-      "19:25 via GVA (9h50m layover) \u2014 2 seats",
-      "21:50 via FRA (Lufthansa+ITA, 16h35m) \u2014 $143"
+      "19:25 via GVA (9h50m layover) \u2014 2 seats, CA$126.90",
+      "21:50 via FRA (Lufthansa+ITA, 16h35m) \u2014 CA$143"
      ]
     }
    },
@@ -60,7 +62,8 @@ const DATA = {
     "longhaul": "Swiss A330-300",
     "lieflat": true,
     "connector": "ITA A320neo",
-    "fees": 144,
+    "fees": 143.81,
+    "fee_display": "CA$197.00 (\u2248$144 USD)",
     "verified": {
      "status": "confirmed",
      "when": "2026-06-10 evening",
@@ -68,15 +71,16 @@ const DATA = {
      "flight": "09:05 FCO\u2192GVA\u2192JFK 14:20",
      "duration": "11h15m",
      "carriers": "ITA A320neo + Swiss A330-300",
-     "fee_cad": 197,
+     "fee_cad": 197.0,
      "alts": [
-      "15:35 via FRA (ITA+Singapore Airlines) \u2014 4 seats",
-      "16:45 via GVA (overnight layover) \u2014 4 seats"
+      "15:35 via FRA (ITA+Singapore Airlines) \u2014 4 seats, CA$223",
+      "16:45 via GVA (overnight layover) \u2014 4 seats, CA$208"
      ]
     }
    },
    "couple_miles": 300000,
    "couple_fees": 473,
+   "fees_exact": "CA$647.80 total (\u2248$473 USD)",
    "programs": [
     "Aeroplan"
    ],
@@ -100,7 +104,8 @@ const DATA = {
     "longhaul": "Swiss A330-300",
     "lieflat": true,
     "connector": "ITA A320neo",
-    "fees": 93,
+    "fees": 92.64,
+    "fee_display": "CA$126.90 (\u2248$93 USD)",
     "verified": {
      "status": "confirmed",
      "when": "2026-06-10 evening",
@@ -108,10 +113,10 @@ const DATA = {
      "flight": "19:25 JFK\u2192GVA\u2192FCO 13:05 (+1)",
      "duration": "11h40m",
      "carriers": "Swiss A330-300 + ITA A320neo",
-     "fee_cad": 127,
+     "fee_cad": 126.9,
      "alts": [
-      "19:25 via GVA (9h50m layover) \u2014 2 seats",
-      "21:50 via FRA (Lufthansa+ITA, 16h35m) \u2014 $143"
+      "19:25 via GVA (9h50m layover) \u2014 2 seats, CA$126.90",
+      "21:50 via FRA (Lufthansa+ITA, 16h35m) \u2014 CA$143"
      ]
     }
    },
@@ -123,7 +128,8 @@ const DATA = {
     "longhaul": "Swiss A330-300",
     "lieflat": true,
     "connector": "ITA A320neo",
-    "fees": 144,
+    "fees": 143.81,
+    "fee_display": "CA$197.00 (\u2248$144 USD)",
     "verified": {
      "status": "confirmed",
      "when": "2026-06-10 evening",
@@ -131,15 +137,16 @@ const DATA = {
      "flight": "09:05 FCO\u2192GVA\u2192JFK 14:20",
      "duration": "11h15m",
      "carriers": "ITA A320neo + Swiss A330-300",
-     "fee_cad": 197,
+     "fee_cad": 197.0,
      "alts": [
-      "16:40 via ZRH \u2014 7 seats, $178",
-      "08:45 via FRA (ITA+Lufthansa, 17h20m) \u2014 5 seats"
+      "16:40 via ZRH \u2014 7 seats, CA$178",
+      "08:45 via FRA (ITA+Lufthansa, 17h20m) \u2014 5 seats, CA$195"
      ]
     }
    },
    "couple_miles": 300000,
    "couple_fees": 473,
+   "fees_exact": "CA$647.80 total (\u2248$473 USD)",
    "programs": [
     "Aeroplan"
    ],
@@ -163,7 +170,8 @@ const DATA = {
     "longhaul": "Lufthansa widebody",
     "lieflat": true,
     "connector": "Lufthansa A320",
-    "fees": 104,
+    "fees": 104.39,
+    "fee_display": "CA$143.00 (\u2248$104 USD)",
     "verified": {
      "status": "confirmed",
      "when": "2026-06-10 evening",
@@ -171,10 +179,10 @@ const DATA = {
      "flight": "15:40 JFK\u2192FRA\u2192FCO 09:05 (+1)",
      "duration": "11h25m",
      "carriers": "Lufthansa (both legs)",
-     "fee_cad": 143,
+     "fee_cad": 143.0,
      "alts": [
-      "15:40 via FRA (LH+ITA, 16h) \u2014 5 seats",
-      "21:50 via FRA (LH+ITA) \u2014 75K"
+      "15:40 via FRA (LH+ITA, 16h) \u2014 5 seats, CA$143",
+      "21:50 via FRA (LH+ITA) \u2014 CA$143"
      ]
     }
    },
@@ -186,7 +194,8 @@ const DATA = {
     "longhaul": "Swiss A330-300",
     "lieflat": true,
     "connector": "ITA A320neo",
-    "fees": 144,
+    "fees": 143.81,
+    "fee_display": "CA$197.00 (\u2248$144 USD)",
     "verified": {
      "status": "confirmed",
      "when": "2026-06-10 evening",
@@ -194,15 +203,16 @@ const DATA = {
      "flight": "09:05 FCO\u2192GVA\u2192JFK 14:20",
      "duration": "11h15m",
      "carriers": "ITA A320neo + Swiss A330-300",
-     "fee_cad": 197,
+     "fee_cad": 197.0,
      "alts": [
-      "16:40 via ZRH \u2014 7 seats, $178",
-      "08:45 via FRA (ITA+Lufthansa, 17h20m) \u2014 5 seats"
+      "16:40 via ZRH \u2014 7 seats, CA$178",
+      "08:45 via FRA (ITA+Lufthansa, 17h20m) \u2014 5 seats, CA$195"
      ]
     }
    },
    "couple_miles": 300000,
    "couple_fees": 496,
+   "fees_exact": "CA$680.00 total (\u2248$496 USD)",
    "programs": [
     "Aeroplan"
    ],
@@ -226,7 +236,8 @@ const DATA = {
     "longhaul": "Swiss A330-300",
     "lieflat": true,
     "connector": "ITA A320neo",
-    "fees": 93,
+    "fees": 92.64,
+    "fee_display": "CA$126.90 (\u2248$93 USD)",
     "verified": {
      "status": "confirmed",
      "when": "2026-06-10 evening",
@@ -234,10 +245,10 @@ const DATA = {
      "flight": "19:25 JFK\u2192GVA\u2192FCO 13:05 (+1)",
      "duration": "11h40m",
      "carriers": "Swiss A330-300 + ITA A320neo",
-     "fee_cad": 127,
+     "fee_cad": 126.9,
      "alts": [
-      "19:25 via GVA (9h50m layover) \u2014 2 seats",
-      "21:50 via FRA (Lufthansa+ITA, 16h35m) \u2014 $143"
+      "19:25 via GVA (9h50m layover) \u2014 2 seats, CA$126.90",
+      "21:50 via FRA (Lufthansa+ITA, 16h35m) \u2014 CA$143"
      ]
     }
    },
@@ -245,18 +256,21 @@ const DATA = {
     "program": "Flying Blue",
     "code": "FB",
     "miles": 90000,
-    "via": "Paris CDG / Amsterdam",
+    "via": "Paris CDG",
     "longhaul": "Air France 777-300ER / A350",
     "lieflat": true,
     "connector": "A320 / A220",
-    "fees": 300,
+    "fees": 455.53,
+    "fee_display": "$455.53 USD (exact, Flying Blue)",
     "verified": {
-     "status": "pending",
-     "note": "Confirm on airfrance.us / klm.us (Amex also transfers to Flying Blue 1:1)"
+     "status": "priced",
+     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG). Space last seen today on seats.aero \u2014 confirm on airfrance.us before transferring.",
+     "routing": "AF1005 + AF4 via CDG"
     }
    },
    "couple_miles": 330000,
-   "couple_fees": 785,
+   "couple_fees": 1096,
+   "fees_exact": "CA$126.90\u00d72 + $455.53\u00d72 USD (\u2248$1096 USD total)",
    "programs": [
     "Aeroplan",
     "Flying Blue"
@@ -281,7 +295,8 @@ const DATA = {
     "longhaul": "Swiss A330-300",
     "lieflat": true,
     "connector": "ITA A320neo",
-    "fees": 93,
+    "fees": 92.64,
+    "fee_display": "CA$126.90 (\u2248$93 USD)",
     "verified": {
      "status": "confirmed",
      "when": "2026-06-10 evening",
@@ -289,10 +304,10 @@ const DATA = {
      "flight": "19:25 JFK\u2192GVA\u2192FCO 13:05 (+1)",
      "duration": "11h40m",
      "carriers": "Swiss A330-300 + ITA A320neo",
-     "fee_cad": 127,
+     "fee_cad": 126.9,
      "alts": [
-      "19:25 via GVA (9h50m layover) \u2014 2 seats",
-      "21:50 via FRA (Lufthansa+ITA, 16h35m) \u2014 $143"
+      "19:25 via GVA (9h50m layover) \u2014 2 seats, CA$126.90",
+      "21:50 via FRA (Lufthansa+ITA, 16h35m) \u2014 CA$143"
      ]
     }
    },
@@ -300,18 +315,21 @@ const DATA = {
     "program": "Flying Blue",
     "code": "FB",
     "miles": 90000,
-    "via": "Paris CDG / Amsterdam",
+    "via": "Paris CDG",
     "longhaul": "Air France 777-300ER / A350",
     "lieflat": true,
     "connector": "A320 / A220",
-    "fees": 300,
+    "fees": 455.33,
+    "fee_display": "$455.33 USD (exact, Flying Blue)",
     "verified": {
-     "status": "pending",
-     "note": "Confirm on airfrance.us / klm.us (Amex also transfers to Flying Blue 1:1)"
+     "status": "priced",
+     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG). Space last seen today on seats.aero \u2014 confirm on airfrance.us before transferring.",
+     "routing": "AF1005 + AF4 via CDG"
     }
    },
    "couple_miles": 330000,
-   "couple_fees": 785,
+   "couple_fees": 1096,
+   "fees_exact": "CA$126.90\u00d72 + $455.33\u00d72 USD (\u2248$1096 USD total)",
    "programs": [
     "Aeroplan",
     "Flying Blue"
@@ -336,7 +354,8 @@ const DATA = {
     "longhaul": "Lufthansa widebody",
     "lieflat": true,
     "connector": "Lufthansa A320",
-    "fees": 104,
+    "fees": 104.39,
+    "fee_display": "CA$143.00 (\u2248$104 USD)",
     "verified": {
      "status": "confirmed",
      "when": "2026-06-10 evening",
@@ -344,10 +363,10 @@ const DATA = {
      "flight": "15:40 JFK\u2192FRA\u2192FCO 09:05 (+1)",
      "duration": "11h25m",
      "carriers": "Lufthansa (both legs)",
-     "fee_cad": 143,
+     "fee_cad": 143.0,
      "alts": [
-      "15:40 via FRA (LH+ITA, 16h) \u2014 5 seats",
-      "21:50 via FRA (LH+ITA) \u2014 75K"
+      "15:40 via FRA (LH+ITA, 16h) \u2014 5 seats, CA$143",
+      "21:50 via FRA (LH+ITA) \u2014 CA$143"
      ]
     }
    },
@@ -355,18 +374,21 @@ const DATA = {
     "program": "Flying Blue",
     "code": "FB",
     "miles": 90000,
-    "via": "Paris CDG / Amsterdam",
+    "via": "Paris CDG",
     "longhaul": "Air France 777-300ER / A350",
     "lieflat": true,
     "connector": "A320 / A220",
-    "fees": 300,
+    "fees": 455.53,
+    "fee_display": "$455.53 USD (exact, Flying Blue)",
     "verified": {
-     "status": "pending",
-     "note": "Confirm on airfrance.us / klm.us (Amex also transfers to Flying Blue 1:1)"
+     "status": "priced",
+     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG). Space last seen today on seats.aero \u2014 confirm on airfrance.us before transferring.",
+     "routing": "AF1005 + AF4 via CDG"
     }
    },
    "couple_miles": 330000,
-   "couple_fees": 809,
+   "couple_fees": 1120,
+   "fees_exact": "CA$143.00\u00d72 + $455.53\u00d72 USD (\u2248$1120 USD total)",
    "programs": [
     "Aeroplan",
     "Flying Blue"
@@ -391,7 +413,8 @@ const DATA = {
     "longhaul": "Lufthansa widebody",
     "lieflat": true,
     "connector": "Lufthansa A320",
-    "fees": 104,
+    "fees": 104.39,
+    "fee_display": "CA$143.00 (\u2248$104 USD)",
     "verified": {
      "status": "confirmed",
      "when": "2026-06-10 evening",
@@ -399,10 +422,10 @@ const DATA = {
      "flight": "15:40 JFK\u2192FRA\u2192FCO 09:05 (+1)",
      "duration": "11h25m",
      "carriers": "Lufthansa (both legs)",
-     "fee_cad": 143,
+     "fee_cad": 143.0,
      "alts": [
-      "15:40 via FRA (LH+ITA, 16h) \u2014 5 seats",
-      "21:50 via FRA (LH+ITA) \u2014 75K"
+      "15:40 via FRA (LH+ITA, 16h) \u2014 5 seats, CA$143",
+      "21:50 via FRA (LH+ITA) \u2014 CA$143"
      ]
     }
    },
@@ -410,18 +433,21 @@ const DATA = {
     "program": "Flying Blue",
     "code": "FB",
     "miles": 90000,
-    "via": "Paris CDG / Amsterdam",
+    "via": "Paris CDG",
     "longhaul": "Air France 777-300ER / A350",
     "lieflat": true,
     "connector": "A320 / A220",
-    "fees": 300,
+    "fees": 455.33,
+    "fee_display": "$455.33 USD (exact, Flying Blue)",
     "verified": {
-     "status": "pending",
-     "note": "Confirm on airfrance.us / klm.us (Amex also transfers to Flying Blue 1:1)"
+     "status": "priced",
+     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG). Space last seen today on seats.aero \u2014 confirm on airfrance.us before transferring.",
+     "routing": "AF1005 + AF4 via CDG"
     }
    },
    "couple_miles": 330000,
-   "couple_fees": 809,
+   "couple_fees": 1119,
+   "fees_exact": "CA$143.00\u00d72 + $455.33\u00d72 USD (\u2248$1119 USD total)",
    "programs": [
     "Aeroplan",
     "Flying Blue"
@@ -446,7 +472,8 @@ const DATA = {
     "longhaul": "Swiss A330-300",
     "lieflat": true,
     "connector": "ITA A320neo",
-    "fees": 93,
+    "fees": 92.64,
+    "fee_display": "CA$126.90 (\u2248$93 USD)",
     "verified": {
      "status": "confirmed",
      "when": "2026-06-10 evening",
@@ -454,10 +481,10 @@ const DATA = {
      "flight": "19:25 JFK\u2192GVA\u2192FCO 13:10 (+1)",
      "duration": "11h45m",
      "carriers": "Swiss A330-300 + ITA A320neo",
-     "fee_cad": 127,
+     "fee_cad": 126.9,
      "alts": [
-      "15:40 via FRA (all-Lufthansa, 11h25m) \u2014 2 seats",
-      "20:55 via FRA (Singapore Airlines + LH) \u2014 4 seats"
+      "15:40 via FRA (all-Lufthansa, 11h25m) \u2014 2 seats, CA$143",
+      "20:55 via FRA (Singapore Airlines + LH) \u2014 4 seats, CA$143"
      ]
     }
    },
@@ -465,18 +492,21 @@ const DATA = {
     "program": "Flying Blue",
     "code": "FB",
     "miles": 90000,
-    "via": "Paris CDG / Amsterdam",
+    "via": "Paris CDG",
     "longhaul": "Air France 777-300ER / A350",
     "lieflat": true,
     "connector": "A320 / A220",
-    "fees": 300,
+    "fees": 455.53,
+    "fee_display": "$455.53 USD (exact, Flying Blue)",
     "verified": {
-     "status": "pending",
-     "note": "Confirm on airfrance.us / klm.us (Amex also transfers to Flying Blue 1:1)"
+     "status": "priced",
+     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG). Space last seen today on seats.aero \u2014 confirm on airfrance.us before transferring.",
+     "routing": "AF1005 + AF4 via CDG"
     }
    },
    "couple_miles": 330000,
-   "couple_fees": 785,
+   "couple_fees": 1096,
+   "fees_exact": "CA$126.90\u00d72 + $455.53\u00d72 USD (\u2248$1096 USD total)",
    "programs": [
     "Aeroplan",
     "Flying Blue"
@@ -501,7 +531,8 @@ const DATA = {
     "longhaul": "Swiss A330-300",
     "lieflat": true,
     "connector": "ITA A320neo",
-    "fees": 93,
+    "fees": 92.64,
+    "fee_display": "CA$126.90 (\u2248$93 USD)",
     "verified": {
      "status": "confirmed",
      "when": "2026-06-10 evening",
@@ -509,10 +540,10 @@ const DATA = {
      "flight": "19:25 JFK\u2192GVA\u2192FCO 13:10 (+1)",
      "duration": "11h45m",
      "carriers": "Swiss A330-300 + ITA A320neo",
-     "fee_cad": 127,
+     "fee_cad": 126.9,
      "alts": [
-      "15:40 via FRA (all-Lufthansa, 11h25m) \u2014 2 seats",
-      "20:55 via FRA (Singapore Airlines + LH) \u2014 4 seats"
+      "15:40 via FRA (all-Lufthansa, 11h25m) \u2014 2 seats, CA$143",
+      "20:55 via FRA (Singapore Airlines + LH) \u2014 4 seats, CA$143"
      ]
     }
    },
@@ -520,18 +551,21 @@ const DATA = {
     "program": "Flying Blue",
     "code": "FB",
     "miles": 90000,
-    "via": "Paris CDG / Amsterdam",
+    "via": "Paris CDG",
     "longhaul": "Air France 777-300ER / A350",
     "lieflat": true,
     "connector": "A320 / A220",
-    "fees": 300,
+    "fees": 455.33,
+    "fee_display": "$455.33 USD (exact, Flying Blue)",
     "verified": {
-     "status": "pending",
-     "note": "Confirm on airfrance.us / klm.us (Amex also transfers to Flying Blue 1:1)"
+     "status": "priced",
+     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG). Space last seen today on seats.aero \u2014 confirm on airfrance.us before transferring.",
+     "routing": "AF1005 + AF4 via CDG"
     }
    },
    "couple_miles": 330000,
-   "couple_fees": 785,
+   "couple_fees": 1096,
+   "fees_exact": "CA$126.90\u00d72 + $455.33\u00d72 USD (\u2248$1096 USD total)",
    "programs": [
     "Aeroplan",
     "Flying Blue"
@@ -552,14 +586,16 @@ const DATA = {
     "program": "Flying Blue",
     "code": "FB",
     "miles": 141500,
-    "via": "Paris CDG / Amsterdam",
+    "via": "Paris CDG",
     "longhaul": "Air France 777-300ER / A350",
     "lieflat": true,
     "connector": "A320 / A220",
-    "fees": 300,
+    "fees": 363.9,
+    "fee_display": "$363.90 USD (exact, Flying Blue)",
     "verified": {
-     "status": "pending",
-     "note": "Confirm on airfrance.us / klm.us (Amex also transfers to Flying Blue 1:1)"
+     "status": "priced",
+     "note": "Exact tax from Flying Blue (AF via CDG (e.g. AF9+AF1604)). Space last seen today on seats.aero \u2014 confirm on airfrance.us before transferring.",
+     "routing": "AF via CDG (e.g. AF9+AF1604)"
     }
    },
    "ret": {
@@ -570,7 +606,8 @@ const DATA = {
     "longhaul": "Swiss A330-300",
     "lieflat": true,
     "connector": "ITA A320neo",
-    "fees": 144,
+    "fees": 143.81,
+    "fee_display": "CA$197.00 (\u2248$144 USD)",
     "verified": {
      "status": "confirmed",
      "when": "2026-06-10 evening",
@@ -578,15 +615,16 @@ const DATA = {
      "flight": "09:05 FCO\u2192GVA\u2192JFK 14:20",
      "duration": "11h15m",
      "carriers": "ITA A320neo + Swiss A330-300",
-     "fee_cad": 197,
+     "fee_cad": 197.0,
      "alts": [
-      "15:35 via FRA (ITA+Singapore Airlines) \u2014 4 seats",
-      "16:45 via GVA (overnight layover) \u2014 4 seats"
+      "15:35 via FRA (ITA+Singapore Airlines) \u2014 4 seats, CA$223",
+      "16:45 via GVA (overnight layover) \u2014 4 seats, CA$208"
      ]
     }
    },
    "couple_miles": 433000,
-   "couple_fees": 888,
+   "couple_fees": 1015,
+   "fees_exact": "$363.90\u00d72 USD + CA$197.00\u00d72 (\u2248$1015 USD total)",
    "programs": [
     "Aeroplan",
     "Flying Blue"
@@ -607,14 +645,16 @@ const DATA = {
     "program": "Flying Blue",
     "code": "FB",
     "miles": 141500,
-    "via": "Paris CDG / Amsterdam",
+    "via": "Paris CDG",
     "longhaul": "Air France 777-300ER / A350",
     "lieflat": true,
     "connector": "A320 / A220",
-    "fees": 300,
+    "fees": 363.9,
+    "fee_display": "$363.90 USD (exact, Flying Blue)",
     "verified": {
-     "status": "pending",
-     "note": "Confirm on airfrance.us / klm.us (Amex also transfers to Flying Blue 1:1)"
+     "status": "priced",
+     "note": "Exact tax from Flying Blue (AF via CDG (e.g. AF9+AF1604)). Space last seen today on seats.aero \u2014 confirm on airfrance.us before transferring.",
+     "routing": "AF via CDG (e.g. AF9+AF1604)"
     }
    },
    "ret": {
@@ -625,7 +665,8 @@ const DATA = {
     "longhaul": "Swiss A330-300",
     "lieflat": true,
     "connector": "ITA A320neo",
-    "fees": 144,
+    "fees": 143.81,
+    "fee_display": "CA$197.00 (\u2248$144 USD)",
     "verified": {
      "status": "confirmed",
      "when": "2026-06-10 evening",
@@ -633,15 +674,16 @@ const DATA = {
      "flight": "09:05 FCO\u2192GVA\u2192JFK 14:20",
      "duration": "11h15m",
      "carriers": "ITA A320neo + Swiss A330-300",
-     "fee_cad": 197,
+     "fee_cad": 197.0,
      "alts": [
-      "16:40 via ZRH \u2014 7 seats, $178",
-      "08:45 via FRA (ITA+Lufthansa, 17h20m) \u2014 5 seats"
+      "16:40 via ZRH \u2014 7 seats, CA$178",
+      "08:45 via FRA (ITA+Lufthansa, 17h20m) \u2014 5 seats, CA$195"
      ]
     }
    },
    "couple_miles": 433000,
-   "couple_fees": 888,
+   "couple_fees": 1015,
+   "fees_exact": "$363.90\u00d72 USD + CA$197.00\u00d72 (\u2248$1015 USD total)",
    "programs": [
     "Aeroplan",
     "Flying Blue"
@@ -662,14 +704,16 @@ const DATA = {
     "program": "Flying Blue",
     "code": "FB",
     "miles": 141500,
-    "via": "Paris CDG / Amsterdam",
+    "via": "Paris CDG",
     "longhaul": "Air France 777-300ER / A350",
     "lieflat": true,
     "connector": "A320 / A220",
-    "fees": 300,
+    "fees": 363.9,
+    "fee_display": "$363.90 USD (exact, Flying Blue)",
     "verified": {
-     "status": "pending",
-     "note": "Confirm on airfrance.us / klm.us (Amex also transfers to Flying Blue 1:1)"
+     "status": "priced",
+     "note": "Exact tax from Flying Blue (AF9/AF7 + connector via CDG). Space last seen today on seats.aero \u2014 confirm on airfrance.us before transferring.",
+     "routing": "AF9/AF7 + connector via CDG"
     }
    },
    "ret": {
@@ -680,7 +724,8 @@ const DATA = {
     "longhaul": "Swiss A330-300",
     "lieflat": true,
     "connector": "ITA A320neo",
-    "fees": 130,
+    "fees": 129.94,
+    "fee_display": "CA$178.00 (\u2248$130 USD)",
     "verified": {
      "status": "confirmed",
      "when": "2026-06-10 evening",
@@ -688,15 +733,16 @@ const DATA = {
      "flight": "08:30 FCO\u2192ZRH\u2192JFK 16:35",
      "duration": "14h05m",
      "carriers": "ITA + Swiss A330-300",
-     "fee_cad": 178,
+     "fee_cad": 178.0,
      "alts": [
-      "09:05 via GVA (11h15m) \u2014 2 seats, $197",
-      "16:40 via ZRH \u2014 8 seats, $178"
+      "09:05 via GVA (11h15m) \u2014 2 seats, CA$197",
+      "16:40 via ZRH \u2014 8 seats, CA$178"
      ]
     }
    },
    "couple_miles": 433000,
-   "couple_fees": 860,
+   "couple_fees": 988,
+   "fees_exact": "$363.90\u00d72 USD + CA$178.00\u00d72 (\u2248$988 USD total)",
    "programs": [
     "Aeroplan",
     "Flying Blue"

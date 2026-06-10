@@ -113,7 +113,7 @@
 </main>
 <footer class="wrap">Built <span id="gen"></span> · snapshot from seats.aero (PRO), live · for planning — confirm award space before transferring points</footer>
 
-<script src="data.js?v=20260610f"></script>
+<script src="data.js?v=20260610g"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const mi=n=>n.toLocaleString('en-US'),usd=n=>'$'+Math.round(n).toLocaleString('en-US');
@@ -137,10 +137,12 @@ function legRow(dir,l,arrow){
   let vhtml='';
   if(v.status==='confirmed'){
     vhtml=`<div class="vline"><span class="badge ver">✓ verified on Aeroplan</span> <b>${v.seats} seat${v.seats>1?'s':''} left</b> · ${v.flight} · ${v.duration} · ${v.carriers} · CA$${v.fee_cad} fees</div>`;
+  }else if(v.status==='priced'){
+    vhtml=`<div class="vline"><span class="badge pend">exact tax · space unverified</span> ${v.note||''}</div>`;
   }else if(v.status==='pending'){
     vhtml=`<div class="vline"><span class="badge pend">not yet verified</span> ${v.note||''}</div>`;
   }
-  return `<div class="leg"><div class="top"><div><span class="dir">${dir}</span> <span class="prog">${l.program}</span> <span style="color:var(--mut);font-size:12.5px">· ${arrow} via ${l.via}</span></div><div class="mi">${mi(l.miles)} mi/pp · +${usd(l.fees)}</div></div>
+  return `<div class="leg"><div class="top"><div><span class="dir">${dir}</span> <span class="prog">${l.program}</span> <span style="color:var(--mut);font-size:12.5px">· ${arrow} via ${l.via}</span></div><div class="mi">${mi(l.miles)} mi/pp · ${l.fee_display||('+'+usd(l.fees))}</div></div>
     <div class="planes">${planeTag(l.longhaul,l.lieflat)}${planeTag(l.connector,false)}</div>${vhtml}</div>`;
 }
 function card(t){
@@ -151,7 +153,8 @@ function card(t){
   c.innerHTML=`<div class="thead"><div class="route">${tag}<br>${fmtD(t.depart)} → ${fmtD(t.home)}</div><div class="nts">${t.nights} nights</div></div>`+
     legRow('OUT',t.out,'JFK→FCO')+legRow('RET',t.ret,'FCO→JFK')+
     `<div class="total"><div><div class="small">Total for two</div><div class="big">${mi(t.couple_miles)} mi</div></div>
-      <div style="text-align:right"><div class="small">+ approx fees</div><div class="big">${usd(t.couple_fees)}</div></div></div>
+      <div style="text-align:right"><div class="small">+ exact fees (two)</div><div class="big">${usd(t.couple_fees)}</div></div></div>
+     <div class="vline" style="text-align:right">${t.fees_exact||''}</div>
      <div class="amex">💳 ${t.amex_note}</div>`;
   return c;
 }
