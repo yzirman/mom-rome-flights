@@ -45,6 +45,10 @@
   .badge{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;padding:1px 6px;border-radius:4px}
   .badge.flat{background:rgba(55,200,195,.16);color:var(--flat)}
   .badge.rec{background:rgba(154,164,182,.14);color:var(--mut)}
+  .badge.ver{background:rgba(57,192,122,.16);color:var(--good)}
+  .badge.pend{background:rgba(241,178,74,.14);color:var(--warn)}
+  .vline{margin-top:6px;font-size:12.5px;color:var(--mut)}
+  .vline b{color:var(--good)}
   .total{display:flex;justify-content:space-between;align-items:center;margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}
   .total .big{font-size:19px;font-weight:800;font-variant-numeric:tabular-nums}
   .total .small{color:var(--mut);font-size:12px}
@@ -75,6 +79,7 @@
       <div class="n" id="h-cheapest"></div>
       <div style="color:var(--mut);font-size:13.5px;margin-top:4px">Aeroplan both ways (Amex transfers 1:1), departing <b>Oct 5</b> — under the 400k goal. <span id="h-count"></span> trips beat 400k.</div>
     </div>
+    <div class="note good" id="verified-banner"></div>
     <div class="legend">
       <span>✈ aircraft shown per leg ·</span>
       <span><span class="badge flat">lie-flat</span> = true flat bed (transatlantic)</span>
@@ -108,7 +113,7 @@
 </main>
 <footer class="wrap">Built <span id="gen"></span> · snapshot from seats.aero (PRO), live · for planning — confirm award space before transferring points</footer>
 
-<script src="data.js?v=20260610e"></script>
+<script src="data.js?v=20260610f"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const mi=n=>n.toLocaleString('en-US'),usd=n=>'$'+Math.round(n).toLocaleString('en-US');
@@ -117,6 +122,7 @@ const fmtD=iso=>new Date(iso+'T00:00').toLocaleDateString('en-US',{weekday:'shor
 $('#t-trav').innerHTML=DATA.trip.travelers;$('#t-window').textContent=DATA.trip.window;$('#gen').textContent=DATA.generated;
 $('#h-cheapest').textContent=mi(DATA.cheapest)+' miles for two (~'+mi(DATA.cheapest/2)+' each)';
 $('#n-volatile').textContent=DATA.note_volatile;
+$('#verified-banner').innerHTML='<b>✓ Verified on the booking site:</b> '+DATA.verified_summary;
 const underGoal=DATA.trips.filter(t=>t.under_goal);
 $('#h-count').textContent=underGoal.length;
 [['Route','JFK → '+DATA.trip.dest],['Cabin',DATA.trip.cabin+' ×'+DATA.trip.pax],['Stops','≤ 1'],['Length',DATA.trip.nights],['Home by',DATA.trip.home_by],['No-fly','Fri / Sat']]
@@ -127,8 +133,15 @@ TABS.forEach(([id,lab],i)=>{const b=ce('button',i==0?'on':'',lab);b.onclick=()=>
 
 function planeTag(name,flat){return `<span class="plane">✈ ${name} <span class="badge ${flat?'flat':'rec'}">${flat?'lie-flat':'recliner'}</span></span>`;}
 function legRow(dir,l,arrow){
+  const v=l.verified||{};
+  let vhtml='';
+  if(v.status==='confirmed'){
+    vhtml=`<div class="vline"><span class="badge ver">✓ verified on Aeroplan</span> <b>${v.seats} seat${v.seats>1?'s':''} left</b> · ${v.flight} · ${v.duration} · ${v.carriers} · CA$${v.fee_cad} fees</div>`;
+  }else if(v.status==='pending'){
+    vhtml=`<div class="vline"><span class="badge pend">not yet verified</span> ${v.note||''}</div>`;
+  }
   return `<div class="leg"><div class="top"><div><span class="dir">${dir}</span> <span class="prog">${l.program}</span> <span style="color:var(--mut);font-size:12.5px">· ${arrow} via ${l.via}</span></div><div class="mi">${mi(l.miles)} mi/pp · +${usd(l.fees)}</div></div>
-    <div class="planes">${planeTag(l.longhaul,l.lieflat)}${planeTag(l.connector,false)}</div></div>`;
+    <div class="planes">${planeTag(l.longhaul,l.lieflat)}${planeTag(l.connector,false)}</div>${vhtml}</div>`;
 }
 function card(t){
   const c=ce('div','card'+(t.rank==1?' star':''));
@@ -146,7 +159,9 @@ function card(t){
 const tiers={};underGoal.forEach(t=>{(tiers[t.couple_miles]=tiers[t.couple_miles]||[]).push(t)});
 const tl=$('#trip-list');
 Object.keys(tiers).map(Number).sort((a,b)=>a-b).forEach(m=>{
-  tl.appendChild(ce('h3',null,mi(m)+' miles for two · '+(m==DATA.cheapest?'Aeroplan both ways':'Aeroplan out + Flying Blue return')));
+  const sample=tiers[m][0];
+  const lab=sample.both_aeroplan?'Aeroplan both ways — fully verified ✓':(sample.out.program+' out + '+sample.ret.program+' return');
+  tl.appendChild(ce('h3',null,mi(m)+' miles for two · '+lab));
   const g=ce('div','grid two');tiers[m].forEach(t=>g.appendChild(card(t)));tl.appendChild(g);
 });
 // over-goal collapsible
