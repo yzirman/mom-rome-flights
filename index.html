@@ -3,81 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mom &amp; Ben — Rome Business Class Options</title>
+<title>Mom &amp; Ben — Rome Business Class</title>
 <style>
-  :root{
-    --bg:#0f1115; --card:#171a21; --card2:#1d212b; --line:#2a2f3a;
-    --ink:#e9edf5; --mut:#9aa4b6; --accent:#4f8cff; --good:#39c07a;
-    --warn:#f1b24a; --bad:#f06363; --gold:#f5c451; --radius:14px;
-  }
+  :root{--bg:#0f1115;--card:#171a21;--card2:#1d212b;--line:#2a2f3a;--ink:#e9edf5;--mut:#9aa4b6;
+    --accent:#4f8cff;--good:#39c07a;--warn:#f1b24a;--bad:#f06363;--gold:#f5c451;--flat:#37c8c3;--radius:14px;}
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
   a{color:var(--accent);text-decoration:none}
-  .wrap{max-width:1000px;margin:0 auto;padding:0 18px 80px}
-  header.hero{padding:46px 18px 26px;background:radial-gradient(900px 300px at 20% -10%,rgba(79,140,255,.18),transparent),var(--bg);border-bottom:1px solid var(--line)}
-  .hero h1{margin:0 0 6px;font-size:30px;letter-spacing:-.5px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 18px 80px}
+  header.hero{padding:42px 18px 24px;background:radial-gradient(900px 300px at 20% -10%,rgba(79,140,255,.18),transparent),var(--bg);border-bottom:1px solid var(--line)}
+  .hero h1{margin:0 0 6px;font-size:29px;letter-spacing:-.5px}
   .hero p{margin:0;color:var(--mut)}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
   .chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:13px}
   .chip b{color:var(--accent)}
   nav.tabs{position:sticky;top:0;z-index:5;display:flex;gap:4px;overflow-x:auto;background:rgba(15,17,21,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:8px 12px}
   nav.tabs button{white-space:nowrap;background:transparent;border:0;color:var(--mut);font-size:14px;font-weight:600;padding:8px 12px;border-radius:8px;cursor:pointer}
   nav.tabs button.on{background:var(--card2);color:var(--ink)}
-  section{display:none;padding-top:26px}
-  section.on{display:block;animation:f .25s ease}
+  section{display:none;padding-top:24px}section.on{display:block;animation:f .25s ease}
   @keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
-  h2{font-size:20px;margin:6px 0 4px}
-  h3{font-size:15px;margin:18px 0 4px}
-  .sub{color:var(--mut);margin:0 0 18px;font-size:14px}
-  .grid{display:grid;gap:14px}
-  @media(min-width:640px){.grid.two{grid-template-columns:1fr 1fr}}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
-  .card.feat{border-color:rgba(245,196,81,.5);box-shadow:0 0 0 1px rgba(245,196,81,.18) inset}
-  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:3px 8px;border-radius:6px;margin-bottom:10px;margin-right:6px}
-  .tag.best{background:rgba(245,196,81,.16);color:var(--gold)}
-  .tag.late{background:rgba(79,140,255,.16);color:var(--accent)}
-  .tag.ok{background:rgba(57,192,122,.16);color:var(--good)}
-  .leg{display:flex;align-items:baseline;gap:8px;padding:8px 0;border-top:1px dashed var(--line)}
-  .leg:first-of-type{border-top:0}
-  .leg .dir{font-size:11px;font-weight:700;color:var(--mut);width:34px;flex:0 0 34px}
-  .leg .body{flex:1}
-  .leg .route{font-weight:600}
-  .leg .meta{color:var(--mut);font-size:12.5px}
-  .leg .mi{text-align:right;font-variant-numeric:tabular-nums;font-size:12.5px;color:var(--mut)}
-  .total{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
-  .total .big{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
-  .total .small{color:var(--mut);font-size:12.5px}
-  table{width:100%;border-collapse:collapse;font-size:13.5px}
-  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
-  th{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.4px;cursor:pointer;user-select:none}
-  tbody tr:hover{background:var(--card2)}
-  td.num{text-align:right;font-variant-numeric:tabular-nums}
-  .pill{font-size:11px;padding:2px 7px;border-radius:5px;background:var(--card2);color:var(--mut)}
-  .pill.good{background:rgba(57,192,122,.14);color:var(--good)}
-  .pill.bad{background:rgba(240,99,99,.14);color:var(--bad)}
-  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}
-  .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:10px;padding:13px 15px;margin:14px 0;font-size:14px}
-  .note.good{border-left-color:var(--good)}
-  .note.bad{border-left-color:var(--bad)}
-  .note.big{border-left-width:4px}
+  h2{font-size:20px;margin:6px 0 4px}h3{font-size:14px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin:26px 0 12px}
+  .sub{color:var(--mut);margin:0 0 16px;font-size:14px}
   .headline{background:linear-gradient(180deg,rgba(245,196,81,.10),transparent);border:1px solid rgba(245,196,81,.4);border-radius:var(--radius);padding:16px 18px;margin-bottom:18px}
-  .headline .n{font-size:26px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums}
-  .funnel{display:flex;flex-direction:column;gap:9px;margin:8px 0 4px}
-  .frow{display:flex;align-items:center;gap:12px}
-  .frow .lab{flex:0 0 230px;color:var(--mut);font-size:13px}
-  .frow .bar{height:26px;border-radius:6px;background:linear-gradient(90deg,var(--accent),#7aa8ff);display:flex;align-items:center;justify-content:flex-end;padding:0 9px;color:#06122b;font-weight:700;font-size:12.5px;min-width:34px}
-  .frow.drop .bar{background:linear-gradient(90deg,#3a4150,#4a5263);color:var(--ink)}
-  .dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
-  .dcell{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:9px 11px}
-  .dcell .d{font-weight:600}
-  .dcell .s{color:var(--mut);font-size:12px}
-  .seatbadge{float:right;font-size:11px;font-weight:700;color:var(--good)}
-  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;padding:9px 15px;border-radius:9px;border:0;cursor:pointer;font-size:14px}
-  .btn.ghost{background:var(--card);border:1px solid var(--line);color:var(--ink)}
-  .dl{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-  details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px 14px;margin-top:12px}
-  summary{cursor:pointer;padding:9px 0;font-weight:600}
+  .headline .n{font-size:25px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums}
+  .grid{display:grid;gap:14px}@media(min-width:680px){.grid.two{grid-template-columns:1fr 1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:15px}
+  .card.star{border-color:rgba(245,196,81,.45);box-shadow:0 0 0 1px rgba(245,196,81,.16) inset}
+  .thead{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px}
+  .route{font-weight:700;font-size:15.5px}
+  .nts{color:var(--mut);font-size:12.5px}
+  .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:3px 7px;border-radius:5px;margin-right:5px}
+  .tag.best{background:rgba(245,196,81,.16);color:var(--gold)}
+  .tag.goal{background:rgba(57,192,122,.16);color:var(--good)}
+  .leg{border-top:1px dashed var(--line);padding:9px 0}
+  .leg .top{display:flex;justify-content:space-between;gap:8px}
+  .leg .dir{font-size:10.5px;font-weight:700;color:var(--mut);background:var(--card2);padding:2px 6px;border-radius:4px}
+  .leg .prog{font-weight:600}
+  .leg .mi{font-variant-numeric:tabular-nums;color:var(--mut);font-size:13px}
+  .planes{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .plane{display:inline-flex;align-items:center;gap:6px;font-size:12px;background:var(--card2);border:1px solid var(--line);border-radius:7px;padding:3px 8px}
+  .badge{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;padding:1px 6px;border-radius:4px}
+  .badge.flat{background:rgba(55,200,195,.16);color:var(--flat)}
+  .badge.rec{background:rgba(154,164,182,.14);color:var(--mut)}
+  .total{display:flex;justify-content:space-between;align-items:center;margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}
+  .total .big{font-size:19px;font-weight:800;font-variant-numeric:tabular-nums}
+  .total .small{color:var(--mut);font-size:12px}
+  .amex{margin-top:7px;font-size:12.5px;color:var(--accent);background:rgba(79,140,255,.08);border-radius:7px;padding:6px 9px}
+  .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:10px;padding:13px 15px;margin:14px 0;font-size:14px}
+  .note.good{border-left-color:var(--good)}.note.bad{border-left-color:var(--bad)}.note.flat{border-left-color:var(--flat)}
+  details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:2px 14px;margin-top:14px}
+  summary{cursor:pointer;padding:11px 0;font-weight:600}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--mut);margin-bottom:14px}
   footer{color:var(--mut);font-size:12.5px;text-align:center;margin-top:40px}
   code{background:var(--card2);padding:1px 6px;border-radius:5px;font-size:12.5px}
 </style>
@@ -85,175 +61,105 @@
 <body>
 <header class="hero">
   <div class="wrap" style="padding:0">
-    <h1>✈️ <span id="t-trav"></span> → Rome</h1>
-    <p>Business-class award options, <b id="t-window"></b> · built &amp; fact-checked from your seats.aero exports</p>
+    <h1>✈️ <span id="t-trav"></span> → Rome <span style="font-size:15px;color:var(--mut)">· business class</span></h1>
+    <p>Cheapest Amex-bookable round trips, <b id="t-window"></b> · live-checked on seats.aero</p>
     <div class="chips" id="chips"></div>
   </div>
 </header>
-
-<nav class="tabs wrap" id="tabs" style="max-width:1000px"></nav>
+<nav class="tabs wrap" id="tabs" style="max-width:1040px"></nav>
 
 <main class="wrap">
-  <!-- BEST -->
-  <section id="best" class="on">
+  <section id="trips" class="on">
     <div class="headline">
-      <div style="color:var(--mut);font-size:13px;text-transform:uppercase;letter-spacing:.5px">Cheapest <b>real, bookable</b> business award for these exact dates</div>
-      <div class="n" id="h-floor"></div>
-      <div style="color:var(--mut);font-size:13.5px;margin-top:4px" id="h-note"></div>
+      <div style="color:var(--mut);font-size:13px;text-transform:uppercase;letter-spacing:.5px">Cheapest round trip for two · goal was 400k</div>
+      <div class="n" id="h-cheapest"></div>
+      <div style="color:var(--mut);font-size:13.5px;margin-top:4px">Aeroplan both ways (Amex transfers 1:1), departing <b>Oct 5</b> — under the 400k goal. <span id="h-count"></span> trips beat 400k.</div>
     </div>
-    <h2>Best bookable round trips</h2>
-    <p class="sub">Priced, <b class="pill good">✓ alliance-verified</b> (the program can actually ticket the carriers), single-program SkyTeam, ≥2 business seats, 8–9 day trip, home by Nov 2. Miles are <b>per person</b>; totals are for <b>two</b>.</p>
-    <div class="grid two" id="featured"></div>
-
-    <div class="note big"><b>Why isn't it cheaper?</b> Real <b>90,000-mile</b> business returns DO exist — but they land <b id="cr-range"></b>, too early to pair with an 8–9 day trip leaving Oct 8+ (earliest priced outbound is Oct 11). They'd only work for an early-October or much shorter trip:
-      <div id="cheap-list" style="margin-top:8px"></div>
+    <div class="legend">
+      <span>✈ aircraft shown per leg ·</span>
+      <span><span class="badge flat">lie-flat</span> = true flat bed (transatlantic)</span>
+      <span><span class="badge rec">recliner</span> = short Euro connector (~1–2h)</span>
     </div>
-
-    <h2 style="margin-top:26px">All <span id="rel-count"></span> verified options</h2>
-    <p class="sub">Click a column to sort.</p>
-    <div class="scroll"><table id="rel-table"></table></div>
+    <div id="trip-list"></div>
+    <details id="over-wrap"><summary id="over-sum"></summary><div id="over-list" style="margin:6px 0 12px"></div></details>
   </section>
 
-  <!-- DELTA -->
-  <section id="delta">
-    <h2>Nonstop Delta One — the way to (maybe) beat the price</h2>
-    <p class="sub">Delta flies <b>JFK⇄Rome nonstop</b> in lie-flat Delta One. These show 2–9 business seats on nearly every date — but seats.aero <b>can't price Delta</b>, so they came through as $0. That's the imperfection, not missing seats.</p>
-    <div class="note good" id="delta-verified"></div>
-    <div class="note"><b>How to use it:</b> price these directly on <b>Delta.com</b> (SkyMiles), or via <b>Virgin Atlantic</b> / <b>Flying Blue</b> (both can book Delta). Pair any outbound date with a return 8–9 days later. Nonstop = no Euro-business connector, and possibly fewer miles than the 579k below — you won't know until you price a specific date.</div>
-    <div class="grid two">
-      <div class="card"><h3 style="margin:2px 0 12px">Outbound · JFK→FCO <span class="pill">DL182 / DL230</span></h3><div class="dgrid" id="delta-out"></div></div>
-      <div class="card"><h3 style="margin:2px 0 12px">Return · FCO→JFK <span class="pill">DL183 / DL231</span></h3><div class="dgrid" id="delta-ret"></div></div>
-    </div>
+  <section id="nonstop">
+    <h2>The only nonstop / fully lie-flat option</h2>
+    <p class="sub">Every trip above has a lie-flat transatlantic leg but a short recliner connector. If avoiding the connection matters, there's exactly one nonstop:</p>
+    <div class="card" id="delta-card"></div>
   </section>
 
-  <!-- FUNNEL -->
-  <section id="funnel">
-    <h2>Where did all the flights go?</h2>
-    <p class="sub">Both exports total <b id="f-grand"></b> itineraries. Nothing deleted — filtered to the specs. Biggest drops: <b>priced</b> (seats shown but no price) then <b>alliance-verified</b> (real vs phantom).</p>
-    <h3>Outbound JFK→FCO</h3>
-    <div class="funnel" id="funnel-out"></div>
-    <h3 style="margin-top:22px">Return FCO→JFK</h3>
-    <div class="funnel" id="funnel-ret"></div>
-    <div class="note"><b id="f-unpriced"></b> itineraries showed ≥2 business seats but <b>$0 / 0 miles</b> — not reliably bookable (most are the <b>Delta nonstops</b>). Of the priced ones, <b id="f-ph"></b> were <b>phantoms</b> (cross-alliance, can't be ticketed). Survivors → <b id="f-rel"></b> verified round trips.</div>
+  <section id="book">
+    <h2>How to book (Amex → Aeroplan)</h2>
+    <div class="note good"><b>The plan:</b> the cheapest trips are <b>Aeroplan</b> both ways. Amex Membership Rewards transfers to <b>Air Canada Aeroplan 1:1, instantly</b>. Transfer the miles, then book at aeroplan.com.</div>
+    <div class="note"><b>⚠️ Verify before you transfer.</b> Award space moves daily — the exact dates with 75k space shift between searches. <b>Search the route free on aeroplan.com first</b> to confirm 2 business seats are live, THEN transfer (transfers are instant and <b>can't be reversed</b>).</div>
+    <div class="note flat"><b>Why this is real (not the "phantom" from before):</b> the routing is ITA Airways + Swiss via Geneva/Zurich. ITA <b>joined Star Alliance on April 1, 2026</b> (left SkyTeam in 2025), so both carriers are Star and Aeroplan can ticket them together. My earlier "phantom" flag used ITA's old SkyTeam status — that's now corrected.</div>
+    <div class="note"><b>Two-program trips (330k):</b> the Oct 14/15 returns are <b>Flying Blue</b> (also an Amex partner) instead of Aeroplan — so you'd transfer Amex MR to <i>both</i> Aeroplan (outbound) and Flying Blue (return). Still all from Amex.</div>
   </section>
 
-  <!-- HOW -->
-  <section id="how">
-    <h2>How to read this &amp; what's a "phantom"</h2>
-    <div class="note good"><b>✓ Verified (bookable):</b> business seats + a real price + every carrier is one the booking program can actually ticket. The list on the first tab is all verified.</div>
-    <div class="note"><b>Unpriced ($0):</b> seats shown, no price captured. Usually not bookable in business — except <b>Delta</b>, where it's just seats.aero failing to price (those nonstops are real, schedules confirmed).</div>
-    <div class="note bad"><b>Phantom — you canNOT book it:</b> seats.aero stitched two pieces of availability into one award the program can't issue. The clearest example: a 75k <b>Aeroplan</b> return of <code>AZ576</code> (ITA Airways = SkyTeam) + <code>LX22</code> (Swiss = Star Alliance). Aeroplan is Star-only — it <b>can't put ITA on the same ticket</b>, so that 75k price isn't real. I auto-flagged every one of these.</div>
-    <div class="note"><b>Mixed cabin:</b> on 1-stop European routings the transatlantic leg is true lie-flat; the short connector (CDG/AMS) is "Euro-business" (recliner, blocked middle). Normal.</div>
-    <div class="note"><b>Two bookings:</b> outbound and return are separate awards. Flying Blue miles transfer from Amex / Chase / Citi / Cap One / Bilt.</div>
-    <details open><summary id="ph-sum">Phantom awards I flagged &amp; excluded</summary><div class="scroll" style="margin:8px 0 12px"><table id="ph-table"></table></div></details>
-  </section>
-
-  <!-- DOWNLOADS -->
-  <section id="files">
-    <h2>Downloads</h2>
-    <p class="sub">The raw exports (all rows, nothing removed) and the verified shortlist.</p>
-    <div class="dl">
-      <a class="btn ghost" href="JFK-FCO_outbound.csv" download>⬇︎ Outbound CSV (379)</a>
-      <a class="btn ghost" href="FCO-JFK_return.csv" download>⬇︎ Return CSV (318)</a>
-      <button class="btn" id="dl-short">⬇︎ Verified shortlist CSV</button>
-    </div>
+  <section id="notes">
+    <h2>Notes &amp; the rules I held</h2>
+    <div class="note good"><b>Hard rules applied:</b> JFK only · business · 2 seats together · ≤1 stop · 7–10 day trip · home by Nov 2 · <b>no Friday/Saturday departures</b> (Shabbat) · no Jewish holidays (your window is clear — they end Oct 4).</div>
+    <div class="note"><b>On the 250k wish:</b> couldn't hit it — <b>75k each way is the floor</b> for 2 business seats among Amex's transfer partners (American's cheaper 57.5k space isn't Amex-transferable). So 300k is the realistic minimum — still well under the 400k goal and ~half of the original 579k Flying Blue quote.</div>
+    <div class="note bad"><b>Snapshot — verify live.</b> <span id="n-volatile"></span></div>
+    <p class="sub" style="margin-top:18px">Fees are cash (taxes/surcharges), paid on top of miles. Aeroplan via Geneva is low (~$95–145/person/leg); shown per trip.</p>
   </section>
 </main>
-
-<footer class="wrap">Built <span id="gen"></span> from seats.aero exports · JFK⇄FCO · for planning only — verify live award space before booking</footer>
+<footer class="wrap">Built <span id="gen"></span> · snapshot from seats.aero (PRO), live · for planning — confirm award space before transferring points</footer>
 
 <script src="data.js"></script>
 <script>
-const $=s=>document.querySelector(s), ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;};
-const mi=n=>n.toLocaleString('en-US'), usd=n=>'$'+Math.round(n).toLocaleString('en-US');
+const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+const mi=n=>n.toLocaleString('en-US'),usd=n=>'$'+Math.round(n).toLocaleString('en-US');
 const fmtD=iso=>new Date(iso+'T00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
 
-$('#t-trav').innerHTML=DATA.trip.travelers;
-$('#t-window').textContent=DATA.trip.window;
-$('#gen').textContent=DATA.generated;
-[['Route','JFK ⇄ '+DATA.trip.dest],['Cabin',DATA.trip.cabin+' ×'+DATA.trip.pax],['Stops','≤ '+DATA.trip.max_stops],['Length',DATA.trip.nights],['Home by',DATA.trip.home_by]]
-  .forEach(([k,v])=>$('#chips').appendChild(ce('span','chip',k+': <b>'+v+'</b>')));
+$('#t-trav').innerHTML=DATA.trip.travelers;$('#t-window').textContent=DATA.trip.window;$('#gen').textContent=DATA.generated;
+$('#h-cheapest').textContent=mi(DATA.cheapest)+' miles for two (~'+mi(DATA.cheapest/2)+' each)';
+$('#n-volatile').textContent=DATA.note_volatile;
+const underGoal=DATA.trips.filter(t=>t.under_goal);
+$('#h-count').textContent=underGoal.length;
+[['Route','JFK → '+DATA.trip.dest],['Cabin',DATA.trip.cabin+' ×'+DATA.trip.pax],['Stops','≤ 1'],['Length',DATA.trip.nights],['Home by',DATA.trip.home_by],['No-fly','Fri / Sat']]
+ .forEach(([k,v])=>$('#chips').appendChild(ce('span','chip',k+': <b>'+v+'</b>')));
 
-$('#h-floor').textContent=mi(DATA.headline.floor_couple)+' miles for two  (~'+mi(DATA.headline.floor_pp)+' each)';
-$('#h-note').textContent=DATA.headline.note;
+const TABS=[['trips','All trips'],['nonstop','Nonstop option'],['book','How to book'],['notes','Notes / verify']];
+TABS.forEach(([id,lab],i)=>{const b=ce('button',i==0?'on':'',lab);b.onclick=()=>{document.querySelectorAll('nav.tabs button').forEach(x=>x.classList.remove('on'));document.querySelectorAll('section').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('#'+id).classList.add('on');window.scrollTo({top:0,behavior:'smooth'})};$('#tabs').appendChild(b)});
 
-const TABS=[['best','Best round trips'],['delta','Nonstop Delta (cheaper?)'],['funnel','Where did flights go?'],['how','Phantoms / how to read'],['files','Downloads']];
-TABS.forEach(([id,lab],i)=>{const b=ce('button',i===0?'on':'',lab);b.onclick=()=>{document.querySelectorAll('nav.tabs button').forEach(x=>x.classList.remove('on'));document.querySelectorAll('section').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('#'+id).classList.add('on');window.scrollTo({top:0,behavior:'smooth'});};$('#tabs').appendChild(b);});
-
-function legRow(dir,l){
-  return `<div class="leg"><div class="dir">${dir}</div><div class="body">
-    <div class="route">${l.flights} <span class="pill">${l.stops?('via '+l.via):'NONSTOP'}</span> <span class="pill good">✓</span></div>
-    <div class="meta">${l.program} · dep ${l.dep} → arr ${l.arr}</div></div>
-    <div class="mi">${mi(l.miles)} mi<br>+${usd(l.tax)} · ${l.seats} seats</div></div>`;
+function planeTag(name,flat){return `<span class="plane">✈ ${name} <span class="badge ${flat?'flat':'rec'}">${flat?'lie-flat':'recliner'}</span></span>`;}
+function legRow(dir,l,arrow){
+  return `<div class="leg"><div class="top"><div><span class="dir">${dir}</span> <span class="prog">${l.program}</span> <span style="color:var(--mut);font-size:12.5px">· ${arrow} via ${l.via}</span></div><div class="mi">${mi(l.miles)} mi/pp · +${usd(l.fees)}</div></div>
+    <div class="planes">${planeTag(l.longhaul,l.lieflat)}${planeTag(l.connector,false)}</div></div>`;
 }
 function card(t){
-  const c=ce('div','card feat');
+  const c=ce('div','card'+(t.rank==1?' star':''));
   let tag='';
-  if(t.best) tag+='<span class="tag best">★ Cheapest</span>';
-  if(t.latest) tag+='<span class="tag late">⏰ Latest · home Nov 2</span>';
-  tag+='<span class="tag ok">✓ verified</span>';
-  c.innerHTML=tag+
-    `<div style="font-weight:600;margin-bottom:8px">${fmtD(t.depart_date)} → ${fmtD(t.home_date)} · <span class="pill">${t.nights} nights</span></div>`+
-    legRow('OUT',t.out)+legRow('RET',t.ret)+
+  if(t.rank==1)tag+='<span class="tag best">★ Cheapest</span>';
+  if(t.under_goal)tag+='<span class="tag goal">under 400k goal</span>';
+  c.innerHTML=`<div class="thead"><div class="route">${tag}<br>${fmtD(t.depart)} → ${fmtD(t.home)}</div><div class="nts">${t.nights} nights</div></div>`+
+    legRow('OUT',t.out,'JFK→FCO')+legRow('RET',t.ret,'FCO→JFK')+
     `<div class="total"><div><div class="small">Total for two</div><div class="big">${mi(t.couple_miles)} mi</div></div>
-     <div style="text-align:right"><div class="small">+ taxes</div><div class="big">${usd(t.couple_tax)}</div></div></div>`;
+      <div style="text-align:right"><div class="small">+ approx fees</div><div class="big">${usd(t.couple_fees)}</div></div></div>
+     <div class="amex">💳 ${t.amex_note}</div>`;
   return c;
 }
-const best=DATA.reliable.find(t=>t.best), latest=DATA.reliable.find(t=>t.latest);
-[best,latest].filter(Boolean).forEach(t=>$('#featured').appendChild(card(t)));
+// group under-goal by couple_miles tier
+const tiers={};underGoal.forEach(t=>{(tiers[t.couple_miles]=tiers[t.couple_miles]||[]).push(t)});
+const tl=$('#trip-list');
+Object.keys(tiers).map(Number).sort((a,b)=>a-b).forEach(m=>{
+  tl.appendChild(ce('h3',null,mi(m)+' miles for two · '+(m==DATA.cheapest?'Aeroplan both ways':'Aeroplan out + Flying Blue return')));
+  const g=ce('div','grid two');tiers[m].forEach(t=>g.appendChild(card(t)));tl.appendChild(g);
+});
+// over-goal collapsible
+const over=DATA.trips.filter(t=>!t.under_goal);
+$('#over-sum').textContent=`More dates (over the 400k goal — for flexibility) · ${over.length} trips`;
+const og=ce('div','grid two');over.forEach(t=>og.appendChild(card(t)));$('#over-list').appendChild(og);
 
-// cheap stranded returns
-const crDates=DATA.cheap_returns.map(c=>fmtD(c.arr));
-$('#cr-range').textContent=crDates[0]+'–'+crDates[crDates.length-1];
-$('#cheap-list').innerHTML=DATA.cheap_returns.map(c=>`<span class="pill" style="margin:2px 4px 2px 0;display:inline-block">${fmtD(c.arr)} · ${mi(c.miles)} mi · ${c.flights} (${c.program}) via ${c.via}</span>`).join('');
-
-// reliable table
-$('#rel-count').textContent=DATA.reliable.length;
-const RT=$('#rel-table');
-RT.innerHTML='<thead><tr><th data-k="depart_date">Depart</th><th data-k="home_date">Home</th><th data-k="nights">Nts</th><th>Outbound</th><th>Return</th><th data-k="couple_miles" class="num">Miles (2)</th><th data-k="couple_tax" class="num">Tax (2)</th></tr></thead><tbody></tbody>';
-let sortK='couple_miles',sortAsc=true;
-function renderRT(){
-  const rows=[...DATA.reliable].sort((a,b)=>{let x=a[sortK],y=b[sortK];if(typeof x==='string')return sortAsc?x.localeCompare(y):y.localeCompare(x);return sortAsc?x-y:y-x;});
-  const tb=RT.querySelector('tbody');tb.innerHTML='';
-  rows.forEach(t=>{const tr=ce('tr');tr.innerHTML=
-    `<td>${fmtD(t.depart_date)}</td><td>${fmtD(t.home_date)}</td><td class="num">${t.nights}</td>
-     <td>${t.out.flights} <span class="pill">${t.out.via}</span></td>
-     <td>${t.ret.flights} <span class="pill">${t.ret.via}</span></td>
-     <td class="num">${mi(t.couple_miles)}</td><td class="num">${usd(t.couple_tax)}</td>`;
-    if(t.best)tr.style.background='rgba(245,196,81,.10)';tb.appendChild(tr);});
-}
-RT.querySelectorAll('th[data-k]').forEach(th=>th.onclick=()=>{const k=th.dataset.k;if(sortK===k)sortAsc=!sortAsc;else{sortK=k;sortAsc=true;}renderRT();});
-renderRT();
-
-// delta
-$('#delta-verified').innerHTML='<b>✓ Flights confirmed real.</b> '+DATA.delta_verified;
-const dcell=r=>`<div class="dcell"><span class="seatbadge">${r.seats} seats</span><div class="d">${fmtD(r.date)}</div><div class="s">${r.flights} · ${r.dep}→${r.arr}</div></div>`;
-$('#delta-out').innerHTML=DATA.delta_out.map(dcell).join('');
-$('#delta-ret').innerHTML=DATA.delta_ret.map(dcell).join('');
-
-// funnel
-const F=DATA.funnel, grand=F.out.total+F.ret.total;
-$('#f-grand').textContent=grand;$('#f-unpriced').textContent=(F.unpriced_out+F.unpriced_ret);
-$('#f-rel').textContent=F.reliable;$('#f-ph').textContent=F.phantom;
-function funnel(el,d){
-  const max=d.total;
-  [['all itineraries',d.total,false],['≤ 1 stop',d.le1,false],['≥ 2 business seats',d.seats2,false],['actually priced',d.priced,true],['alliance-verified (real)',d.real,true],['in date window',d.window,true]]
-  .forEach(([lab,v,drop])=>{const row=ce('div','frow'+(drop?' drop':''));row.innerHTML=`<div class="lab">${lab}</div><div class="bar" style="width:${Math.max(6,v/max*100)}%">${v}</div>`;el.appendChild(row);});
-}
-funnel($('#funnel-out'),F.out);funnel($('#funnel-ret'),F.ret);
-
-// phantom table
-$('#ph-sum').textContent=`Phantom awards I flagged & excluded (${DATA.phantom.length})`;
-$('#ph-table').innerHTML='<thead><tr><th>Dir</th><th>Flights shown</th><th>Program</th><th class="num">"Price"</th><th>Why it can\'t be booked</th></tr></thead><tbody>'+
-  DATA.phantom.map(p=>`<tr><td><span class="pill">${p.dir==='out'?'OUT':'RET'}</span></td><td>${p.flights}</td><td>${p.program}</td><td class="num">${mi(p.miles)} mi</td><td style="white-space:normal">${p.reason} <span class="pill bad">${p.alliances.join(' + ')}</span></td></tr>`).join('')+'</tbody>';
-
-// shortlist CSV
-$('#dl-short').onclick=()=>{
-  const h=['depart_date','home_date','nights','out_flights','out_program','out_via','out_miles_pp','ret_flights','ret_program','ret_via','ret_miles_pp','couple_miles','couple_tax'];
-  const rows=DATA.reliable.map(t=>[t.depart_date,t.home_date,t.nights,t.out.flights,t.out.program,t.out.via,t.out.miles,t.ret.flights,t.ret.program,t.ret.via,t.ret.miles,t.couple_miles,t.couple_tax]);
-  const csv=[h.join(',')].concat(rows.map(r=>r.map(x=>/[",]/.test(''+x)?'"'+x+'"':x).join(','))).join('\n');
-  const a=ce('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='rome_business_shortlist.csv';a.click();
-};
+// delta nonstop card
+const d=DATA.delta_nonstop;
+$('#delta-card').innerHTML=`<div class="route">JFK ⇄ Rome · NONSTOP</div>
+  <div class="planes" style="margin:8px 0">${planeTag(d.aircraft,true)}<span class="plane">no connection</span></div>
+  <div style="color:var(--mut);font-size:13.5px">${d.note}</div>
+  <div class="amex" style="margin-top:10px">Book via ${d.program}</div>`;
 </script>
 </body>
 </html>
