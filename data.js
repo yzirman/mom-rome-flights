@@ -1,5 +1,5 @@
 const DATA = {
- "generated": "2026-06-10 evening \u2014 EVERY flight verified on its booking site (Aeroplan on aircanada.com \u00d72, Flying Blue on airfrance.us)",
+ "generated": "2026-06-10 evening \u2014 every flight verified on its booking site (JFK + Boston)",
  "trip": {
   "travelers": "Mom &amp; Ben",
   "origin": "JFK",
@@ -174,7 +174,8 @@ const DATA = {
    "fully_verified": true,
    "amex_note": "Transfer 300,000 Amex MR \u2192 Aeroplan (1:1, instant)",
    "rank": 1,
-   "under_goal": true
+   "under_goal": true,
+   "origin": "JFK"
   },
   {
    "depart": "2026-10-06",
@@ -234,7 +235,8 @@ const DATA = {
    "fully_verified": true,
    "amex_note": "Transfer 300,000 Amex MR \u2192 Aeroplan (1:1, instant)",
    "rank": 2,
-   "under_goal": true
+   "under_goal": true,
+   "origin": "JFK"
   },
   {
    "depart": "2026-10-05",
@@ -296,7 +298,8 @@ const DATA = {
    "fully_verified": true,
    "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
    "rank": 3,
-   "under_goal": true
+   "under_goal": true,
+   "origin": "JFK"
   },
   {
    "depart": "2026-10-06",
@@ -358,7 +361,8 @@ const DATA = {
    "fully_verified": true,
    "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
    "rank": 4,
-   "under_goal": true
+   "under_goal": true,
+   "origin": "JFK"
   },
   {
    "depart": "2026-10-07",
@@ -420,7 +424,8 @@ const DATA = {
    "fully_verified": true,
    "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
    "rank": 5,
-   "under_goal": true
+   "under_goal": true,
+   "origin": "JFK"
   },
   {
    "depart": "2026-10-04",
@@ -482,7 +487,8 @@ const DATA = {
    "fully_verified": true,
    "amex_note": "282,000 \u2192 Flying Blue + 150,000 \u2192 Aeroplan",
    "rank": 6,
-   "under_goal": false
+   "under_goal": false,
+   "origin": "JFK"
   },
   {
    "depart": "2026-10-12",
@@ -544,7 +550,68 @@ const DATA = {
    "fully_verified": true,
    "amex_note": "282,000 \u2192 Flying Blue + 150,000 \u2192 Aeroplan",
    "rank": 7,
-   "under_goal": false
+   "under_goal": false,
+   "origin": "JFK"
+  },
+  {
+   "depart": "2026-10-05",
+   "depart_dow": "Mon",
+   "home": "2026-10-13",
+   "home_dow": "Tue",
+   "nights": 8,
+   "origin": "BOS",
+   "out": {
+    "program": "Aeroplan",
+    "code": "AC",
+    "miles": 75000,
+    "via": "Frankfurt",
+    "longhaul": "Lufthansa widebody",
+    "lieflat": true,
+    "connector": "ITA A320",
+    "fees": 104.39,
+    "fee_display": "CA$143.00 (\u2248$104 USD)",
+    "verified": {
+     "status": "confirmed",
+     "when": "2026-06-10 ~8pm ET",
+     "seats": 2,
+     "flight": "17:45 BOS\u2192FRA\u2192FCO 13:40 (+1)",
+     "duration": "13h55m \u00b7 \u26a0\ufe0f 4h50m connection",
+     "carriers": "Lufthansa (lie-flat) + ITA Airways",
+     "fee_cad": 143.0,
+     "cabin": "100% business \u2014 cabin-verified"
+    }
+   },
+   "ret": {
+    "program": "Aeroplan",
+    "code": "AC",
+    "miles": 75000,
+    "via": "Frankfurt",
+    "longhaul": "Lufthansa widebody",
+    "lieflat": true,
+    "connector": "ITA A320",
+    "fees": 142.35,
+    "fee_display": "CA$195.00 (\u2248$142 USD)",
+    "verified": {
+     "status": "confirmed",
+     "when": "2026-06-10 ~8pm ET",
+     "seats": 2,
+     "flight": "08:45 FCO\u2192FRA\u2192BOS 20:10 same day",
+     "duration": "17h25m \u00b7 \u26a0\ufe0f 6h50m connection",
+     "carriers": "ITA Airways + Lufthansa (lie-flat)",
+     "fee_cad": 195.0,
+     "cabin": "100% business \u2014 cabin-verified"
+    }
+   },
+   "couple_miles": 300000,
+   "couple_fees": 493,
+   "fees_exact": "CA$676.00 total (\u2248$494 USD)",
+   "programs": [
+    "Aeroplan"
+   ],
+   "both_aeroplan": true,
+   "fully_verified": true,
+   "amex_note": "Transfer 300,000 Amex MR \u2192 Aeroplan (1:1, instant)"
   }
- ]
+ ],
+ "bos_note": "Logan has exactly ONE true-business trip in spec: Oct 5 \u2192 Oct 13 at 300k. Everything else from BOS was either a mixed-cabin trap (transatlantic in economy \u2014 Munich routings, the short-connection Frankfurt return) or 193k+/person. Heads up: both connections are longer than the JFK options (4h50m out, 6h50m back, both in Frankfurt)."
 };

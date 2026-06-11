@@ -37,18 +37,24 @@
   .total .small{color:var(--mut);font-size:12px}
   .amex{margin-top:7px;font-size:12.5px;color:var(--accent);background:rgba(79,140,255,.08);border-radius:7px;padding:6px 9px}
   footer{color:var(--mut);font-size:12.5px;text-align:center;margin-top:36px}
+  .tabs{display:flex;gap:6px;margin:18px 0 4px}
+  .tabs button{background:var(--card);border:1px solid var(--line);color:var(--mut);font-size:14px;font-weight:700;padding:9px 18px;border-radius:10px;cursor:pointer}
+  .tabs button.on{background:var(--card2);color:var(--ink);border-color:var(--accent)}
+  .orig-note{color:var(--mut);font-size:13px;margin:8px 0 0;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:9px;padding:10px 13px}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
     <h1>✈️ Mom &amp; Ben → Rome · business class</h1>
-    <p class="sub">JFK ⇄ FCO · 2 seats together · lie-flat across the Atlantic · every flight verified on its booking site (Jun 10) · miles shown per person, totals for two</p>
+    <p class="sub">New York or Boston ⇄ Rome · 2 seats together · lie-flat across the Atlantic · every flight verified on its booking site (Jun 10) · miles shown per person, totals for two</p>
   </header>
+  <div class="tabs"><button id="tab-jfk" class="on">From JFK</button><button id="tab-bos">From Boston (BOS)</button></div>
+  <div class="orig-note" id="orig-note" style="display:none"></div>
   <div id="trip-list"></div>
   <footer>Award space changes hourly — re-check on aeroplan.com / airfrance.us right before transferring Amex points (transfers can't be reversed).</footer>
 </div>
-<script src="data.js?v=20260610k"></script>
+<script src="data.js?v=20260610l"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const mi=n=>n.toLocaleString('en-US'),usd=n=>'$'+Math.round(n).toLocaleString('en-US');
@@ -64,19 +70,31 @@ function legRow(dir,l,arrow){
 function card(t){
   const c=ce('div','card'+(t.rank==1?' star':''));
   c.innerHTML=`<div class="thead"><div class="route">${t.rank==1?'<span class="tag best">★ Cheapest</span>':''}${fmtD(t.depart)} → ${fmtD(t.home)}</div><div class="nts">${t.nights} nights in Rome</div></div>`+
-    legRow('OUT',t.out,'JFK→FCO')+legRow('RET',t.ret,'FCO→JFK')+
+    legRow('OUT',t.out,(t.origin||'JFK')+'→FCO')+legRow('RET',t.ret,'FCO→'+(t.origin||'JFK'))+
     `<div class="total"><div><div class="small">Miles for two</div><div class="big">${mi(t.couple_miles)}</div></div>
       <div style="text-align:right"><div class="small">Fees for two (exact)</div><div class="big">${usd(t.couple_fees)}</div></div></div>
      <div class="amex">💳 ${t.amex_note}</div>`;
   return c;
 }
-const tiers={};DATA.trips.forEach(t=>{(tiers[t.couple_miles]=tiers[t.couple_miles]||[]).push(t)});
-const tl=$('#trip-list');
-Object.keys(tiers).map(Number).sort((a,b)=>a-b).forEach(m=>{
-  const s=tiers[m][0];
-  tl.appendChild(ce('h3',null,mi(m)+' miles for two · '+(s.both_aeroplan?'Aeroplan both ways':s.out.program+' out + '+s.ret.program+' back')));
-  const g=ce('div','grid two');tiers[m].forEach(t=>g.appendChild(card(t)));tl.appendChild(g);
-});
+function render(origin){
+  const tl=$('#trip-list');tl.innerHTML='';
+  const note=$('#orig-note');
+  if(origin==='BOS'&&DATA.bos_note){note.textContent=DATA.bos_note;note.style.display='block';}
+  else{note.style.display='none';}
+  const trips=DATA.trips.filter(t=>t.origin===origin);
+  const tiers={};trips.forEach(t=>{(tiers[t.couple_miles]=tiers[t.couple_miles]||[]).push(t)});
+  let first=true;
+  Object.keys(tiers).map(Number).sort((a,b)=>a-b).forEach(m=>{
+    const s=tiers[m][0];
+    tl.appendChild(ce('h3',null,mi(m)+' miles for two · '+(s.both_aeroplan?'Aeroplan both ways':s.out.program+' out + '+s.ret.program+' back')));
+    const g=ce('div','grid two');
+    tiers[m].forEach(t=>{const el=card(t);if(first&&origin==='BOS')el.classList.add('star');g.appendChild(el);});
+    tl.appendChild(g);first=false;
+  });
+}
+$('#tab-jfk').onclick=()=>{$('#tab-jfk').classList.add('on');$('#tab-bos').classList.remove('on');render('JFK');};
+$('#tab-bos').onclick=()=>{$('#tab-bos').classList.add('on');$('#tab-jfk').classList.remove('on');render('BOS');};
+render('JFK');
 </script>
 </body>
 </html>
