@@ -49,12 +49,13 @@
     <h1>✈️ Mom &amp; Ben → Rome · business class</h1>
     <p class="sub">New York or Boston ⇄ Rome · 2 seats together · lie-flat across the Atlantic · every flight verified on its booking site (Jun 10) · miles shown per person, totals for two</p>
   </header>
+  <div class="orig-note" id="points-note" style="border-left-color:var(--accent)"></div>
   <div class="tabs"><button id="tab-jfk" class="on">From JFK</button><button id="tab-bos">From Boston (BOS)</button></div>
   <div class="orig-note" id="orig-note" style="display:none"></div>
   <div id="trip-list"></div>
   <footer>Award space changes hourly — re-check on aeroplan.com / airfrance.us right before transferring Amex points (transfers can't be reversed).</footer>
 </div>
-<script src="data.js?v=20260610l"></script>
+<script src="data.js?v=20260610m"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const mi=n=>n.toLocaleString('en-US'),usd=n=>'$'+Math.round(n).toLocaleString('en-US');
@@ -92,6 +93,7 @@ function render(origin){
     tl.appendChild(g);first=false;
   });
 }
+if(DATA.points_note)$('#points-note').textContent=DATA.points_note;
 $('#tab-jfk').onclick=()=>{$('#tab-jfk').classList.add('on');$('#tab-bos').classList.remove('on');render('JFK');};
 $('#tab-bos').onclick=()=>{$('#tab-bos').classList.add('on');$('#tab-jfk').classList.remove('on');render('BOS');};
 render('JFK');

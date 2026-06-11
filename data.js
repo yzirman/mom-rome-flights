@@ -172,7 +172,7 @@ const DATA = {
    ],
    "both_aeroplan": true,
    "fully_verified": true,
-   "amex_note": "Transfer 300,000 Amex MR \u2192 Aeroplan (1:1, instant)",
+   "amex_note": "300,000 \u2192 Aeroplan \u00b7 transfers 1:1 from Amex MR or Chase UR (or both \u2014 pool Mom's Chase + Ben's Amex into one Aeroplan account)",
    "rank": 1,
    "under_goal": true,
    "origin": "JFK"
@@ -233,7 +233,7 @@ const DATA = {
    ],
    "both_aeroplan": true,
    "fully_verified": true,
-   "amex_note": "Transfer 300,000 Amex MR \u2192 Aeroplan (1:1, instant)",
+   "amex_note": "300,000 \u2192 Aeroplan \u00b7 transfers 1:1 from Amex MR or Chase UR (or both \u2014 pool Mom's Chase + Ben's Amex into one Aeroplan account)",
    "rank": 2,
    "under_goal": true,
    "origin": "JFK"
@@ -296,7 +296,7 @@ const DATA = {
    ],
    "both_aeroplan": false,
    "fully_verified": true,
-   "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
+   "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue \u00b7 both transfer 1:1 from Amex MR or Chase UR",
    "rank": 3,
    "under_goal": true,
    "origin": "JFK"
@@ -359,7 +359,7 @@ const DATA = {
    ],
    "both_aeroplan": false,
    "fully_verified": true,
-   "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
+   "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue \u00b7 both transfer 1:1 from Amex MR or Chase UR",
    "rank": 4,
    "under_goal": true,
    "origin": "JFK"
@@ -422,7 +422,7 @@ const DATA = {
    ],
    "both_aeroplan": false,
    "fully_verified": true,
-   "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
+   "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue \u00b7 both transfer 1:1 from Amex MR or Chase UR",
    "rank": 5,
    "under_goal": true,
    "origin": "JFK"
@@ -485,7 +485,7 @@ const DATA = {
    ],
    "both_aeroplan": false,
    "fully_verified": true,
-   "amex_note": "282,000 \u2192 Flying Blue + 150,000 \u2192 Aeroplan",
+   "amex_note": "282,000 \u2192 Flying Blue + 150,000 \u2192 Aeroplan \u00b7 both transfer 1:1 from Amex MR or Chase UR",
    "rank": 6,
    "under_goal": false,
    "origin": "JFK"
@@ -548,7 +548,7 @@ const DATA = {
    ],
    "both_aeroplan": false,
    "fully_verified": true,
-   "amex_note": "282,000 \u2192 Flying Blue + 150,000 \u2192 Aeroplan",
+   "amex_note": "282,000 \u2192 Flying Blue + 150,000 \u2192 Aeroplan \u00b7 both transfer 1:1 from Amex MR or Chase UR",
    "rank": 7,
    "under_goal": false,
    "origin": "JFK"
@@ -610,8 +610,9 @@ const DATA = {
    ],
    "both_aeroplan": true,
    "fully_verified": true,
-   "amex_note": "Transfer 300,000 Amex MR \u2192 Aeroplan (1:1, instant)"
+   "amex_note": "300,000 \u2192 Aeroplan \u00b7 transfers 1:1 from Amex MR or Chase UR (or both \u2014 pool Mom's Chase + Ben's Amex into one Aeroplan account)"
   }
  ],
- "bos_note": "Logan has exactly ONE true-business trip in spec: Oct 5 \u2192 Oct 13 at 300k. Everything else from BOS was either a mixed-cabin trap (transatlantic in economy \u2014 Munich routings, the short-connection Frankfurt return) or 193k+/person. Heads up: both connections are longer than the JFK options (4h50m out, 6h50m back, both in Frankfurt)."
+ "bos_note": "Logan has exactly ONE true-business trip in spec: Oct 5 \u2192 Oct 13 at 300k. Everything else from BOS was either a mixed-cabin trap (transatlantic in economy \u2014 Munich routings, the short-connection Frankfurt return) or 193k+/person. Heads up: both connections are longer than the JFK options (4h50m out, 6h50m back, both in Frankfurt).",
+ "points_note": "\ud83d\udcb3 Points: every trip here books through Aeroplan and/or Flying Blue \u2014 both take 1:1 instant transfers from Amex Membership Rewards AND Chase Ultimate Rewards. Mom's Chase and Ben's Amex can pool into the same loyalty account. (United, Chase's other Star partner, requires a MileagePlus login to even see award prices and typically charges 80k+/leg for these same flights \u2014 Aeroplan at 75k is the better use of Chase points.)"
 };
