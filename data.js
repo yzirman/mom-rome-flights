@@ -1,5 +1,5 @@
 const DATA = {
- "generated": "2026-06-10 evening \u2014 every Aeroplan option cabin-checked per segment on aircanada.com",
+ "generated": "2026-06-10 evening \u2014 cabin-verified per segment on aircanada.com \u00b7 long layovers excluded",
  "trip": {
   "travelers": "Mom &amp; Ben",
   "origin": "JFK",
@@ -14,8 +14,8 @@ const DATA = {
  "cap": 450000,
  "cheapest": 300000,
  "fx_note": "CAD\u2192USD at 0.73",
- "verified_summary": "Every 75K option on all six dates was opened on aircanada.com (signed in) and its per-segment cabin checked. Aeroplan sells many of these as 'business' with the TRANSATLANTIC LEG IN ECONOMY (shown in red as '10% in Business Class'). All such mixed-cabin traps are excluded below \u2014 every Aeroplan leg shown is verified 100% business with a lie-flat transatlantic seat.",
- "note_volatile": "Seat counts and cabin mixes were live the evening of Jun 10, 2026 and change constantly. Re-check the cabin note ('Mixed cabin' warning) on aircanada.com right before transferring Amex points \u2014 transfers are instant and non-reversible.",
+ "verified_summary": "Every Aeroplan option was opened on aircanada.com (signed in) and its per-segment cabin checked. Mixed-cabin fares (transatlantic leg in ECONOMY) and anything with a long layover (>4h) are excluded. Every flight below is 100% business with a lie-flat ocean crossing and a short connection (max 2h25m).",
+ "note_volatile": "Seat counts were live the evening of Jun 10, 2026 and change constantly. Re-check the cabin ('Mixed cabin' warning) on aircanada.com right before transferring Amex points \u2014 transfers are instant and non-reversible.",
  "traps": [
   {
    "date": "Oct 12 return",
@@ -28,6 +28,12 @@ const DATA = {
    "flight": "15:35 FCO\u2192FRA\u2192JFK (ITA+Singapore)",
    "pct": "13%",
    "why": "FRA\u2192JFK transatlantic in ECONOMY"
+  },
+  {
+   "date": "Oct 12 return",
+   "flight": "16:45 FCO\u2192GVA\u2192JFK (true business, 4 seats)",
+   "pct": "100%",
+   "why": "EXCLUDED: 17h25m overnight layover in Geneva"
   },
   {
    "date": "Oct 13 return",
@@ -45,7 +51,7 @@ const DATA = {
    "date": "Oct 13 return",
    "flight": "16:45 FCO\u2192GVA\u2192JFK",
    "pct": "~10%",
-   "why": "GVA\u2192JFK in ECONOMY"
+   "why": "GVA\u2192JFK in ECONOMY + overnight layover"
   },
   {
    "date": "Oct 20 return",
@@ -63,13 +69,19 @@ const DATA = {
    "date": "Oct 20 return",
    "flight": "16:45 FCO\u2192GVA\u2192JFK (7 seats)",
    "pct": "~10%",
-   "why": "GVA\u2192JFK in ECONOMY"
+   "why": "GVA\u2192JFK in ECONOMY + overnight layover"
   },
   {
    "date": "Oct 5 outbound",
    "flight": "21:50 JFK\u2192FRA\u2192FCO",
    "pct": "~40%",
    "why": "JFK\u2192FRA transatlantic in ECONOMY"
+  },
+  {
+   "date": "Oct 5 outbound",
+   "flight": "19:25 via GVA (9h50m layover variant)",
+   "pct": "100%",
+   "why": "EXCLUDED: 9h50m layover"
   },
   {
    "date": "Oct 6 outbound",
@@ -103,74 +115,6 @@ const DATA = {
    "depart_dow": "Mon",
    "home": "2026-10-13",
    "home_dow": "Tue",
-   "nights": 7,
-   "out": {
-    "program": "Aeroplan",
-    "code": "AC",
-    "miles": 75000,
-    "via": "Geneva",
-    "longhaul": "Swiss A330-300",
-    "lieflat": true,
-    "connector": "ITA A320neo",
-    "fees": 92.64,
-    "fee_display": "CA$126.90 (\u2248$93 USD)",
-    "verified": {
-     "status": "confirmed",
-     "when": "2026-06-10 evening",
-     "seats": 2,
-     "flight": "19:25 JFK\u2192GVA\u2192FCO 13:05 (+1)",
-     "duration": "11h40m",
-     "carriers": "Swiss A330-300 (lie-flat) + ITA A320neo",
-     "fee_cad": 126.9,
-     "cabin": "100% business \u2014 verified, no mixed-cabin note",
-     "alts": [
-      "19:25 via GVA (9h50m layover) \u2014 2 seats, same Swiss TATL",
-      "\u26a0\ufe0f 21:50 via FRA \u2014 MIXED: JFK\u2013FRA in ECONOMY (excluded)"
-     ]
-    }
-   },
-   "ret": {
-    "program": "Aeroplan",
-    "code": "AC",
-    "miles": 75000,
-    "via": "Geneva",
-    "longhaul": "Swiss A330-300",
-    "lieflat": true,
-    "connector": "ITA A320neo",
-    "fees": 151.84,
-    "fee_display": "CA$208.00 (\u2248$152 USD)",
-    "verified": {
-     "status": "confirmed",
-     "when": "2026-06-10 evening",
-     "seats": 4,
-     "flight": "16:45 FCO\u2192GVA (overnight, 17h25m layover) \u2192JFK, arrives Oct 13 14:20",
-     "duration": "27h35m total",
-     "carriers": "ITA A320neo + Swiss A330-300 (lie-flat)",
-     "fee_cad": 208.0,
-     "cabin": "100% business \u2014 verified; NOTE: overnight layover in Geneva, lands Oct 13",
-     "alts": [
-      "\u26a0\ufe0f 09:05 same-day \u2014 MIXED: only 10% business, GVA\u2013JFK in ECONOMY (excluded)",
-      "\u26a0\ufe0f 15:35 via FRA \u2014 MIXED: 13% business (excluded)"
-     ]
-    }
-   },
-   "couple_miles": 300000,
-   "couple_fees": 489,
-   "fees_exact": "CA$669.80 total (\u2248$489 USD)",
-   "programs": [
-    "Aeroplan"
-   ],
-   "both_aeroplan": true,
-   "fully_verified": true,
-   "amex_note": "Transfer 300,000 Amex MR \u2192 Aeroplan (1:1, instant)",
-   "rank": 1,
-   "under_goal": true
-  },
-  {
-   "depart": "2026-10-05",
-   "depart_dow": "Mon",
-   "home": "2026-10-13",
-   "home_dow": "Tue",
    "nights": 8,
    "out": {
     "program": "Aeroplan",
@@ -187,14 +131,10 @@ const DATA = {
      "when": "2026-06-10 evening",
      "seats": 2,
      "flight": "19:25 JFK\u2192GVA\u2192FCO 13:05 (+1)",
-     "duration": "11h40m",
+     "duration": "11h40m \u00b7 2h20m connection",
      "carriers": "Swiss A330-300 (lie-flat) + ITA A320neo",
      "fee_cad": 126.9,
-     "cabin": "100% business \u2014 verified, no mixed-cabin note",
-     "alts": [
-      "19:25 via GVA (9h50m layover) \u2014 2 seats, same Swiss TATL",
-      "\u26a0\ufe0f 21:50 via FRA \u2014 MIXED: JFK\u2013FRA in ECONOMY (excluded)"
-     ]
+     "cabin": "100% business \u2014 cabin-verified"
     }
    },
    "ret": {
@@ -212,15 +152,10 @@ const DATA = {
      "when": "2026-06-10 evening",
      "seats": 4,
      "flight": "09:05 FCO\u2192GVA\u2192JFK 14:20 same day",
-     "duration": "11h15m",
+     "duration": "11h15m \u00b7 1h connection",
      "carriers": "ITA A320neo + Swiss A330-300 (lie-flat)",
      "fee_cad": 197.0,
-     "cabin": "100% business \u2014 verified, no mixed-cabin note",
-     "alts": [
-      "\u26a0\ufe0f 16:40 via ZRH (7 seats) \u2014 MIXED: 10% business (excluded)",
-      "\u26a0\ufe0f 08:45 via FRA \u2014 MIXED: FRA\u2013JFK in ECONOMY (excluded)",
-      "\u26a0\ufe0f 16:45 via GVA \u2014 MIXED (excluded)"
-     ]
+     "cabin": "100% business \u2014 cabin-verified"
     }
    },
    "couple_miles": 300000,
@@ -232,7 +167,7 @@ const DATA = {
    "both_aeroplan": true,
    "fully_verified": true,
    "amex_note": "Transfer 300,000 Amex MR \u2192 Aeroplan (1:1, instant)",
-   "rank": 2,
+   "rank": 1,
    "under_goal": true
   },
   {
@@ -256,13 +191,10 @@ const DATA = {
      "when": "2026-06-10 evening",
      "seats": 6,
      "flight": "15:40 JFK\u2192FRA\u2192FCO 09:05 (+1)",
-     "duration": "11h25m",
+     "duration": "11h25m \u00b7 1h50m connection",
      "carriers": "Lufthansa widebody (lie-flat) both legs",
      "fee_cad": 143.0,
-     "cabin": "100% business \u2014 verified, no mixed-cabin note",
-     "alts": [
-      "\u26a0\ufe0f 19:25 via GVA \u2014 MIXED: JFK\u2013GVA in ECONOMY (excluded)"
-     ]
+     "cabin": "100% business \u2014 cabin-verified"
     }
    },
    "ret": {
@@ -280,15 +212,10 @@ const DATA = {
      "when": "2026-06-10 evening",
      "seats": 4,
      "flight": "09:05 FCO\u2192GVA\u2192JFK 14:20 same day",
-     "duration": "11h15m",
+     "duration": "11h15m \u00b7 1h connection",
      "carriers": "ITA A320neo + Swiss A330-300 (lie-flat)",
      "fee_cad": 197.0,
-     "cabin": "100% business \u2014 verified, no mixed-cabin note",
-     "alts": [
-      "\u26a0\ufe0f 16:40 via ZRH (7 seats) \u2014 MIXED: 10% business (excluded)",
-      "\u26a0\ufe0f 08:45 via FRA \u2014 MIXED: FRA\u2013JFK in ECONOMY (excluded)",
-      "\u26a0\ufe0f 16:45 via GVA \u2014 MIXED (excluded)"
-     ]
+     "cabin": "100% business \u2014 cabin-verified"
     }
    },
    "couple_miles": 300000,
@@ -300,7 +227,7 @@ const DATA = {
    "both_aeroplan": true,
    "fully_verified": true,
    "amex_note": "Transfer 300,000 Amex MR \u2192 Aeroplan (1:1, instant)",
-   "rank": 3,
+   "rank": 2,
    "under_goal": true
   },
   {
@@ -324,14 +251,10 @@ const DATA = {
      "when": "2026-06-10 evening",
      "seats": 2,
      "flight": "19:25 JFK\u2192GVA\u2192FCO 13:05 (+1)",
-     "duration": "11h40m",
+     "duration": "11h40m \u00b7 2h20m connection",
      "carriers": "Swiss A330-300 (lie-flat) + ITA A320neo",
      "fee_cad": 126.9,
-     "cabin": "100% business \u2014 verified, no mixed-cabin note",
-     "alts": [
-      "19:25 via GVA (9h50m layover) \u2014 2 seats, same Swiss TATL",
-      "\u26a0\ufe0f 21:50 via FRA \u2014 MIXED: JFK\u2013FRA in ECONOMY (excluded)"
-     ]
+     "cabin": "100% business \u2014 cabin-verified"
     }
    },
    "ret": {
@@ -346,7 +269,7 @@ const DATA = {
     "fee_display": "$455.53 USD (exact, Flying Blue)",
     "verified": {
      "status": "priced",
-     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG). Cabin mix + space: confirm on airfrance.us before transferring.",
+     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG); normal 1\u20133h CDG connection. Cabin + space: confirm on airfrance.us.",
      "routing": "AF1005 + AF4 via CDG"
     }
    },
@@ -360,7 +283,7 @@ const DATA = {
    "both_aeroplan": false,
    "fully_verified": false,
    "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
-   "rank": 4,
+   "rank": 3,
    "under_goal": true
   },
   {
@@ -384,14 +307,10 @@ const DATA = {
      "when": "2026-06-10 evening",
      "seats": 2,
      "flight": "19:25 JFK\u2192GVA\u2192FCO 13:05 (+1)",
-     "duration": "11h40m",
+     "duration": "11h40m \u00b7 2h20m connection",
      "carriers": "Swiss A330-300 (lie-flat) + ITA A320neo",
      "fee_cad": 126.9,
-     "cabin": "100% business \u2014 verified, no mixed-cabin note",
-     "alts": [
-      "19:25 via GVA (9h50m layover) \u2014 2 seats, same Swiss TATL",
-      "\u26a0\ufe0f 21:50 via FRA \u2014 MIXED: JFK\u2013FRA in ECONOMY (excluded)"
-     ]
+     "cabin": "100% business \u2014 cabin-verified"
     }
    },
    "ret": {
@@ -406,7 +325,7 @@ const DATA = {
     "fee_display": "$455.33 USD (exact, Flying Blue)",
     "verified": {
      "status": "priced",
-     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG). Cabin mix + space: confirm on airfrance.us before transferring.",
+     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG); normal 1\u20133h CDG connection. Cabin + space: confirm on airfrance.us.",
      "routing": "AF1005 + AF4 via CDG"
     }
    },
@@ -420,7 +339,7 @@ const DATA = {
    "both_aeroplan": false,
    "fully_verified": false,
    "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
-   "rank": 5,
+   "rank": 4,
    "under_goal": true
   },
   {
@@ -444,13 +363,10 @@ const DATA = {
      "when": "2026-06-10 evening",
      "seats": 6,
      "flight": "15:40 JFK\u2192FRA\u2192FCO 09:05 (+1)",
-     "duration": "11h25m",
+     "duration": "11h25m \u00b7 1h50m connection",
      "carriers": "Lufthansa widebody (lie-flat) both legs",
      "fee_cad": 143.0,
-     "cabin": "100% business \u2014 verified, no mixed-cabin note",
-     "alts": [
-      "\u26a0\ufe0f 19:25 via GVA \u2014 MIXED: JFK\u2013GVA in ECONOMY (excluded)"
-     ]
+     "cabin": "100% business \u2014 cabin-verified"
     }
    },
    "ret": {
@@ -465,7 +381,7 @@ const DATA = {
     "fee_display": "$455.53 USD (exact, Flying Blue)",
     "verified": {
      "status": "priced",
-     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG). Cabin mix + space: confirm on airfrance.us before transferring.",
+     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG); normal 1\u20133h CDG connection. Cabin + space: confirm on airfrance.us.",
      "routing": "AF1005 + AF4 via CDG"
     }
    },
@@ -479,7 +395,7 @@ const DATA = {
    "both_aeroplan": false,
    "fully_verified": false,
    "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
-   "rank": 6,
+   "rank": 5,
    "under_goal": true
   },
   {
@@ -503,13 +419,10 @@ const DATA = {
      "when": "2026-06-10 evening",
      "seats": 6,
      "flight": "15:40 JFK\u2192FRA\u2192FCO 09:05 (+1)",
-     "duration": "11h25m",
+     "duration": "11h25m \u00b7 1h50m connection",
      "carriers": "Lufthansa widebody (lie-flat) both legs",
      "fee_cad": 143.0,
-     "cabin": "100% business \u2014 verified, no mixed-cabin note",
-     "alts": [
-      "\u26a0\ufe0f 19:25 via GVA \u2014 MIXED: JFK\u2013GVA in ECONOMY (excluded)"
-     ]
+     "cabin": "100% business \u2014 cabin-verified"
     }
    },
    "ret": {
@@ -524,7 +437,7 @@ const DATA = {
     "fee_display": "$455.33 USD (exact, Flying Blue)",
     "verified": {
      "status": "priced",
-     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG). Cabin mix + space: confirm on airfrance.us before transferring.",
+     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG); normal 1\u20133h CDG connection. Cabin + space: confirm on airfrance.us.",
      "routing": "AF1005 + AF4 via CDG"
     }
    },
@@ -538,7 +451,7 @@ const DATA = {
    "both_aeroplan": false,
    "fully_verified": false,
    "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
-   "rank": 7,
+   "rank": 6,
    "under_goal": true
   },
   {
@@ -562,14 +475,10 @@ const DATA = {
      "when": "2026-06-10 evening",
      "seats": 2,
      "flight": "15:40 JFK\u2192FRA\u2192FCO 09:05 (+1)",
-     "duration": "11h25m",
+     "duration": "11h25m \u00b7 1h50m connection",
      "carriers": "Lufthansa widebody (lie-flat) both legs",
      "fee_cad": 143.0,
-     "cabin": "100% business \u2014 verified, no mixed-cabin note",
-     "alts": [
-      "\u26a0\ufe0f 20:55 Singapore+LH \u2014 MIXED: only 13% business (excluded)",
-      "\u26a0\ufe0f 19:25 via GVA \u2014 MIXED: JFK\u2013GVA in ECONOMY (excluded)"
-     ]
+     "cabin": "100% business \u2014 cabin-verified"
     }
    },
    "ret": {
@@ -584,7 +493,7 @@ const DATA = {
     "fee_display": "$455.53 USD (exact, Flying Blue)",
     "verified": {
      "status": "priced",
-     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG). Cabin mix + space: confirm on airfrance.us before transferring.",
+     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG); normal 1\u20133h CDG connection. Cabin + space: confirm on airfrance.us.",
      "routing": "AF1005 + AF4 via CDG"
     }
    },
@@ -598,7 +507,7 @@ const DATA = {
    "both_aeroplan": false,
    "fully_verified": false,
    "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
-   "rank": 8,
+   "rank": 7,
    "under_goal": true
   },
   {
@@ -622,14 +531,10 @@ const DATA = {
      "when": "2026-06-10 evening",
      "seats": 2,
      "flight": "15:40 JFK\u2192FRA\u2192FCO 09:05 (+1)",
-     "duration": "11h25m",
+     "duration": "11h25m \u00b7 1h50m connection",
      "carriers": "Lufthansa widebody (lie-flat) both legs",
      "fee_cad": 143.0,
-     "cabin": "100% business \u2014 verified, no mixed-cabin note",
-     "alts": [
-      "\u26a0\ufe0f 20:55 Singapore+LH \u2014 MIXED: only 13% business (excluded)",
-      "\u26a0\ufe0f 19:25 via GVA \u2014 MIXED: JFK\u2013GVA in ECONOMY (excluded)"
-     ]
+     "cabin": "100% business \u2014 cabin-verified"
     }
    },
    "ret": {
@@ -644,7 +549,7 @@ const DATA = {
     "fee_display": "$455.33 USD (exact, Flying Blue)",
     "verified": {
      "status": "priced",
-     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG). Cabin mix + space: confirm on airfrance.us before transferring.",
+     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG); normal 1\u20133h CDG connection. Cabin + space: confirm on airfrance.us.",
      "routing": "AF1005 + AF4 via CDG"
     }
    },
@@ -658,68 +563,8 @@ const DATA = {
    "both_aeroplan": false,
    "fully_verified": false,
    "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
-   "rank": 9,
+   "rank": 8,
    "under_goal": true
-  },
-  {
-   "depart": "2026-10-04",
-   "depart_dow": "Sun",
-   "home": "2026-10-13",
-   "home_dow": "Tue",
-   "nights": 8,
-   "out": {
-    "program": "Flying Blue",
-    "code": "FB",
-    "miles": 141500,
-    "via": "Paris CDG",
-    "longhaul": "Air France 777-300ER / A350",
-    "lieflat": true,
-    "connector": "A320 / A220",
-    "fees": 363.9,
-    "fee_display": "$363.90 USD (exact, Flying Blue)",
-    "verified": {
-     "status": "priced",
-     "note": "Exact tax from Flying Blue (AF via CDG (e.g. AF9+AF1604)). Cabin mix + space: confirm on airfrance.us before transferring.",
-     "routing": "AF via CDG (e.g. AF9+AF1604)"
-    }
-   },
-   "ret": {
-    "program": "Aeroplan",
-    "code": "AC",
-    "miles": 75000,
-    "via": "Geneva",
-    "longhaul": "Swiss A330-300",
-    "lieflat": true,
-    "connector": "ITA A320neo",
-    "fees": 151.84,
-    "fee_display": "CA$208.00 (\u2248$152 USD)",
-    "verified": {
-     "status": "confirmed",
-     "when": "2026-06-10 evening",
-     "seats": 4,
-     "flight": "16:45 FCO\u2192GVA (overnight, 17h25m layover) \u2192JFK, arrives Oct 13 14:20",
-     "duration": "27h35m total",
-     "carriers": "ITA A320neo + Swiss A330-300 (lie-flat)",
-     "fee_cad": 208.0,
-     "cabin": "100% business \u2014 verified; NOTE: overnight layover in Geneva, lands Oct 13",
-     "alts": [
-      "\u26a0\ufe0f 09:05 same-day \u2014 MIXED: only 10% business, GVA\u2013JFK in ECONOMY (excluded)",
-      "\u26a0\ufe0f 15:35 via FRA \u2014 MIXED: 13% business (excluded)"
-     ]
-    }
-   },
-   "couple_miles": 433000,
-   "couple_fees": 1031,
-   "fees_exact": "$363.90\u00d72 USD + CA$208.00\u00d72 (\u2248$1031 USD total)",
-   "programs": [
-    "Aeroplan",
-    "Flying Blue"
-   ],
-   "both_aeroplan": false,
-   "fully_verified": false,
-   "amex_note": "283,000 \u2192 Flying Blue + 150,000 \u2192 Aeroplan",
-   "rank": 10,
-   "under_goal": false
   },
   {
    "depart": "2026-10-04",
@@ -739,7 +584,7 @@ const DATA = {
     "fee_display": "$363.90 USD (exact, Flying Blue)",
     "verified": {
      "status": "priced",
-     "note": "Exact tax from Flying Blue (AF via CDG (e.g. AF9+AF1604)). Cabin mix + space: confirm on airfrance.us before transferring.",
+     "note": "Exact tax from Flying Blue (AF via CDG (e.g. AF9+AF1604)); normal 1\u20133h CDG connection. Cabin + space: confirm on airfrance.us.",
      "routing": "AF via CDG (e.g. AF9+AF1604)"
     }
    },
@@ -758,15 +603,10 @@ const DATA = {
      "when": "2026-06-10 evening",
      "seats": 4,
      "flight": "09:05 FCO\u2192GVA\u2192JFK 14:20 same day",
-     "duration": "11h15m",
+     "duration": "11h15m \u00b7 1h connection",
      "carriers": "ITA A320neo + Swiss A330-300 (lie-flat)",
      "fee_cad": 197.0,
-     "cabin": "100% business \u2014 verified, no mixed-cabin note",
-     "alts": [
-      "\u26a0\ufe0f 16:40 via ZRH (7 seats) \u2014 MIXED: 10% business (excluded)",
-      "\u26a0\ufe0f 08:45 via FRA \u2014 MIXED: FRA\u2013JFK in ECONOMY (excluded)",
-      "\u26a0\ufe0f 16:45 via GVA \u2014 MIXED (excluded)"
-     ]
+     "cabin": "100% business \u2014 cabin-verified"
     }
    },
    "couple_miles": 433000,
@@ -779,7 +619,7 @@ const DATA = {
    "both_aeroplan": false,
    "fully_verified": false,
    "amex_note": "283,000 \u2192 Flying Blue + 150,000 \u2192 Aeroplan",
-   "rank": 11,
+   "rank": 9,
    "under_goal": false
   },
   {
@@ -800,7 +640,7 @@ const DATA = {
     "fee_display": "$363.90 USD (exact, Flying Blue)",
     "verified": {
      "status": "priced",
-     "note": "Exact tax from Flying Blue (AF9/AF7 + connector via CDG). Cabin mix + space: confirm on airfrance.us before transferring.",
+     "note": "Exact tax from Flying Blue (AF9/AF7 + connector via CDG); normal 1\u20133h CDG connection. Cabin + space: confirm on airfrance.us.",
      "routing": "AF9/AF7 + connector via CDG"
     }
    },
@@ -819,15 +659,10 @@ const DATA = {
      "when": "2026-06-10 evening",
      "seats": 2,
      "flight": "09:05 FCO\u2192GVA\u2192JFK 14:20 same day",
-     "duration": "11h15m",
+     "duration": "11h15m \u00b7 1h connection",
      "carriers": "ITA A320neo + Swiss A330-300 (lie-flat)",
      "fee_cad": 197.0,
-     "cabin": "100% business \u2014 verified, no mixed-cabin note",
-     "alts": [
-      "\u26a0\ufe0f 08:30 via ZRH (6 seats) \u2014 MIXED: ZRH\u2013JFK in ECONOMY (excluded)",
-      "\u26a0\ufe0f 16:40 via ZRH (8 seats) \u2014 MIXED: 10% business (excluded)",
-      "\u26a0\ufe0f 16:45 via GVA (7 seats) \u2014 MIXED (excluded)"
-     ]
+     "cabin": "100% business \u2014 cabin-verified"
     }
    },
    "couple_miles": 433000,
@@ -840,7 +675,7 @@ const DATA = {
    "both_aeroplan": false,
    "fully_verified": false,
    "amex_note": "283,000 \u2192 Flying Blue + 150,000 \u2192 Aeroplan",
-   "rank": 12,
+   "rank": 10,
    "under_goal": false
   }
  ]
