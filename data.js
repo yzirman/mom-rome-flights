@@ -1,5 +1,5 @@
 const DATA = {
- "generated": "2026-06-10 evening \u2014 cabin-verified per segment on aircanada.com \u00b7 long layovers excluded",
+ "generated": "2026-06-10 evening \u2014 EVERY flight verified on its booking site (Aeroplan on aircanada.com \u00d72, Flying Blue on airfrance.us)",
  "trip": {
   "travelers": "Mom &amp; Ben",
   "origin": "JFK",
@@ -14,8 +14,8 @@ const DATA = {
  "cap": 450000,
  "cheapest": 300000,
  "fx_note": "CAD\u2192USD at 0.73",
- "verified_summary": "Every Aeroplan option was opened on aircanada.com (signed in) and its per-segment cabin checked. Mixed-cabin fares (transatlantic leg in ECONOMY) and anything with a long layover (>4h) are excluded. Every flight below is 100% business with a lie-flat ocean crossing and a short connection (max 2h25m).",
- "note_volatile": "Seat counts were live the evening of Jun 10, 2026 and change constantly. Re-check the cabin ('Mixed cabin' warning) on aircanada.com right before transferring Amex points \u2014 transfers are instant and non-reversible.",
+ "verified_summary": "Every flight listed was verified signed-in on its actual booking site the evening of Jun 10: the five Aeroplan legs on aircanada.com (twice \u2014 seat counts and per-segment cabins re-checked), and the Flying Blue legs on airfrance.us (exact miles + taxes for 2 passengers, Business cabin filter, flight numbers and aircraft from the details panel). One change caught live: the Oct 15 Flying Blue 90k return SOLD OUT during the day \u2014 it's been removed.",
+ "note_volatile": "All numbers were live the evening of Jun 10, 2026. Award space changes hourly \u2014 re-check once more right before transferring Amex points (transfers are instant and non-reversible).",
  "traps": [
   {
    "date": "Oct 12 return",
@@ -100,6 +100,12 @@ const DATA = {
    "flight": "19:25 JFK\u2192GVA\u2192FCO (showed 3 seats)",
    "pct": "~10%",
    "why": "JFK\u2192GVA in ECONOMY"
+  },
+  {
+   "date": "Oct 15 return (Flying Blue)",
+   "flight": "AF1005+AF4 \u2014 the 90k award",
+   "pct": "SOLD OUT",
+   "why": "Was 90k/pp this morning; by evening repriced to 148k/pp. Dropped from the list."
   }
  ],
  "delta_nonstop": {
@@ -128,13 +134,13 @@ const DATA = {
     "fee_display": "CA$126.90 (\u2248$93 USD)",
     "verified": {
      "status": "confirmed",
-     "when": "2026-06-10 evening",
+     "when": "2026-06-10 ~7:30pm ET (second check)",
      "seats": 2,
      "flight": "19:25 JFK\u2192GVA\u2192FCO 13:05 (+1)",
      "duration": "11h40m \u00b7 2h20m connection",
      "carriers": "Swiss A330-300 (lie-flat) + ITA A320neo",
      "fee_cad": 126.9,
-     "cabin": "100% business \u2014 cabin-verified"
+     "cabin": "100% business \u2014 cabin-verified twice"
     }
    },
    "ret": {
@@ -149,13 +155,13 @@ const DATA = {
     "fee_display": "CA$197.00 (\u2248$144 USD)",
     "verified": {
      "status": "confirmed",
-     "when": "2026-06-10 evening",
+     "when": "2026-06-10 ~7:30pm ET (second check)",
      "seats": 4,
      "flight": "09:05 FCO\u2192GVA\u2192JFK 14:20 same day",
      "duration": "11h15m \u00b7 1h connection",
      "carriers": "ITA A320neo + Swiss A330-300 (lie-flat)",
      "fee_cad": 197.0,
-     "cabin": "100% business \u2014 cabin-verified"
+     "cabin": "100% business \u2014 cabin-verified twice"
     }
    },
    "couple_miles": 300000,
@@ -188,13 +194,13 @@ const DATA = {
     "fee_display": "CA$143.00 (\u2248$104 USD)",
     "verified": {
      "status": "confirmed",
-     "when": "2026-06-10 evening",
+     "when": "2026-06-10 ~7:30pm ET (second check)",
      "seats": 6,
      "flight": "15:40 JFK\u2192FRA\u2192FCO 09:05 (+1)",
      "duration": "11h25m \u00b7 1h50m connection",
      "carriers": "Lufthansa widebody (lie-flat) both legs",
      "fee_cad": 143.0,
-     "cabin": "100% business \u2014 cabin-verified"
+     "cabin": "100% business \u2014 cabin-verified twice"
     }
    },
    "ret": {
@@ -209,13 +215,13 @@ const DATA = {
     "fee_display": "CA$197.00 (\u2248$144 USD)",
     "verified": {
      "status": "confirmed",
-     "when": "2026-06-10 evening",
+     "when": "2026-06-10 ~7:30pm ET (second check)",
      "seats": 4,
      "flight": "09:05 FCO\u2192GVA\u2192JFK 14:20 same day",
      "duration": "11h15m \u00b7 1h connection",
      "carriers": "ITA A320neo + Swiss A330-300 (lie-flat)",
      "fee_cad": 197.0,
-     "cabin": "100% business \u2014 cabin-verified"
+     "cabin": "100% business \u2014 cabin-verified twice"
     }
    },
    "couple_miles": 300000,
@@ -248,13 +254,13 @@ const DATA = {
     "fee_display": "CA$126.90 (\u2248$93 USD)",
     "verified": {
      "status": "confirmed",
-     "when": "2026-06-10 evening",
+     "when": "2026-06-10 ~7:30pm ET (second check)",
      "seats": 2,
      "flight": "19:25 JFK\u2192GVA\u2192FCO 13:05 (+1)",
      "duration": "11h40m \u00b7 2h20m connection",
      "carriers": "Swiss A330-300 (lie-flat) + ITA A320neo",
      "fee_cad": 126.9,
-     "cabin": "100% business \u2014 cabin-verified"
+     "cabin": "100% business \u2014 cabin-verified twice"
     }
    },
    "ret": {
@@ -262,84 +268,34 @@ const DATA = {
     "code": "FB",
     "miles": 90000,
     "via": "Paris CDG",
-    "longhaul": "Air France 777-300ER / A350",
+    "longhaul": "Air France Boeing 777-300 (lie-flat)",
     "lieflat": true,
-    "connector": "A320 / A220",
-    "fees": 455.53,
-    "fee_display": "$455.53 USD (exact, Flying Blue)",
-    "verified": {
-     "status": "priced",
-     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG); normal 1\u20133h CDG connection. Cabin + space: confirm on airfrance.us.",
-     "routing": "AF1005 + AF4 via CDG"
-    }
-   },
-   "couple_miles": 330000,
-   "couple_fees": 1096,
-   "fees_exact": "CA$126.90\u00d72 + $455.53\u00d72 USD (\u2248$1096 USD total)",
-   "programs": [
-    "Aeroplan",
-    "Flying Blue"
-   ],
-   "both_aeroplan": false,
-   "fully_verified": false,
-   "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
-   "rank": 3,
-   "under_goal": true
-  },
-  {
-   "depart": "2026-10-05",
-   "depart_dow": "Mon",
-   "home": "2026-10-15",
-   "home_dow": "Thu",
-   "nights": 10,
-   "out": {
-    "program": "Aeroplan",
-    "code": "AC",
-    "miles": 75000,
-    "via": "Geneva",
-    "longhaul": "Swiss A330-300",
-    "lieflat": true,
-    "connector": "ITA A320neo",
-    "fees": 92.64,
-    "fee_display": "CA$126.90 (\u2248$93 USD)",
+    "connector": "AF1005 A320",
+    "fees": 455.93,
+    "fee_display": "$455.93 USD (verified)",
     "verified": {
      "status": "confirmed",
-     "when": "2026-06-10 evening",
-     "seats": 2,
-     "flight": "19:25 JFK\u2192GVA\u2192FCO 13:05 (+1)",
-     "duration": "11h40m \u00b7 2h20m connection",
-     "carriers": "Swiss A330-300 (lie-flat) + ITA A320neo",
-     "fee_cad": 126.9,
-     "cabin": "100% business \u2014 cabin-verified"
-    }
-   },
-   "ret": {
-    "program": "Flying Blue",
-    "code": "FB",
-    "miles": 90000,
-    "via": "Paris CDG",
-    "longhaul": "Air France 777-300ER / A350",
-    "lieflat": true,
-    "connector": "A320 / A220",
-    "fees": 455.33,
-    "fee_display": "$455.33 USD (exact, Flying Blue)",
-    "verified": {
-     "status": "priced",
-     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG); normal 1\u20133h CDG connection. Cabin + space: confirm on airfrance.us.",
-     "routing": "AF1005 + AF4 via CDG"
+     "when": "2026-06-10 ~7:45pm ET",
+     "seats": null,
+     "flight": "AF1005 06:05 FCO\u2192CDG + AF4 10:45\u2192JFK 12:55",
+     "duration": "12h50 \u00b7 2h20 connection",
+     "carriers": "Air France Boeing 777-300 (lie-flat) + AF1005 A320",
+     "fee_cad": null,
+     "cabin": "Business fare on airfrance.us (Business cabin filter)",
+     "note": "Verified on airfrance.us: 'Lowest fare 180,000 Miles' + $911.86 for two."
     }
    },
    "couple_miles": 330000,
-   "couple_fees": 1096,
-   "fees_exact": "CA$126.90\u00d72 + $455.33\u00d72 USD (\u2248$1096 USD total)",
+   "couple_fees": 1097,
+   "fees_exact": "CA$126.90\u00d72 + $455.93\u00d72 USD (\u2248$1097 USD total)",
    "programs": [
     "Aeroplan",
     "Flying Blue"
    ],
    "both_aeroplan": false,
-   "fully_verified": false,
+   "fully_verified": true,
    "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
-   "rank": 4,
+   "rank": 3,
    "under_goal": true
   },
   {
@@ -360,13 +316,13 @@ const DATA = {
     "fee_display": "CA$143.00 (\u2248$104 USD)",
     "verified": {
      "status": "confirmed",
-     "when": "2026-06-10 evening",
+     "when": "2026-06-10 ~7:30pm ET (second check)",
      "seats": 6,
      "flight": "15:40 JFK\u2192FRA\u2192FCO 09:05 (+1)",
      "duration": "11h25m \u00b7 1h50m connection",
      "carriers": "Lufthansa widebody (lie-flat) both legs",
      "fee_cad": 143.0,
-     "cabin": "100% business \u2014 cabin-verified"
+     "cabin": "100% business \u2014 cabin-verified twice"
     }
    },
    "ret": {
@@ -374,84 +330,34 @@ const DATA = {
     "code": "FB",
     "miles": 90000,
     "via": "Paris CDG",
-    "longhaul": "Air France 777-300ER / A350",
+    "longhaul": "Air France Boeing 777-300 (lie-flat)",
     "lieflat": true,
-    "connector": "A320 / A220",
-    "fees": 455.53,
-    "fee_display": "$455.53 USD (exact, Flying Blue)",
-    "verified": {
-     "status": "priced",
-     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG); normal 1\u20133h CDG connection. Cabin + space: confirm on airfrance.us.",
-     "routing": "AF1005 + AF4 via CDG"
-    }
-   },
-   "couple_miles": 330000,
-   "couple_fees": 1120,
-   "fees_exact": "CA$143.00\u00d72 + $455.53\u00d72 USD (\u2248$1120 USD total)",
-   "programs": [
-    "Aeroplan",
-    "Flying Blue"
-   ],
-   "both_aeroplan": false,
-   "fully_verified": false,
-   "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
-   "rank": 5,
-   "under_goal": true
-  },
-  {
-   "depart": "2026-10-06",
-   "depart_dow": "Tue",
-   "home": "2026-10-15",
-   "home_dow": "Thu",
-   "nights": 9,
-   "out": {
-    "program": "Aeroplan",
-    "code": "AC",
-    "miles": 75000,
-    "via": "Frankfurt",
-    "longhaul": "Lufthansa widebody",
-    "lieflat": true,
-    "connector": "Lufthansa A320",
-    "fees": 104.39,
-    "fee_display": "CA$143.00 (\u2248$104 USD)",
+    "connector": "AF1005 A320",
+    "fees": 455.93,
+    "fee_display": "$455.93 USD (verified)",
     "verified": {
      "status": "confirmed",
-     "when": "2026-06-10 evening",
-     "seats": 6,
-     "flight": "15:40 JFK\u2192FRA\u2192FCO 09:05 (+1)",
-     "duration": "11h25m \u00b7 1h50m connection",
-     "carriers": "Lufthansa widebody (lie-flat) both legs",
-     "fee_cad": 143.0,
-     "cabin": "100% business \u2014 cabin-verified"
-    }
-   },
-   "ret": {
-    "program": "Flying Blue",
-    "code": "FB",
-    "miles": 90000,
-    "via": "Paris CDG",
-    "longhaul": "Air France 777-300ER / A350",
-    "lieflat": true,
-    "connector": "A320 / A220",
-    "fees": 455.33,
-    "fee_display": "$455.33 USD (exact, Flying Blue)",
-    "verified": {
-     "status": "priced",
-     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG); normal 1\u20133h CDG connection. Cabin + space: confirm on airfrance.us.",
-     "routing": "AF1005 + AF4 via CDG"
+     "when": "2026-06-10 ~7:45pm ET",
+     "seats": null,
+     "flight": "AF1005 06:05 FCO\u2192CDG + AF4 10:45\u2192JFK 12:55",
+     "duration": "12h50 \u00b7 2h20 connection",
+     "carriers": "Air France Boeing 777-300 (lie-flat) + AF1005 A320",
+     "fee_cad": null,
+     "cabin": "Business fare on airfrance.us (Business cabin filter)",
+     "note": "Verified on airfrance.us: 'Lowest fare 180,000 Miles' + $911.86 for two."
     }
    },
    "couple_miles": 330000,
-   "couple_fees": 1119,
-   "fees_exact": "CA$143.00\u00d72 + $455.33\u00d72 USD (\u2248$1119 USD total)",
+   "couple_fees": 1121,
+   "fees_exact": "CA$143.00\u00d72 + $455.93\u00d72 USD (\u2248$1121 USD total)",
    "programs": [
     "Aeroplan",
     "Flying Blue"
    ],
    "both_aeroplan": false,
-   "fully_verified": false,
+   "fully_verified": true,
    "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
-   "rank": 6,
+   "rank": 4,
    "under_goal": true
   },
   {
@@ -472,13 +378,13 @@ const DATA = {
     "fee_display": "CA$143.00 (\u2248$104 USD)",
     "verified": {
      "status": "confirmed",
-     "when": "2026-06-10 evening",
+     "when": "2026-06-10 ~7:30pm ET (second check)",
      "seats": 2,
      "flight": "15:40 JFK\u2192FRA\u2192FCO 09:05 (+1)",
      "duration": "11h25m \u00b7 1h50m connection",
      "carriers": "Lufthansa widebody (lie-flat) both legs",
      "fee_cad": 143.0,
-     "cabin": "100% business \u2014 cabin-verified"
+     "cabin": "100% business \u2014 cabin-verified twice"
     }
    },
    "ret": {
@@ -486,84 +392,34 @@ const DATA = {
     "code": "FB",
     "miles": 90000,
     "via": "Paris CDG",
-    "longhaul": "Air France 777-300ER / A350",
+    "longhaul": "Air France Boeing 777-300 (lie-flat)",
     "lieflat": true,
-    "connector": "A320 / A220",
-    "fees": 455.53,
-    "fee_display": "$455.53 USD (exact, Flying Blue)",
-    "verified": {
-     "status": "priced",
-     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG); normal 1\u20133h CDG connection. Cabin + space: confirm on airfrance.us.",
-     "routing": "AF1005 + AF4 via CDG"
-    }
-   },
-   "couple_miles": 330000,
-   "couple_fees": 1120,
-   "fees_exact": "CA$143.00\u00d72 + $455.53\u00d72 USD (\u2248$1120 USD total)",
-   "programs": [
-    "Aeroplan",
-    "Flying Blue"
-   ],
-   "both_aeroplan": false,
-   "fully_verified": false,
-   "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
-   "rank": 7,
-   "under_goal": true
-  },
-  {
-   "depart": "2026-10-07",
-   "depart_dow": "Wed",
-   "home": "2026-10-15",
-   "home_dow": "Thu",
-   "nights": 8,
-   "out": {
-    "program": "Aeroplan",
-    "code": "AC",
-    "miles": 75000,
-    "via": "Frankfurt",
-    "longhaul": "Lufthansa widebody",
-    "lieflat": true,
-    "connector": "Lufthansa A320",
-    "fees": 104.39,
-    "fee_display": "CA$143.00 (\u2248$104 USD)",
+    "connector": "AF1005 A320",
+    "fees": 455.93,
+    "fee_display": "$455.93 USD (verified)",
     "verified": {
      "status": "confirmed",
-     "when": "2026-06-10 evening",
-     "seats": 2,
-     "flight": "15:40 JFK\u2192FRA\u2192FCO 09:05 (+1)",
-     "duration": "11h25m \u00b7 1h50m connection",
-     "carriers": "Lufthansa widebody (lie-flat) both legs",
-     "fee_cad": 143.0,
-     "cabin": "100% business \u2014 cabin-verified"
-    }
-   },
-   "ret": {
-    "program": "Flying Blue",
-    "code": "FB",
-    "miles": 90000,
-    "via": "Paris CDG",
-    "longhaul": "Air France 777-300ER / A350",
-    "lieflat": true,
-    "connector": "A320 / A220",
-    "fees": 455.33,
-    "fee_display": "$455.33 USD (exact, Flying Blue)",
-    "verified": {
-     "status": "priced",
-     "note": "Exact tax from Flying Blue (AF1005 + AF4 via CDG); normal 1\u20133h CDG connection. Cabin + space: confirm on airfrance.us.",
-     "routing": "AF1005 + AF4 via CDG"
+     "when": "2026-06-10 ~7:45pm ET",
+     "seats": null,
+     "flight": "AF1005 06:05 FCO\u2192CDG + AF4 10:45\u2192JFK 12:55",
+     "duration": "12h50 \u00b7 2h20 connection",
+     "carriers": "Air France Boeing 777-300 (lie-flat) + AF1005 A320",
+     "fee_cad": null,
+     "cabin": "Business fare on airfrance.us (Business cabin filter)",
+     "note": "Verified on airfrance.us: 'Lowest fare 180,000 Miles' + $911.86 for two."
     }
    },
    "couple_miles": 330000,
-   "couple_fees": 1119,
-   "fees_exact": "CA$143.00\u00d72 + $455.33\u00d72 USD (\u2248$1119 USD total)",
+   "couple_fees": 1121,
+   "fees_exact": "CA$143.00\u00d72 + $455.93\u00d72 USD (\u2248$1121 USD total)",
    "programs": [
     "Aeroplan",
     "Flying Blue"
    ],
    "both_aeroplan": false,
-   "fully_verified": false,
+   "fully_verified": true,
    "amex_note": "150,000 \u2192 Aeroplan + 180,000 \u2192 Flying Blue",
-   "rank": 8,
+   "rank": 5,
    "under_goal": true
   },
   {
@@ -575,17 +431,23 @@ const DATA = {
    "out": {
     "program": "Flying Blue",
     "code": "FB",
-    "miles": 141500,
+    "miles": 141000,
     "via": "Paris CDG",
-    "longhaul": "Air France 777-300ER / A350",
+    "longhaul": "Air France A350-900 (lie-flat)",
     "lieflat": true,
-    "connector": "A320 / A220",
-    "fees": 363.9,
-    "fee_display": "$363.90 USD (exact, Flying Blue)",
+    "connector": "AF1604 A220-300",
+    "fees": 364.3,
+    "fee_display": "$364.30 USD (verified)",
     "verified": {
-     "status": "priced",
-     "note": "Exact tax from Flying Blue (AF via CDG (e.g. AF9+AF1604)); normal 1\u20133h CDG connection. Cabin + space: confirm on airfrance.us.",
-     "routing": "AF via CDG (e.g. AF9+AF1604)"
+     "status": "confirmed",
+     "when": "2026-06-10 ~7:45pm ET",
+     "seats": null,
+     "flight": "AF11 01:00 JFK\u2192CDG\u2192FCO 17:30 (+0)",
+     "duration": "10h30 \u00b7 1h10 connection",
+     "carriers": "Air France A350-900 (lie-flat) + AF1604 A220-300",
+     "fee_cad": null,
+     "cabin": "Business fare on airfrance.us (Business cabin filter)",
+     "note": "Verified on airfrance.us: 'Lowest fare 282,000 Miles' + $728.60 for two. NOTE: 01:00 AM departure; the evening AF9 on this date now prices at 230k/pp."
     }
    },
    "ret": {
@@ -600,26 +462,26 @@ const DATA = {
     "fee_display": "CA$197.00 (\u2248$144 USD)",
     "verified": {
      "status": "confirmed",
-     "when": "2026-06-10 evening",
+     "when": "2026-06-10 ~7:30pm ET (second check)",
      "seats": 4,
      "flight": "09:05 FCO\u2192GVA\u2192JFK 14:20 same day",
      "duration": "11h15m \u00b7 1h connection",
      "carriers": "ITA A320neo + Swiss A330-300 (lie-flat)",
      "fee_cad": 197.0,
-     "cabin": "100% business \u2014 cabin-verified"
+     "cabin": "100% business \u2014 cabin-verified twice"
     }
    },
-   "couple_miles": 433000,
-   "couple_fees": 1015,
-   "fees_exact": "$363.90\u00d72 USD + CA$197.00\u00d72 (\u2248$1015 USD total)",
+   "couple_miles": 432000,
+   "couple_fees": 1016,
+   "fees_exact": "$364.30\u00d72 USD + CA$197.00\u00d72 (\u2248$1016 USD total)",
    "programs": [
     "Aeroplan",
     "Flying Blue"
    ],
    "both_aeroplan": false,
-   "fully_verified": false,
-   "amex_note": "283,000 \u2192 Flying Blue + 150,000 \u2192 Aeroplan",
-   "rank": 9,
+   "fully_verified": true,
+   "amex_note": "282,000 \u2192 Flying Blue + 150,000 \u2192 Aeroplan",
+   "rank": 6,
    "under_goal": false
   },
   {
@@ -631,17 +493,23 @@ const DATA = {
    "out": {
     "program": "Flying Blue",
     "code": "FB",
-    "miles": 141500,
+    "miles": 141000,
     "via": "Paris CDG",
-    "longhaul": "Air France 777-300ER / A350",
+    "longhaul": "Air France 777/A350 (lie-flat)",
     "lieflat": true,
-    "connector": "A320 / A220",
-    "fees": 363.9,
-    "fee_display": "$363.90 USD (exact, Flying Blue)",
+    "connector": "AF connector",
+    "fees": 364.3,
+    "fee_display": "$364.30 USD (verified)",
     "verified": {
-     "status": "priced",
-     "note": "Exact tax from Flying Blue (AF9/AF7 + connector via CDG); normal 1\u20133h CDG connection. Cabin + space: confirm on airfrance.us.",
-     "routing": "AF9/AF7 + connector via CDG"
+     "status": "confirmed",
+     "when": "2026-06-10 ~7:45pm ET",
+     "seats": null,
+     "flight": "AF9 23:30 JFK\u2192CDG\u2192FCO 16:35 (+1)",
+     "duration": "11h05 \u00b7 connection at CDG",
+     "carriers": "Air France 777/A350 (lie-flat) + AF connector",
+     "fee_cad": null,
+     "cabin": "Business fare on airfrance.us (Business cabin filter)",
+     "note": "Verified on airfrance.us: 282,000 Miles + $728.60 for two."
     }
    },
    "ret": {
@@ -656,26 +524,26 @@ const DATA = {
     "fee_display": "CA$197.00 (\u2248$144 USD)",
     "verified": {
      "status": "confirmed",
-     "when": "2026-06-10 evening",
+     "when": "2026-06-10 ~7:30pm ET (second check)",
      "seats": 2,
      "flight": "09:05 FCO\u2192GVA\u2192JFK 14:20 same day",
      "duration": "11h15m \u00b7 1h connection",
      "carriers": "ITA A320neo + Swiss A330-300 (lie-flat)",
      "fee_cad": 197.0,
-     "cabin": "100% business \u2014 cabin-verified"
+     "cabin": "100% business \u2014 cabin-verified twice"
     }
    },
-   "couple_miles": 433000,
-   "couple_fees": 1015,
-   "fees_exact": "$363.90\u00d72 USD + CA$197.00\u00d72 (\u2248$1015 USD total)",
+   "couple_miles": 432000,
+   "couple_fees": 1016,
+   "fees_exact": "$364.30\u00d72 USD + CA$197.00\u00d72 (\u2248$1016 USD total)",
    "programs": [
     "Aeroplan",
     "Flying Blue"
    ],
    "both_aeroplan": false,
-   "fully_verified": false,
-   "amex_note": "283,000 \u2192 Flying Blue + 150,000 \u2192 Aeroplan",
-   "rank": 10,
+   "fully_verified": true,
+   "amex_note": "282,000 \u2192 Flying Blue + 150,000 \u2192 Aeroplan",
+   "rank": 7,
    "under_goal": false
   }
  ]
