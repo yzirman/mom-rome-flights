@@ -87,6 +87,10 @@
     </div>
     <div id="trip-list"></div>
     <details id="over-wrap"><summary id="over-sum"></summary><div id="over-list" style="margin:6px 0 12px"></div></details>
+    <details open><summary id="trap-sum"></summary>
+      <div class="note bad" style="margin-top:10px"><b>The trap (what you caught):</b> Aeroplan lists these in the Business column, but the long <b>transatlantic leg is in ECONOMY</b> — only the short Europe hop is business (shown in red on aircanada.com as e.g. "10% in Business Class"). Same 75K price as real business. Every one is excluded from the trips above.</div>
+      <div class="scroll" style="margin:8px 0 12px"><table id="trap-table"></table></div>
+    </details>
   </section>
 
   <section id="nonstop">
@@ -113,7 +117,7 @@
 </main>
 <footer class="wrap">Built <span id="gen"></span> · snapshot from seats.aero (PRO), live · for planning — confirm award space before transferring points</footer>
 
-<script src="data.js?v=20260610g"></script>
+<script src="data.js?v=20260610h"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const mi=n=>n.toLocaleString('en-US'),usd=n=>'$'+Math.round(n).toLocaleString('en-US');
@@ -136,7 +140,7 @@ function legRow(dir,l,arrow){
   const v=l.verified||{};
   let vhtml='';
   if(v.status==='confirmed'){
-    vhtml=`<div class="vline"><span class="badge ver">✓ verified on Aeroplan</span> <b>${v.seats} seat${v.seats>1?'s':''} left</b> · ${v.flight} · ${v.duration} · ${v.carriers} · CA$${v.fee_cad} fees</div>`;
+    vhtml=`<div class="vline"><span class="badge ver">✓ 100% BUSINESS — cabin-verified</span> <b>${v.seats} seat${v.seats>1?'s':''} left</b> · ${v.flight} · ${v.duration} · ${v.carriers} · CA$${v.fee_cad} fees</div>`;
   }else if(v.status==='priced'){
     vhtml=`<div class="vline"><span class="badge pend">exact tax · space unverified</span> ${v.note||''}</div>`;
   }else if(v.status==='pending'){
@@ -171,6 +175,11 @@ Object.keys(tiers).map(Number).sort((a,b)=>a-b).forEach(m=>{
 const over=DATA.trips.filter(t=>!t.under_goal);
 $('#over-sum').textContent=`More dates (over the 400k goal — for flexibility) · ${over.length} trips`;
 const og=ce('div','grid two');over.forEach(t=>og.appendChild(card(t)));$('#over-list').appendChild(og);
+
+// mixed-cabin traps table
+$('#trap-sum').textContent=`⚠️ Mixed-cabin traps excluded (${(DATA.traps||[]).length}) — "business" with the long flight in economy`;
+$('#trap-table').innerHTML='<thead><tr><th>Date / direction</th><th>Flight shown on Aeroplan</th><th class="num">% business</th><th>Why excluded</th></tr></thead><tbody>'+
+  (DATA.traps||[]).map(p=>`<tr><td>${p.date}</td><td>${p.flight}</td><td class="num" style="color:var(--bad);font-weight:700">${p.pct}</td><td style="white-space:normal">${p.why}</td></tr>`).join('')+'</tbody>';
 
 // delta nonstop card
 const d=DATA.delta_nonstop;
