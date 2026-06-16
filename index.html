@@ -61,7 +61,7 @@
   <div id="body"></div>
   <footer id="foot"></footer>
 </div>
-<script src="data.js?v=20260615a"></script>
+<script src="data.js?v=20260615b"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const mi=n=>n.toLocaleString('en-US');
@@ -102,6 +102,7 @@ function card(t){
 }
 function renderJFK(){
   const b=$('#body');b.innerHTML='';
+  if(DATA.jfk_note) b.appendChild(ce('div','note gold','📌 '+DATA.jfk_note));
   const g=ce('div','grid two');
   DATA.trips.filter(t=>t.origin==='JFK').sort((a,b)=>a.rank-b.rank).forEach(t=>g.appendChild(card(t)));
   b.appendChild(g);

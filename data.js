@@ -7,6 +7,8 @@ const DATA = {
 
   points_note: "You can pool points. Amex Membership Rewards AND Chase Ultimate Rewards each transfer 1:1 to Aeroplan and to Flying Blue (Air France). Move Mom's Chase + Ben's Amex into ONE Aeroplan account so both seats book on the same reservation. 150,000 Aeroplan per person = 300,000 for the two of you (each leg is 75,000).",
 
+  jfk_note: "Why so few? The DEPARTURE is flexible (three clean dates below — pick by trip length), but the RETURN is the scarce piece: across the whole Oct 3–Nov 4 window, the only clean, short-layover business return is Oct 20, and it has just 2 seats. I opened every Aeroplan date from Oct 6–28 live and dropped the rest — most cheap \"business\" fares are secretly economy across the Atlantic (the mixed-cabin trick). Book the Oct 20 return first.",
+
   // ----- JFK options (the real ones) -----
   trips: [
     {
@@ -63,6 +65,32 @@ const DATA = {
     },
     {
       origin: "JFK", rank: 3,
+      depart: "2026-10-14", depart_dow: "Wed",
+      home:   "2026-10-20", home_dow: "Tue",
+      nights: 6,
+      out: {
+        program: "Aeroplan", miles: 75000, via: "Frankfurt", hub: "FRA",
+        fee_cad: 143, status: "verified", lieflat: true,
+        flight: "LH 401 + LH 230", time: "dep 15:40 → arr 09:05+1",
+        duration: "11h25 total · 1h50 in Frankfurt",
+        carriers: "Lufthansa (whole way)",
+        aircraft: "Airbus A340-600 across the Atlantic", seats: 6
+      },
+      ret: {
+        program: "Aeroplan", miles: 75000, via: "Geneva", hub: "GVA",
+        fee_cad: 197, status: "verified", lieflat: true,
+        flight: "AZ 576 + LX 22", time: "dep 09:05 → arr 14:20",
+        duration: "11h15 total · 1h in Geneva",
+        carriers: "ITA (connector) + Swiss (transatlantic)",
+        aircraft: "Airbus A330-300 across the Atlantic", seats: 2
+      },
+      couple_miles: 300000, couple_fees_cad: 679, couple_fees_usd: 496,
+      programs: ["Aeroplan"], both_aeroplan: true,
+      warn: "Same Oct 20 return again (2 seats). This one has the most OUTbound seats of the three (6) — but the 2-seat return is still the limiting factor.",
+      amex_note: "150,000 points each → Aeroplan (Amex or Chase). ~CA$679 (≈US$496) in taxes for both."
+    },
+    {
+      origin: "JFK", rank: 4,
       depart: "2026-10-26", depart_dow: "Mon",
       home:   "2026-11-03", home_dow: "Tue",
       nights: 8,
