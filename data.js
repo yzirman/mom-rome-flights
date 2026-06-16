@@ -7,6 +7,8 @@ const DATA = {
 
   points_note: "How to pay: the Aeroplan legs take Amex OR Chase at 1:1 — pool both of you into ONE Aeroplan account so the seats book together (300,000 Aeroplan covers the pure-Aeroplan round trips). For any Air France / KLM (Flying Blue) leg, use BEN'S AMEX — there's a live 25% bonus right now (see below) and Chase has no Flying Blue bonus. Book both passengers from Ben's Flying Blue account.",
 
+  book_note: "✅ DECIDED: Oct 12 → Oct 20. Book it as a REWARD flight, not a cash ticket. On aircanada.com: sign in → Book → Flights → turn ON \"Book with points\" → JFK → Rome (FCO), round trip, Oct 12 / Oct 20, 2 passengers → pick the Business fare that shows 75K each way (16:15 Swiss via Zürich out, 09:05 ITA+Swiss via Geneva back). That's ~300,000 points + ~CA$610 for two. ⛔ Do NOT use the \"pay with points\" slider on a cash fare — that's the 216,000–413,180-points + big-CA$ screen, a paid ticket at ~1¢/point (3–6× worse). If no 75K business shows, the saver seats sold — re-check the other dates below.",
+
   bonus: {
     headline: "25% Amex → Flying Blue transfer bonus — ends June 30, 2026",
     body: "Through June 30, every 1,000 Amex Membership Rewards points = 1,250 Flying Blue (Air France/KLM) miles — so the Flying Blue legs below cost about 20% fewer Amex points. AMEX ONLY (Chase's Flying Blue bonus already expired); automatic, no signup. To use it, transfer Ben's Amex → Flying Blue before June 30 — you can book the Oct/Nov award immediately after. Aeroplan legs are unaffected (pay 1:1 with Chase or Amex)."
@@ -17,7 +19,7 @@ const DATA = {
   // ----- JFK options (the real ones) -----
   trips: [
     {
-      origin: "JFK", rank: 1,
+      origin: "JFK", rank: 1, chosen: true,
       depart: "2026-10-12", depart_dow: "Mon",
       home:   "2026-10-20", home_dow: "Tue",
       nights: 8,
@@ -37,10 +39,20 @@ const DATA = {
         carriers: "ITA (connector) + Swiss (transatlantic)",
         aircraft: "Airbus A330-300 across the Atlantic", seats: 2
       },
-      couple_miles: 300000, couple_fees_cad: 609, couple_fees_usd: 444,
+      couple_miles: 300000, couple_fees_cad: 532, couple_fees_usd: 388,
+      checkout: {
+        intro: "What Aeroplan shows at checkout (business, 2 passengers) — choose how much to pay in points vs cash:",
+        options: [
+          {pts: "180,000", cash: "CA$2,824.40"},
+          {pts: "240,000", cash: "CA$1,684.40", tag: "Popular"},
+          {pts: "300,000", cash: "CA$531.80", best: true},
+          {pts: "353,180", cash: "points only"}
+        ],
+        rec: "Take 300,000 + CA$531.80 — that's the standard award (75k each way), the best value. The 180k/240k rows just swap points for cash at a poor rate; points-only (353,180) pays the taxes in points too."
+      },
       programs: ["Aeroplan"], both_aeroplan: true,
       warn: "The Oct 20 return has only 2 business seats left — exactly enough for the two of you, but zero margin. Book this one FIRST.",
-      amex_note: "150,000 points each → Aeroplan (Amex or Chase). ~CA$609 (≈US$444) in taxes for both."
+      amex_note: "150,000 points each → Aeroplan (Amex or Chase). CA$531.80 (≈US$388) total taxes for both — confirmed at checkout."
     },
     {
       origin: "JFK", rank: 2,
@@ -197,5 +209,17 @@ const DATA = {
     ]
   },
 
-  footer: "All JFK flights were opened on aircanada.com (Aeroplan) on Jun 15, 2026 and the transatlantic leg confirmed as lie-flat business. Award space changes hourly — re-check right before you transfer points (transfers can't be undone)."
+  footer: "All JFK flights were opened on aircanada.com (Aeroplan) on Jun 15, 2026 and the transatlantic leg confirmed as lie-flat business. Award space changes hourly — re-check right before you transfer points (transfers can't be undone).",
+
+  ashley: {
+    status: "🔍 Ashley's trip — confirming the plan, then searching",
+    specs: [
+      "Cabin: Delta One (lie-flat) on the transatlantic leg.",
+      "Routes: Boston, New York (JFK/EWR), Atlanta, or Detroit → Rome (FCO) or Milan (MXP). Positioning is fine (e.g. Boston → Atlanta, then Atlanta → Rome in Delta One).",
+      "Out: a Thursday, departing late in the day. Back: Saturday or Sunday.",
+      "Window: depart early–mid October, return ~Oct 24–25. Likely target: Thu Oct 15 → Sat Oct 24 / Sun Oct 25 (9–10 nights).",
+      "To confirm: how many passengers, and points vs cash."
+    ],
+    note: "Delta One on points is bookable via Virgin Atlantic or Flying Blue (both Amex + Chase transferable), or Delta SkyMiles (Amex). Heads-up: some of Delta's seasonal Italy routes wind down in late October — worth checking once dates are locked."
+  }
 };

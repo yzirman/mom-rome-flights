@@ -40,7 +40,20 @@
   .total .big{font-size:19px;font-weight:800;font-variant-numeric:tabular-nums}
   .total .small{color:var(--mut);font-size:12px}
   .amex{margin-top:8px;font-size:12.5px;color:var(--accent);background:rgba(79,140,255,.08);border-radius:7px;padding:7px 10px}
+  .checkout{margin-top:7px;font-size:12.5px;background:rgba(57,192,122,.07);border:1px solid rgba(57,192,122,.3);border-radius:8px;padding:9px 11px;line-height:1.5}
+  .co-intro{color:var(--good);font-weight:600;margin-bottom:7px}
+  .co-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .co-opt{display:flex;align-items:baseline;gap:7px;background:var(--card2);border:1px solid var(--line);border-radius:7px;padding:6px 9px}
+  .co-opt.best{border-color:var(--good);background:rgba(57,192,122,.12)}
+  .co-pts{font-weight:800;font-variant-numeric:tabular-nums;color:var(--ink)}
+  .co-cash{color:var(--mut);font-size:11.5px}
+  .co-flag{margin-left:auto;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:var(--good)}
+  .co-flag.pop{color:var(--mut)}
+  .co-rec{color:var(--mut);margin-top:8px}
   footer{color:var(--mut);font-size:12.5px;text-align:center;margin-top:36px;line-height:1.6}
+  .who{display:flex;gap:8px;margin:16px 0 4px}
+  .who button{flex:1;background:var(--card);border:1px solid var(--line);color:var(--mut);font-size:15px;font-weight:800;padding:13px;border-radius:12px;cursor:pointer}
+  .who button.on{background:var(--card2);color:var(--ink);border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
   .tabs{display:flex;gap:6px;margin:18px 0 4px}
   .tabs button{background:var(--card);border:1px solid var(--line);color:var(--mut);font-size:14px;font-weight:700;padding:9px 18px;border-radius:10px;cursor:pointer}
   .tabs button.on{background:var(--card2);color:var(--ink);border-color:var(--accent)}
@@ -50,25 +63,36 @@
   .info ul{margin:0;padding-left:18px}
   .info li{margin:0 0 9px;color:var(--mut);font-size:13.5px;line-height:1.55}
   .info li b{color:var(--ink)}
+  .book-banner{margin:14px 0 0;background:rgba(57,192,122,.10);border:1px solid rgba(57,192,122,.45);border-left:4px solid var(--good);border-radius:10px;padding:12px 14px;font-size:13.5px;color:var(--ink);line-height:1.55}
+  .book-banner b{color:var(--good)}
   .bonus-banner{margin:10px 0 0;background:linear-gradient(90deg,rgba(245,196,81,.14),rgba(245,137,79,.10));border:1px solid rgba(245,196,81,.4);border-radius:10px;padding:12px 14px;font-size:13px;color:var(--ink);line-height:1.5}
   .bonus-banner b{color:var(--gold)}
   .small.bonus{color:var(--good);font-weight:700}
   .pts-was{color:var(--mut);font-size:11.5px}
+  .plan-h{font-size:19px;margin:18px 0 10px;letter-spacing:-.3px}
+  .section-h{font-size:13.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.6px;margin:30px 0 4px;border-top:1px solid var(--line);padding-top:20px}
+  #plan .card{border-color:rgba(57,192,122,.5);box-shadow:0 0 0 1px rgba(57,192,122,.18) inset}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <h1>✈️ Mom &amp; Ben → Rome · business class</h1>
-    <p class="sub">2 seats together · lie-flat across the Atlantic both ways · no Friday/Saturday departures · every flight checked live on the airline's site</p>
+    <h1>✈️ Rome 2026 · business-class award trips</h1>
+    <p class="sub">Two trips · lie-flat across the Atlantic · checked live on the airlines' sites</p>
   </header>
-  <div class="bonus-banner" id="bonus-banner"></div>
-  <div class="note" id="points-note"></div>
-  <div class="tabs"><button id="tab-jfk" class="on">New York (JFK)</button><button id="tab-ewr">Newark (EWR)</button><button id="tab-bos">Boston (BOS)</button></div>
-  <div id="body"></div>
+  <div class="who"><button id="who-mom" class="on">Mom &amp; Ben → Rome</button><button id="who-ash">Ashley → Rome / Milan</button></div>
+  <div id="mom-section">
+    <div id="plan"></div>
+    <div class="note" id="points-note"></div>
+    <h3 class="section-h">Other dates &amp; backups</h3>
+    <div class="bonus-banner" id="bonus-banner"></div>
+    <div class="tabs"><button id="tab-jfk" class="on">New York (JFK)</button><button id="tab-ewr">Newark (EWR)</button><button id="tab-bos">Boston (BOS)</button></div>
+    <div id="body"></div>
+  </div>
+  <div id="ash-section" style="display:none"></div>
   <footer id="foot"></footer>
 </div>
-<script src="data.js?v=20260615e"></script>
+<script src="data.js?v=20260615i"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const mi=n=>n.toLocaleString('en-US');
@@ -91,8 +115,9 @@ function legRow(dir,l){
   </div>`;
 }
 function card(t){
-  const c=ce('div','card'+(t.rank===1?' star':'')+(t.over400?' over':''));
-  const tag=t.rank===1?'<span class="tag best">★ Best — book first</span>'
+  const c=ce('div','card'+((t.chosen||t.rank===1)?' star':'')+(t.over400?' over':''));
+  const tag=t.chosen?'<span class="tag best">✅ Booking this</span>'
+          :t.rank===1?'<span class="tag best">★ Best — book first</span>'
           :t.over400?'<span class="tag over">Pricier backup</span>'
           :(t.both_aeroplan?'<span class="tag alt">Alternate date</span>':'<span class="tag alt">Backup · more seats</span>');
   const feeBig=t.couple_fees_cad!=null?('CA$'+mi(t.couple_fees_cad)):('≈US$'+mi(t.couple_fees_usd));
@@ -109,14 +134,26 @@ function card(t){
         <div><div class="small">${ptsLabel}</div><div class="big">${ptsBig}</div>${ptsSub}</div>
         <div style="text-align:right"><div class="small">Cash for two</div><div class="big">${feeBig}</div><div class="small">${feeSub}</div></div>
       </div>
-      <div class="amex">💳 ${t.amex_note}</div>`;
+      <div class="amex">💳 ${t.amex_note}</div>`
+    +checkoutBlock(t.checkout);
   return c;
+}
+function checkoutBlock(co){
+  if(!co)return '';
+  const rows=co.options.map(o=>`<div class="co-opt${o.best?' best':''}">
+      <span class="co-pts">${o.pts}</span>
+      <span class="co-cash">${o.cash==='points only'?'points only':'+ '+o.cash}</span>
+      ${o.best?'<span class="co-flag">✓ take this</span>':(o.tag?`<span class="co-flag pop">${o.tag}</span>`:'')}
+    </div>`).join('');
+  return `<div class="checkout"><div class="co-intro">🎟️ ${co.intro}</div>
+    <div class="co-grid">${rows}</div>
+    <div class="co-rec">${co.rec}</div></div>`;
 }
 function renderJFK(){
   const b=$('#body');b.innerHTML='';
   if(DATA.jfk_note) b.appendChild(ce('div','note gold','📌 '+DATA.jfk_note));
   const g=ce('div','grid two');
-  DATA.trips.filter(t=>t.origin==='JFK').sort((a,b)=>a.rank-b.rank).forEach(t=>g.appendChild(card(t)));
+  DATA.trips.filter(t=>t.origin==='JFK'&&!t.chosen).sort((a,b)=>a.rank-b.rank).forEach(t=>g.appendChild(card(t)));
   b.appendChild(g);
 }
 function renderInfo(info,icon){
@@ -124,6 +161,13 @@ function renderInfo(info,icon){
   const c=ce('div','card info');
   c.innerHTML=`<h2>${icon} ${info.headline}</h2><ul>${info.points.map(p=>'<li>'+p+'</li>').join('')}</ul>`;
   b.appendChild(c);
+}
+function renderPlan(){
+  const t=DATA.trips.find(x=>x.chosen); if(!t)return;
+  const p=$('#plan'); p.innerHTML='';
+  p.appendChild(ce('h2','plan-h','📋 The plan — you’re booking this'));
+  p.appendChild(card(t));
+  if(DATA.book_note) p.appendChild(ce('div','book-banner',DATA.book_note));
 }
 if(DATA.bonus){$('#bonus-banner').innerHTML='🔥 <b>'+DATA.bonus.headline+'</b><br>'+DATA.bonus.body;}else{$('#bonus-banner').style.display='none';}
 $('#points-note').innerHTML='💳 '+DATA.points_note;
@@ -135,6 +179,17 @@ Object.keys(tabs).forEach(k=>{
     window.scrollTo(0,0); tabs[k]();
   };
 });
+function renderAshley(){
+  const a=DATA.ashley; if(!a)return; const s=$('#ash-section'); s.innerHTML='';
+  const c=ce('div','card info');
+  c.innerHTML=`<h2>${a.status}</h2><ul>${a.specs.map(p=>'<li>'+p+'</li>').join('')}</ul>`
+    +`<div class="note" style="margin-top:8px">${a.note}</div>`;
+  s.appendChild(c);
+}
+$('#who-mom').onclick=()=>{$('#who-mom').classList.add('on');$('#who-ash').classList.remove('on');$('#mom-section').style.display='';$('#ash-section').style.display='none';window.scrollTo(0,0);};
+$('#who-ash').onclick=()=>{$('#who-ash').classList.add('on');$('#who-mom').classList.remove('on');$('#ash-section').style.display='';$('#mom-section').style.display='none';window.scrollTo(0,0);};
+renderPlan();
+renderAshley();
 renderJFK();
 </script>
 </body>
