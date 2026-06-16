@@ -50,6 +50,10 @@
   .info ul{margin:0;padding-left:18px}
   .info li{margin:0 0 9px;color:var(--mut);font-size:13.5px;line-height:1.55}
   .info li b{color:var(--ink)}
+  .bonus-banner{margin:10px 0 0;background:linear-gradient(90deg,rgba(245,196,81,.14),rgba(245,137,79,.10));border:1px solid rgba(245,196,81,.4);border-radius:10px;padding:12px 14px;font-size:13px;color:var(--ink);line-height:1.5}
+  .bonus-banner b{color:var(--gold)}
+  .small.bonus{color:var(--good);font-weight:700}
+  .pts-was{color:var(--mut);font-size:11.5px}
 </style>
 </head>
 <body>
@@ -58,12 +62,13 @@
     <h1>✈️ Mom &amp; Ben → Rome · business class</h1>
     <p class="sub">2 seats together · lie-flat across the Atlantic both ways · no Friday/Saturday departures · every flight checked live on the airline's site</p>
   </header>
+  <div class="bonus-banner" id="bonus-banner"></div>
   <div class="note" id="points-note"></div>
   <div class="tabs"><button id="tab-jfk" class="on">New York (JFK)</button><button id="tab-ewr">Newark (EWR)</button><button id="tab-bos">Boston (BOS)</button></div>
   <div id="body"></div>
   <footer id="foot"></footer>
 </div>
-<script src="data.js?v=20260615d"></script>
+<script src="data.js?v=20260615e"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const mi=n=>n.toLocaleString('en-US');
@@ -88,18 +93,20 @@ function legRow(dir,l){
 function card(t){
   const c=ce('div','card'+(t.rank===1?' star':'')+(t.over400?' over':''));
   const tag=t.rank===1?'<span class="tag best">★ Best — book first</span>'
-          :t.over400?'<span class="tag over">Over 400k · pricier backup</span>'
+          :t.over400?'<span class="tag over">Pricier backup</span>'
           :(t.both_aeroplan?'<span class="tag alt">Alternate date</span>':'<span class="tag alt">Backup · more seats</span>');
   const feeBig=t.couple_fees_cad!=null?('CA$'+mi(t.couple_fees_cad)):('≈US$'+mi(t.couple_fees_usd));
   const feeSub=t.couple_fees_cad!=null?('≈US$'+mi(t.couple_fees_usd)+' for two'):'taxes + surcharges for two';
-  const milesBig=t.over400?'Over 400k':mi(t.couple_miles);
-  const milesSub=t.over400?('~'+mi(t.couple_miles)+' for two'):'';
+  const bp=t.bonus_points;
+  const ptsLabel=bp?'Amex/Chase points · two':'Points for two';
+  const ptsBig=bp?mi(bp):mi(t.couple_miles);
+  const ptsSub=bp?`<div class="small bonus">✓ 25% Amex→Flying Blue bonus</div><div class="pts-was">vs ${mi(t.couple_miles)} at 1:1</div>`:'';
   c.innerHTML=`<div class="thead"><div class="route">${tag}<br>${fmtD(t.depart)} → ${fmtD(t.home)}</div>
       <div class="nts">${t.nights} nights<br>in Rome</div></div>`
     +legRow('OUT',t.out)+legRow('BACK',t.ret)
     +(t.warn?`<div class="warn">${t.warn}</div>`:'')
     +`<div class="total">
-        <div><div class="small">Points for two</div><div class="big">${milesBig}</div>${milesSub?`<div class="small">${milesSub}</div>`:''}</div>
+        <div><div class="small">${ptsLabel}</div><div class="big">${ptsBig}</div>${ptsSub}</div>
         <div style="text-align:right"><div class="small">Cash for two</div><div class="big">${feeBig}</div><div class="small">${feeSub}</div></div>
       </div>
       <div class="amex">💳 ${t.amex_note}</div>`;
@@ -118,6 +125,7 @@ function renderInfo(info,icon){
   c.innerHTML=`<h2>${icon} ${info.headline}</h2><ul>${info.points.map(p=>'<li>'+p+'</li>').join('')}</ul>`;
   b.appendChild(c);
 }
+if(DATA.bonus){$('#bonus-banner').innerHTML='🔥 <b>'+DATA.bonus.headline+'</b><br>'+DATA.bonus.body;}else{$('#bonus-banner').style.display='none';}
 $('#points-note').innerHTML='💳 '+DATA.points_note;
 $('#foot').textContent=DATA.footer;
 const tabs={jfk:renderJFK,ewr:()=>renderInfo(DATA.ewr_info,'🟡'),bos:()=>renderInfo(DATA.bos_info,'🛑')};

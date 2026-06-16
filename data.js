@@ -5,7 +5,12 @@
 const DATA = {
   checked: "Jun 15, 2026",
 
-  points_note: "You can pool points. Amex Membership Rewards AND Chase Ultimate Rewards each transfer 1:1 to Aeroplan and to Flying Blue (Air France). Move Mom's Chase + Ben's Amex into ONE Aeroplan account so both seats book on the same reservation. 150,000 Aeroplan per person = 300,000 for the two of you (each leg is 75,000).",
+  points_note: "How to pay: the Aeroplan legs take Amex OR Chase at 1:1 — pool both of you into ONE Aeroplan account so the seats book together (300,000 Aeroplan covers the pure-Aeroplan round trips). For any Air France / KLM (Flying Blue) leg, use BEN'S AMEX — there's a live 25% bonus right now (see below) and Chase has no Flying Blue bonus. Book both passengers from Ben's Flying Blue account.",
+
+  bonus: {
+    headline: "25% Amex → Flying Blue transfer bonus — ends June 30, 2026",
+    body: "Through June 30, every 1,000 Amex Membership Rewards points = 1,250 Flying Blue (Air France/KLM) miles — so the Flying Blue legs below cost about 20% fewer Amex points. AMEX ONLY (Chase's Flying Blue bonus already expired); automatic, no signup. To use it, transfer Ben's Amex → Flying Blue before June 30 — you can book the Oct/Nov award immediately after. Aeroplan legs are unaffected (pay 1:1 with Chase or Amex)."
+  },
 
   jfk_note: "Why so few? The DEPARTURE is flexible (three clean dates below — pick by trip length), but the RETURN is the scarce piece: across the whole Oct 3–Nov 4 window, the only clean, short-layover business return is Oct 20, and it has just 2 seats. I opened every Aeroplan date from Oct 6–28 live and dropped the rest — most cheap \"business\" fares are secretly economy across the Atlantic (the mixed-cabin trick). Book the Oct 20 return first.",
 
@@ -110,7 +115,7 @@ const DATA = {
         carriers: "Air France (whole way)",
         aircraft: "Boeing 777-300ER across the Atlantic", seats: 4
       },
-      couple_miles: 330000, couple_fees_usd: 1145,
+      couple_miles: 330000, couple_fees_usd: 1145, bonus_points: 294000,
       programs: ["Aeroplan", "Flying Blue"], both_aeroplan: false,
       warn: "Backup with more seats (7 out / 4 back) and a later date. Outbound verified live. The Air France return is confirmed in Flying Blue's inventory (4 business seats, 777-300ER across the Atlantic = genuine lie-flat). Air France's own widget blocked an automated screenshot, but you're logged in — search FCO→JFK, Nov 3, 2 passengers, Business, 'Book with Miles' to see it. Heads-up: Air France adds ~US$490/person in cash surcharges.",
       amex_note: "Out: 75,000 each → Aeroplan. Back: 90,000 each → Flying Blue. 330,000 total + ~US$1,145 taxes/surcharges for two."
@@ -136,7 +141,7 @@ const DATA = {
         carriers: "KLM (whole way)",
         aircraft: "Boeing 787-10 across the Atlantic", seats: 2
       },
-      couple_miles: 446000, couple_fees_usd: 1138,
+      couple_miles: 446000, couple_fees_usd: 1138, bonus_points: 387000,
       programs: ["Aeroplan", "Flying Blue"], both_aeroplan: false,
       warn: "Pricier fallback to the Oct 26 → Nov 3 option above — only worth it if Nov 3 (cheaper, 330k) is gone or you specifically want a Monday return / 7-night trip. KLM 787 business is genuine lie-flat; confirm the return on klm.us / airfrance.us.",
       amex_note: "Out: 75,000 each → Aeroplan. Back: 148,000 each → Flying Blue. ~446,000 total + ~US$1,138 for two."
@@ -162,7 +167,7 @@ const DATA = {
         carriers: "KLM (whole way)",
         aircraft: "Boeing 787-10 across the Atlantic", seats: 2
       },
-      couple_miles: 446000, couple_fees_usd: 1138,
+      couple_miles: 446000, couple_fees_usd: 1138, bonus_points: 387000,
       programs: ["Aeroplan", "Flying Blue"], both_aeroplan: false,
       warn: "Same idea as the Nov 2 option — a 9-night, pricier (~446k) fallback to the cheaper Nov 3 trip. Use it if Nov 3 sells out or you want these exact dates. KLM 787 business is genuine lie-flat; confirm on klm.us.",
       amex_note: "Out: 75,000 each → Aeroplan. Back: 148,000 each → Flying Blue. ~446,000 total + ~US$1,138 for two."
