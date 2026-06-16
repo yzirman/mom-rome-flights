@@ -215,6 +215,20 @@ const DATA = {
     headline: "Ashley + Emrey → Rome / Milan",
     sub: "2 in lie-flat business · flexible dates — pick from the map below",
     play: "The play: Amex Membership Rewards → Aeroplan = 75,000 miles each way in lie-flat business (Lufthansa / Swiss widebody via Frankfurt, Zürich or Munich). ≈ 300,000 Amex points for the two of you + ~CA$530–700 taxes. Delta One is ruled out on points — ~513,000 SkyMiles round-trip per person (~1M+ for two), and the Delta One \"sale\" is summer-only (Jun–Aug).",
+    trips: [
+      {tag: "★ Most seats", tagcls: "best", star: true, route: "JFK ⇄ Rome", depart: "Mon Oct 26", home: "Mon Nov 2", nights: 7,
+       out: "Swiss A330 via Zürich · 7 seats", ret: "ITA + Swiss via Geneva · 5 seats", pts: "300,000 · Amex → Aeroplan", cash: "~CA$600 / two"},
+      {tag: "Boston — home", tagcls: "alt", route: "BOS ⇄ Rome", depart: "Tue Oct 13", home: "Tue Oct 20", nights: 7,
+       out: "Lufthansa 747 via Frankfurt · 3 seats", ret: "ITA + Swiss via Zürich · 2 seats", pts: "300,000 · Amex → Aeroplan", cash: "~CA$600 / two"},
+      {tag: "Early Oct", tagcls: "alt", route: "JFK ⇄ Rome", depart: "Tue Oct 13", home: "Wed Oct 21", nights: 8,
+       out: "Lufthansa A340 via Frankfurt · 4 seats", ret: "Swiss via Zürich · 2 seats", pts: "300,000 · Amex → Aeroplan", cash: "~CA$600 / two"},
+      {tag: "Mid Oct", tagcls: "alt", route: "JFK ⇄ Rome", depart: "Mon Oct 19", home: "Tue Oct 27", nights: 8,
+       out: "Swiss via Zürich · 4 seats", ret: "ITA + Swiss via Geneva · 3 seats", pts: "300,000 · Amex → Aeroplan", cash: "~CA$600 / two"},
+      {tag: "Chicago", tagcls: "alt", route: "ORD ⇄ Rome", depart: "Mon Oct 26", home: "Tue Nov 3", nights: 8,
+       out: "Lufthansa via Munich · 7 seats", ret: "ITA + Lufthansa via Frankfurt · 9 seats", pts: "300,000 · Amex → Aeroplan", cash: "~CA$600 / two"},
+      {tag: "✨ A380 splurge", tagcls: "over", route: "JFK ⇄ Milan", depart: "Thu Oct 15", home: "Thu Oct 22", nights: 7,
+       out: "Emirates A380 nonstop · 7 seats", ret: "Emirates A380 nonstop · 7 seats", pts: "400,000 · Amex → Emirates", cash: "~US$1,700 / two"}
+    ],
     out_label: "Outbound · US → Rome (FCO) / Milan (MXP)",
     out: [
       {w: "Oct 4–6", a: "EWR, IAD, JFK"},
