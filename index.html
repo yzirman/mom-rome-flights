@@ -50,6 +50,12 @@
   .co-flag{margin-left:auto;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:var(--good)}
   .co-flag.pop{color:var(--mut)}
   .co-rec{color:var(--mut);margin-top:8px}
+  .ash-sub{color:var(--mut);font-size:13.5px;margin:2px 0 10px}
+  .ash-grid{display:grid;gap:14px;margin-top:12px}@media(min-width:680px){.ash-grid{grid-template-columns:1fr 1fr}}
+  .ash-h{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--accent);margin:0 0 4px}
+  .ash-row{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-top:1px dashed var(--line);font-size:13px}
+  .ash-row b{color:var(--ink);white-space:nowrap}
+  .ash-row span{color:var(--mut);text-align:right}
   footer{color:var(--mut);font-size:12.5px;text-align:center;margin-top:36px;line-height:1.6}
   .who{display:flex;gap:8px;margin:16px 0 4px}
   .who button{flex:1;background:var(--card);border:1px solid var(--line);color:var(--mut);font-size:15px;font-weight:800;padding:13px;border-radius:12px;cursor:pointer}
@@ -92,7 +98,7 @@
   <div id="ash-section" style="display:none"></div>
   <footer id="foot"></footer>
 </div>
-<script src="data.js?v=20260615i"></script>
+<script src="data.js?v=20260615j"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const mi=n=>n.toLocaleString('en-US');
@@ -181,9 +187,16 @@ Object.keys(tabs).forEach(k=>{
 });
 function renderAshley(){
   const a=DATA.ashley; if(!a)return; const s=$('#ash-section'); s.innerHTML='';
-  const c=ce('div','card info');
-  c.innerHTML=`<h2>${a.status}</h2><ul>${a.specs.map(p=>'<li>'+p+'</li>').join('')}</ul>`
-    +`<div class="note" style="margin-top:8px">${a.note}</div>`;
+  const c=ce('div','card star');
+  const col=(label,rows)=>`<div><div class="ash-h">${label}</div>`+
+    rows.map(x=>`<div class="ash-row"><b>${x.w}</b><span>${x.a}</span></div>`).join('')+`</div>`;
+  c.innerHTML=`<div class="thead"><div class="route">${a.headline}</div></div>`
+    +`<p class="ash-sub">${a.sub}</p>`
+    +`<div class="amex">💳 ${a.play}</div>`
+    +`<div class="ash-grid">${col(a.out_label,a.out)}${col(a.ret_label,a.ret)}</div>`
+    +`<div class="vline" style="margin-top:10px">${a.gateways}</div>`
+    +a.extras.map(e=>`<div class="note" style="margin-top:7px">${e}</div>`).join('')
+    +`<div class="warn" style="margin-top:9px">${a.caveat}</div>`;
   s.appendChild(c);
 }
 $('#who-mom').onclick=()=>{$('#who-mom').classList.add('on');$('#who-ash').classList.remove('on');$('#mom-section').style.display='';$('#ash-section').style.display='none';window.scrollTo(0,0);};

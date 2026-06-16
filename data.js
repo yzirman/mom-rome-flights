@@ -212,14 +212,31 @@ const DATA = {
   footer: "All JFK flights were opened on aircanada.com (Aeroplan) on Jun 15, 2026 and the transatlantic leg confirmed as lie-flat business. Award space changes hourly — re-check right before you transfer points (transfers can't be undone).",
 
   ashley: {
-    status: "🔍 Ashley's trip — confirming the plan, then searching",
-    specs: [
-      "Cabin: Delta One (lie-flat) on the transatlantic leg.",
-      "Routes: Boston, New York (JFK/EWR), Atlanta, or Detroit → Rome (FCO) or Milan (MXP). Positioning is fine (e.g. Boston → Atlanta, then Atlanta → Rome in Delta One).",
-      "Out: a Thursday, departing late in the day. Back: Saturday or Sunday.",
-      "Window: depart early–mid October, return ~Oct 24–25. Likely target: Thu Oct 15 → Sat Oct 24 / Sun Oct 25 (9–10 nights).",
-      "To confirm: how many passengers, and points vs cash."
+    headline: "Ashley + Emrey → Rome / Milan",
+    sub: "2 in lie-flat business · flexible dates — pick from the map below",
+    play: "The play: Amex Membership Rewards → Aeroplan = 75,000 miles each way in lie-flat business (Lufthansa / Swiss widebody via Frankfurt, Zürich or Munich). ≈ 300,000 Amex points for the two of you + ~CA$530–700 taxes. Delta One is ruled out on points — ~513,000 SkyMiles round-trip per person (~1M+ for two), and the Delta One \"sale\" is summer-only (Jun–Aug).",
+    out_label: "Outbound · US → Rome (FCO) / Milan (MXP)",
+    out: [
+      {w: "Oct 4–6", a: "EWR, IAD, JFK"},
+      {w: "Oct 11–14", a: "BOS, JFK, EWR, IAD"},
+      {w: "Oct 18–21", a: "BOS, JFK, EWR, IAD, ORD"},
+      {w: "Oct 25–28", a: "ATL, JFK, EWR, IAD, ORD"},
+      {w: "Nov 1–4", a: "EWR, ORD"}
     ],
-    note: "Delta One on points is bookable via Virgin Atlantic or Flying Blue (both Amex + Chase transferable), or Delta SkyMiles (Amex). Heads-up: some of Delta's seasonal Italy routes wind down in late October — worth checking once dates are locked."
+    ret_label: "Return · Rome / Milan → US",
+    ret: [
+      {w: "Oct 1–8", a: "JFK, IAD"},
+      {w: "Oct 12–15", a: "BOS, JFK, EWR, IAD, ORD"},
+      {w: "Oct 20–22", a: "BOS, JFK, EWR, IAD, ORD"},
+      {w: "Oct 27–29", a: "ATL, JFK, EWR, IAD"},
+      {w: "Nov 2–4", a: "BOS, JFK, EWR, IAD, ORD, ATL"}
+    ],
+    gateways: "Gateways: JFK, EWR, Boston, Washington (IAD), Chicago (ORD), Atlanta — Lufthansa / Swiss widebody via Frankfurt, Zürich or Munich. Pick (almost) any outbound + any return ~7–12 days later; both legs at 75k.",
+    extras: [
+      "✈️ Emirates A380, JFK → Milan nonstop — 100k business (Amex → Emirates), Oct 15/16. A spectacular plane if he wants something special.",
+      "🇫🇷 Flying Blue via Paris — 90k, and the 25% Amex bonus (ends June 30) drops it to ~72k effective.",
+      "🚫 Detroit doesn't work on points (Delta hub, no Star-partner space) — position to Chicago (ORD) or JFK and start the award there."
+    ],
+    caveat: "Same trap as Mom's trip: a cheap \"business\" fare can hide an economy transatlantic leg. The Lufthansa / Swiss widebody routings above are the reliably-clean ones — confirm the long leg is lie-flat at booking. Award space moves daily; this map is as of Jun 15."
   }
 };
