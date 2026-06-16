@@ -114,6 +114,58 @@ const DATA = {
       programs: ["Aeroplan", "Flying Blue"], both_aeroplan: false,
       warn: "Backup with more seats (7 out / 4 back) and a later date. Outbound verified live. The Air France return is confirmed in Flying Blue's inventory (4 business seats, 777-300ER across the Atlantic = genuine lie-flat). Air France's own widget blocked an automated screenshot, but you're logged in — search FCO→JFK, Nov 3, 2 passengers, Business, 'Book with Miles' to see it. Heads-up: Air France adds ~US$490/person in cash surcharges.",
       amex_note: "Out: 75,000 each → Aeroplan. Back: 90,000 each → Flying Blue. 330,000 total + ~US$1,145 taxes/surcharges for two."
+    },
+    {
+      origin: "JFK", rank: 5, over400: true,
+      depart: "2026-10-26", depart_dow: "Mon",
+      home:   "2026-11-02", home_dow: "Mon",
+      nights: 7,
+      out: {
+        program: "Aeroplan", miles: 75000, via: "Zürich", hub: "ZRH",
+        fee_cad: 108, status: "verified", lieflat: true,
+        flight: "LX 15 + LX 1736", time: "dep 22:00 → arr 14:00+1",
+        duration: "~11h total · 1h40 in Zürich",
+        carriers: "Swiss (whole way)",
+        aircraft: "Airbus A330-300 across the Atlantic", seats: 7
+      },
+      ret: {
+        program: "Flying Blue", miles: 148000, via: "Amsterdam", hub: "AMS",
+        fee_cad: null, fee_usd: 490, status: "to-verify", lieflat: true,
+        flight: "KL 1602 + KL 643", time: "via Amsterdam (AMS)",
+        duration: "1 stop in Amsterdam",
+        carriers: "KLM (whole way)",
+        aircraft: "Boeing 787-10 across the Atlantic", seats: 2
+      },
+      couple_miles: 446000, couple_fees_usd: 1138,
+      programs: ["Aeroplan", "Flying Blue"], both_aeroplan: false,
+      warn: "Pricier fallback to the Oct 26 → Nov 3 option above — only worth it if Nov 3 (cheaper, 330k) is gone or you specifically want a Monday return / 7-night trip. KLM 787 business is genuine lie-flat; confirm the return on klm.us / airfrance.us.",
+      amex_note: "Out: 75,000 each → Aeroplan. Back: 148,000 each → Flying Blue. ~446,000 total + ~US$1,138 for two."
+    },
+    {
+      origin: "JFK", rank: 6, over400: true,
+      depart: "2026-10-26", depart_dow: "Mon",
+      home:   "2026-11-04", home_dow: "Wed",
+      nights: 9,
+      out: {
+        program: "Aeroplan", miles: 75000, via: "Zürich", hub: "ZRH",
+        fee_cad: 108, status: "verified", lieflat: true,
+        flight: "LX 15 + LX 1736", time: "dep 22:00 → arr 14:00+1",
+        duration: "~11h total · 1h40 in Zürich",
+        carriers: "Swiss (whole way)",
+        aircraft: "Airbus A330-300 across the Atlantic", seats: 7
+      },
+      ret: {
+        program: "Flying Blue", miles: 148000, via: "Amsterdam", hub: "AMS",
+        fee_cad: null, fee_usd: 490, status: "to-verify", lieflat: true,
+        flight: "KL 1600 + KL 641", time: "via Amsterdam (AMS)",
+        duration: "1 stop in Amsterdam",
+        carriers: "KLM (whole way)",
+        aircraft: "Boeing 787-10 across the Atlantic", seats: 2
+      },
+      couple_miles: 446000, couple_fees_usd: 1138,
+      programs: ["Aeroplan", "Flying Blue"], both_aeroplan: false,
+      warn: "Same idea as the Nov 2 option — a 9-night, pricier (~446k) fallback to the cheaper Nov 3 trip. Use it if Nov 3 sells out or you want these exact dates. KLM 787 business is genuine lie-flat; confirm on klm.us.",
+      amex_note: "Out: 75,000 each → Aeroplan. Back: 148,000 each → Flying Blue. ~446,000 total + ~US$1,138 for two."
     }
   ],
 

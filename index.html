@@ -22,6 +22,8 @@
   .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:3px 7px;border-radius:5px;margin-right:5px}
   .tag.best{background:rgba(245,196,81,.16);color:var(--gold)}
   .tag.alt{background:rgba(79,140,255,.14);color:var(--accent)}
+  .tag.over{background:rgba(245,137,79,.16);color:var(--warn)}
+  .card.over{border-color:rgba(245,137,79,.3)}
   .leg{border-top:1px dashed var(--line);padding:10px 0}
   .leg .top{display:flex;justify-content:space-between;gap:8px}
   .leg .dir{font-size:10.5px;font-weight:700;color:var(--mut);background:var(--card2);padding:2px 6px;border-radius:4px}
@@ -61,7 +63,7 @@
   <div id="body"></div>
   <footer id="foot"></footer>
 </div>
-<script src="data.js?v=20260615c"></script>
+<script src="data.js?v=20260615d"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const mi=n=>n.toLocaleString('en-US');
@@ -84,17 +86,20 @@ function legRow(dir,l){
   </div>`;
 }
 function card(t){
-  const c=ce('div','card'+(t.rank===1?' star':''));
+  const c=ce('div','card'+(t.rank===1?' star':'')+(t.over400?' over':''));
   const tag=t.rank===1?'<span class="tag best">★ Best — book first</span>'
+          :t.over400?'<span class="tag over">Over 400k · pricier backup</span>'
           :(t.both_aeroplan?'<span class="tag alt">Alternate date</span>':'<span class="tag alt">Backup · more seats</span>');
   const feeBig=t.couple_fees_cad!=null?('CA$'+mi(t.couple_fees_cad)):('≈US$'+mi(t.couple_fees_usd));
   const feeSub=t.couple_fees_cad!=null?('≈US$'+mi(t.couple_fees_usd)+' for two'):'taxes + surcharges for two';
+  const milesBig=t.over400?'Over 400k':mi(t.couple_miles);
+  const milesSub=t.over400?('~'+mi(t.couple_miles)+' for two'):'';
   c.innerHTML=`<div class="thead"><div class="route">${tag}<br>${fmtD(t.depart)} → ${fmtD(t.home)}</div>
       <div class="nts">${t.nights} nights<br>in Rome</div></div>`
     +legRow('OUT',t.out)+legRow('BACK',t.ret)
     +(t.warn?`<div class="warn">${t.warn}</div>`:'')
     +`<div class="total">
-        <div><div class="small">Points for two</div><div class="big">${mi(t.couple_miles)}</div></div>
+        <div><div class="small">Points for two</div><div class="big">${milesBig}</div>${milesSub?`<div class="small">${milesSub}</div>`:''}</div>
         <div style="text-align:right"><div class="small">Cash for two</div><div class="big">${feeBig}</div><div class="small">${feeSub}</div></div>
       </div>
       <div class="amex">💳 ${t.amex_note}</div>`;
