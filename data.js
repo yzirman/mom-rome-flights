@@ -112,10 +112,22 @@ const DATA = {
       },
       couple_miles: 330000, couple_fees_usd: 1145,
       programs: ["Aeroplan", "Flying Blue"], both_aeroplan: false,
-      warn: "Backup option — a later date with more seat cushion (7 out / 4 back). The outbound is verified live; the Air France return is from the award database and should be confirmed on airfrance.us (Air France business on the 777 is genuine lie-flat). Higher cash: Air France adds ~US$490/person in surcharges.",
+      warn: "Backup with more seats (7 out / 4 back) and a later date. Outbound verified live. The Air France return is confirmed in Flying Blue's inventory (4 business seats, 777-300ER across the Atlantic = genuine lie-flat). Air France's own widget blocked an automated screenshot, but you're logged in — search FCO→JFK, Nov 3, 2 passengers, Business, 'Book with Miles' to see it. Heads-up: Air France adds ~US$490/person in cash surcharges.",
       amex_note: "Out: 75,000 each → Aeroplan. Back: 90,000 each → Flying Blue. 330,000 total + ~US$1,145 taxes/surcharges for two."
     }
   ],
+
+  // ----- Newark: the honest finding -----
+  ewr_info: {
+    headline: "Newark doesn't beat JFK for business — but it has a great economy nonstop.",
+    points: [
+      "Good news: United flies NONSTOP Newark→Rome (~8h15). But the nonstops only release ECONOMY award space — about 40,000 miles each way (Aeroplan or United). No business on the nonstops.",
+      "Business award space from Newark is thin and trap-heavy: the cheap 75,000-mile fares are United mixed-cabin (the transatlantic leg, e.g. EWR→Munich, is economy). Verified live on Oct 26.",
+      "True lie-flat business exists only via Canada on Air Canada metal at ~478,000 miles — far over budget.",
+      "Partner space does flicker in: a Lufthansa 747-8 via Frankfurt at 75,000 showed 2 seats, but it sold within the hour I was checking — too fleeting to plan around.",
+      "Bottom line: for business, JFK wins. Newark is only worth it if you'd take the economy nonstop (genuinely nice at ~40k)."
+    ]
+  },
 
   // ----- Boston: the honest finding -----
   bos_info: {

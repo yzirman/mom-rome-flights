@@ -57,11 +57,11 @@
     <p class="sub">2 seats together · lie-flat across the Atlantic both ways · no Friday/Saturday departures · every flight checked live on the airline's site</p>
   </header>
   <div class="note" id="points-note"></div>
-  <div class="tabs"><button id="tab-jfk" class="on">From New York (JFK)</button><button id="tab-bos">From Boston (BOS)</button></div>
+  <div class="tabs"><button id="tab-jfk" class="on">New York (JFK)</button><button id="tab-ewr">Newark (EWR)</button><button id="tab-bos">Boston (BOS)</button></div>
   <div id="body"></div>
   <footer id="foot"></footer>
 </div>
-<script src="data.js?v=20260615b"></script>
+<script src="data.js?v=20260615c"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const mi=n=>n.toLocaleString('en-US');
@@ -107,17 +107,21 @@ function renderJFK(){
   DATA.trips.filter(t=>t.origin==='JFK').sort((a,b)=>a.rank-b.rank).forEach(t=>g.appendChild(card(t)));
   b.appendChild(g);
 }
-function renderBOS(){
+function renderInfo(info,icon){
   const b=$('#body');b.innerHTML='';
-  const i=DATA.bos_info;
   const c=ce('div','card info');
-  c.innerHTML=`<h2>🛑 ${i.headline}</h2><ul>${i.points.map(p=>'<li>'+p+'</li>').join('')}</ul>`;
+  c.innerHTML=`<h2>${icon} ${info.headline}</h2><ul>${info.points.map(p=>'<li>'+p+'</li>').join('')}</ul>`;
   b.appendChild(c);
 }
 $('#points-note').innerHTML='💳 '+DATA.points_note;
 $('#foot').textContent=DATA.footer;
-$('#tab-jfk').onclick=()=>{$('#tab-jfk').classList.add('on');$('#tab-bos').classList.remove('on');renderJFK();};
-$('#tab-bos').onclick=()=>{$('#tab-bos').classList.add('on');$('#tab-jfk').classList.remove('on');renderBOS();};
+const tabs={jfk:renderJFK,ewr:()=>renderInfo(DATA.ewr_info,'🟡'),bos:()=>renderInfo(DATA.bos_info,'🛑')};
+Object.keys(tabs).forEach(k=>{
+  $('#tab-'+k).onclick=()=>{
+    Object.keys(tabs).forEach(j=>$('#tab-'+j).classList.toggle('on',j===k));
+    window.scrollTo(0,0); tabs[k]();
+  };
+});
 renderJFK();
 </script>
 </body>
