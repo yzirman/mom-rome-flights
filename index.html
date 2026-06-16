@@ -6,97 +6,118 @@
 <title>Mom &amp; Ben — Rome Business Class</title>
 <style>
   :root{--bg:#0f1115;--card:#171a21;--card2:#1d212b;--line:#2a2f3a;--ink:#e9edf5;--mut:#9aa4b6;
-    --accent:#4f8cff;--good:#39c07a;--gold:#f5c451;--flat:#37c8c3;--radius:14px;}
+    --accent:#4f8cff;--good:#39c07a;--gold:#f5c451;--flat:#37c8c3;--warn:#f5894f;--radius:14px;}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
   .wrap{max-width:1040px;margin:0 auto;padding:0 18px 60px}
   header{padding:34px 0 6px}
   h1{margin:0 0 4px;font-size:26px;letter-spacing:-.5px}
   .sub{color:var(--mut);font-size:14px;margin:0}
-  h3{font-size:13.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin:26px 0 12px}
   .grid{display:grid;gap:14px}@media(min-width:680px){.grid.two{grid-template-columns:1fr 1fr}}
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:15px}
   .card.star{border-color:rgba(245,196,81,.45);box-shadow:0 0 0 1px rgba(245,196,81,.16) inset}
-  .thead{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px}
-  .route{font-weight:700;font-size:15.5px}
+  .thead{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}
+  .route{font-weight:700;font-size:16px}
   .nts{color:var(--mut);font-size:12.5px;white-space:nowrap}
   .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:3px 7px;border-radius:5px;margin-right:5px}
   .tag.best{background:rgba(245,196,81,.16);color:var(--gold)}
-  .leg{border-top:1px dashed var(--line);padding:9px 0}
+  .tag.alt{background:rgba(79,140,255,.14);color:var(--accent)}
+  .leg{border-top:1px dashed var(--line);padding:10px 0}
   .leg .top{display:flex;justify-content:space-between;gap:8px}
   .leg .dir{font-size:10.5px;font-weight:700;color:var(--mut);background:var(--card2);padding:2px 6px;border-radius:4px}
   .leg .prog{font-weight:600}
-  .leg .mi{font-variant-numeric:tabular-nums;color:var(--mut);font-size:13px;text-align:right}
-  .vline{margin-top:5px;font-size:12.5px;color:var(--mut)}
-  .vline b{color:var(--good)}
+  .leg .mi{font-variant-numeric:tabular-nums;color:var(--mut);font-size:13px;text-align:right;white-space:nowrap}
+  .vline{margin-top:5px;font-size:13px;color:var(--mut)}
+  .vline b{color:var(--ink);font-weight:600}
   .badge{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;padding:1px 6px;border-radius:4px}
   .badge.flat{background:rgba(55,200,195,.16);color:var(--flat)}
   .badge.ver{background:rgba(57,192,122,.16);color:var(--good)}
+  .badge.tov{background:rgba(245,137,79,.16);color:var(--warn)}
+  .warn{margin-top:11px;font-size:12.8px;color:var(--warn);background:rgba(245,137,79,.09);border-radius:8px;padding:8px 11px;border-left:3px solid var(--warn)}
   .total{display:flex;justify-content:space-between;align-items:center;margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}
   .total .big{font-size:19px;font-weight:800;font-variant-numeric:tabular-nums}
   .total .small{color:var(--mut);font-size:12px}
-  .amex{margin-top:7px;font-size:12.5px;color:var(--accent);background:rgba(79,140,255,.08);border-radius:7px;padding:6px 9px}
-  footer{color:var(--mut);font-size:12.5px;text-align:center;margin-top:36px}
+  .amex{margin-top:8px;font-size:12.5px;color:var(--accent);background:rgba(79,140,255,.08);border-radius:7px;padding:7px 10px}
+  footer{color:var(--mut);font-size:12.5px;text-align:center;margin-top:36px;line-height:1.6}
   .tabs{display:flex;gap:6px;margin:18px 0 4px}
   .tabs button{background:var(--card);border:1px solid var(--line);color:var(--mut);font-size:14px;font-weight:700;padding:9px 18px;border-radius:10px;cursor:pointer}
   .tabs button.on{background:var(--card2);color:var(--ink);border-color:var(--accent)}
-  .orig-note{color:var(--mut);font-size:13px;margin:8px 0 0;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:9px;padding:10px 13px}
+  .note{color:var(--ink);font-size:13px;margin:10px 0 0;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:9px;padding:11px 13px}
+  .note.gold{border-left-color:var(--gold)}
+  .info h2{font-size:17px;margin:2px 0 10px}
+  .info ul{margin:0;padding-left:18px}
+  .info li{margin:0 0 9px;color:var(--mut);font-size:13.5px;line-height:1.55}
+  .info li b{color:var(--ink)}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
     <h1>✈️ Mom &amp; Ben → Rome · business class</h1>
-    <p class="sub">New York or Boston ⇄ Rome · 2 seats together · lie-flat across the Atlantic · every flight verified on its booking site (Jun 10) · miles shown per person, totals for two</p>
+    <p class="sub">2 seats together · lie-flat across the Atlantic both ways · no Friday/Saturday departures · every flight checked live on the airline's site</p>
   </header>
-  <div class="orig-note" id="points-note" style="border-left-color:var(--accent)"></div>
-  <div class="tabs"><button id="tab-jfk" class="on">From JFK</button><button id="tab-bos">From Boston (BOS)</button></div>
-  <div class="orig-note" id="orig-note" style="display:none"></div>
-  <div id="trip-list"></div>
-  <footer>Award space changes hourly — re-check on aeroplan.com / airfrance.us right before transferring Amex points (transfers can't be reversed).</footer>
+  <div class="note" id="points-note"></div>
+  <div class="tabs"><button id="tab-jfk" class="on">From New York (JFK)</button><button id="tab-bos">From Boston (BOS)</button></div>
+  <div id="body"></div>
+  <footer id="foot"></footer>
 </div>
-<script src="data.js?v=20260610m"></script>
+<script src="data.js?v=20260615a"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
-const mi=n=>n.toLocaleString('en-US'),usd=n=>'$'+Math.round(n).toLocaleString('en-US');
+const mi=n=>n.toLocaleString('en-US');
 const fmtD=iso=>new Date(iso+'T00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
-function planeTag(name){return `<span class="badge flat">${name}</span>`;}
-function legRow(dir,l,arrow){
-  const v=l.verified||{};
-  const seats=v.seats?`<b>${v.seats} seat${v.seats>1?'s':''} left</b> · `:'';
-  return `<div class="leg"><div class="top"><div><span class="dir">${dir}</span> <span class="prog">${l.program}</span> <span style="color:var(--mut);font-size:12.5px">· ${arrow} via ${l.via}</span></div><div class="mi">${mi(l.miles)} mi/pp<br>${l.fee_display||''}</div></div>
-    <div class="vline"><span class="badge ver">✓ verified</span> ${seats}${v.flight} · ${v.duration}</div>
-    <div class="vline">✈ ${v.carriers}</div></div>`;
+
+function legRow(dir,l){
+  const verified=l.status==='verified';
+  const vbadge=verified?'<span class="badge ver">✓ verified live</span>':'<span class="badge tov">⚠ verify at booking</span>';
+  const flat=l.lieflat?' <span class="badge flat">lie-flat</span>':'';
+  const fee=l.fee_cad!=null?('CA$'+l.fee_cad+'/pp'):(l.fee_usd!=null?('≈US$'+l.fee_usd+'/pp'):'');
+  return `<div class="leg">
+    <div class="top">
+      <div><span class="dir">${dir}</span> <span class="prog">${l.program}</span>
+        <span style="color:var(--mut);font-size:12.5px">· via ${l.via} (${l.hub})</span></div>
+      <div class="mi">${mi(l.miles)} mi/pp<br>${fee}</div>
+    </div>
+    <div class="vline">${vbadge} <b>${l.seats} seat${l.seats>1?'s':''} left</b> · ${l.flight} · ${l.time}</div>
+    <div class="vline">✈ ${l.carriers} · ${l.aircraft}${flat}</div>
+    <div class="vline" style="font-size:12px">${l.duration}</div>
+  </div>`;
 }
 function card(t){
-  const c=ce('div','card'+(t.rank==1?' star':''));
-  c.innerHTML=`<div class="thead"><div class="route">${t.rank==1?'<span class="tag best">★ Cheapest</span>':''}${fmtD(t.depart)} → ${fmtD(t.home)}</div><div class="nts">${t.nights} nights in Rome</div></div>`+
-    legRow('OUT',t.out,(t.origin||'JFK')+'→FCO')+legRow('RET',t.ret,'FCO→'+(t.origin||'JFK'))+
-    `<div class="total"><div><div class="small">Miles for two</div><div class="big">${mi(t.couple_miles)}</div></div>
-      <div style="text-align:right"><div class="small">Fees for two (exact)</div><div class="big">${usd(t.couple_fees)}</div></div></div>
-     <div class="amex">💳 ${t.amex_note}</div>`;
+  const c=ce('div','card'+(t.rank===1?' star':''));
+  const tag=t.rank===1?'<span class="tag best">★ Best — book first</span>'
+          :(t.both_aeroplan?'<span class="tag alt">Alternate date</span>':'<span class="tag alt">Backup · more seats</span>');
+  const feeBig=t.couple_fees_cad!=null?('CA$'+mi(t.couple_fees_cad)):('≈US$'+mi(t.couple_fees_usd));
+  const feeSub=t.couple_fees_cad!=null?('≈US$'+mi(t.couple_fees_usd)+' for two'):'taxes + surcharges for two';
+  c.innerHTML=`<div class="thead"><div class="route">${tag}<br>${fmtD(t.depart)} → ${fmtD(t.home)}</div>
+      <div class="nts">${t.nights} nights<br>in Rome</div></div>`
+    +legRow('OUT',t.out)+legRow('BACK',t.ret)
+    +(t.warn?`<div class="warn">${t.warn}</div>`:'')
+    +`<div class="total">
+        <div><div class="small">Points for two</div><div class="big">${mi(t.couple_miles)}</div></div>
+        <div style="text-align:right"><div class="small">Cash for two</div><div class="big">${feeBig}</div><div class="small">${feeSub}</div></div>
+      </div>
+      <div class="amex">💳 ${t.amex_note}</div>`;
   return c;
 }
-function render(origin){
-  const tl=$('#trip-list');tl.innerHTML='';
-  const note=$('#orig-note');
-  if(origin==='BOS'&&DATA.bos_note){note.textContent=DATA.bos_note;note.style.display='block';}
-  else{note.style.display='none';}
-  const trips=DATA.trips.filter(t=>t.origin===origin);
-  const tiers={};trips.forEach(t=>{(tiers[t.couple_miles]=tiers[t.couple_miles]||[]).push(t)});
-  let first=true;
-  Object.keys(tiers).map(Number).sort((a,b)=>a-b).forEach(m=>{
-    const s=tiers[m][0];
-    tl.appendChild(ce('h3',null,mi(m)+' miles for two · '+(s.both_aeroplan?'Aeroplan both ways':s.out.program+' out + '+s.ret.program+' back')));
-    const g=ce('div','grid two');
-    tiers[m].forEach(t=>{const el=card(t);if(first&&origin==='BOS')el.classList.add('star');g.appendChild(el);});
-    tl.appendChild(g);first=false;
-  });
+function renderJFK(){
+  const b=$('#body');b.innerHTML='';
+  const g=ce('div','grid two');
+  DATA.trips.filter(t=>t.origin==='JFK').sort((a,b)=>a.rank-b.rank).forEach(t=>g.appendChild(card(t)));
+  b.appendChild(g);
 }
-if(DATA.points_note)$('#points-note').textContent=DATA.points_note;
-$('#tab-jfk').onclick=()=>{$('#tab-jfk').classList.add('on');$('#tab-bos').classList.remove('on');render('JFK');};
-$('#tab-bos').onclick=()=>{$('#tab-bos').classList.add('on');$('#tab-jfk').classList.remove('on');render('BOS');};
-render('JFK');
+function renderBOS(){
+  const b=$('#body');b.innerHTML='';
+  const i=DATA.bos_info;
+  const c=ce('div','card info');
+  c.innerHTML=`<h2>🛑 ${i.headline}</h2><ul>${i.points.map(p=>'<li>'+p+'</li>').join('')}</ul>`;
+  b.appendChild(c);
+}
+$('#points-note').innerHTML='💳 '+DATA.points_note;
+$('#foot').textContent=DATA.footer;
+$('#tab-jfk').onclick=()=>{$('#tab-jfk').classList.add('on');$('#tab-bos').classList.remove('on');renderJFK();};
+$('#tab-bos').onclick=()=>{$('#tab-bos').classList.add('on');$('#tab-jfk').classList.remove('on');renderBOS();};
+renderJFK();
 </script>
 </body>
 </html>
