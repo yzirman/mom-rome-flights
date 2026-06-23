@@ -122,14 +122,14 @@ const DATA = {
   },
 
   europe_alt: {
-    headline: "🇪🇺 From NYC — what's actually confirmable lie-flat (verified, Oct 2026 + May 2027)",
+    headline: "🇪🇺 FULL sweep — NYC + Boston × Oct 2026 + May 2027 (nonstop = guaranteed lie-flat)",
     points: [
-      "🇮🇹 Rome — ❌ no lie-flat on cheap points. The 75k Aeroplan \"business\" awards are MIXED-CABIN: I checked the seat map and the whole transatlantic leg (JFK→Frankfurt) is in ECONOMY — business only on the 1-hour hop into Rome. And there's ZERO nonstop award space (ITA releases none). Confirmed dead from NYC.",
-      "🇬🇧 London — ✅ the ONLY confirmed lie-flat (nonstop = no mixed-cabin trap), both months: BA 777 ~45,000 Avios each way (~$996/person UK tax), or Virgin A350/A330 ~84k in October / ~47,500 in May (~$691 tax). Cheap points, heavy cash.",
-      "🇪🇸 Madrid — ❌ no cheap Iberia saver from NYC (verified on aa.com — 484,000+ dynamic only, both months). The Iberia bargain is Boston-only.",
-      "🇵🇹 Lisbon — ❌ no nonstop award space from NYC (verified on Aeroplan/TAP).",
-      "🇫🇷 Paris · 🇪🇸 Barcelona — ⚠️ only connecting awards show up; can't confirm lie-flat without an Air France / Iberia site check (mixed-cabin risk).",
-      "Bottom line: from New York, LONDON is the only city where you can get a CONFIRMED lie-flat business award on Amex points — cheap on points, heavy on UK taxes. Rome-on-cheap-points is a mixed-cabin trap; everything else is no award space. (Note: the Rome trips below are the trap-prone ones, kept only as candidates to re-verify.)"
+      "✅ LONDON is the ONLY European city with confirmable nonstop lie-flat business on Amex points — from BOTH New York and Boston, BOTH months. Nonstop = no mixed-cabin trap possible.",
+      "🇬🇧 From NEW YORK — Mom (weekdays only, no Fri/Sat): BA 777, 45,000 Avios each way (~$996/person UK tax) on Oct 5, 6, 12, 13, 19, 20, 21 — or Virgin A350/A330, 84k in Oct / just 47,500 in May (~$691 tax) on weekday dates. May is the cheaper window.",
+      "🇬🇧 From BOSTON — Ashley (any day): BA A380, 45,000 Avios (~$996 tax), or Qatar-Avios A380 88k, or Virgin 100k. Oct + May both wide open.",
+      "🇮🇹 Rome · 🇫🇷 Paris · 🇪🇸 Madrid · 🇪🇸 Barcelona · 🇵🇹 Lisbon: ZERO nonstop award space from NYC OR Boston, either month. Only connecting awards exist — and the cheap ones are mixed-cabin (Rome verified economy-across-the-Atlantic on the seat map). NOT lie-flat. (Air France / Iberia nonstops may hold space the search can't see — needs an airline-site login to check.)",
+      "✈️ Milan (for Ashley): Emirates A380 nonstop from JFK, 100,000 each way, lie-flat — Oct 12, 15, 25, 26, 27 · May 4, 5, 9, 10.",
+      "BOTTOM LINE: if lie-flat is non-negotiable, LONDON is the answer from NYC or Boston — cheap on points (45k Avios), heavy on UK tax (~$700–1,000/person). Everything else is either no award space or a mixed-cabin trap. (The Rome trips below are the trap-prone connecting ones — do not book without a seat-map check.)"
     ]
   },
 
