@@ -99,16 +99,15 @@
   <div id="mom-section">
     <div id="plan"></div>
     <div class="note" id="points-note"></div>
-    <h3 class="section-h">Other dates &amp; backups</h3>
+    <h3 class="section-h">Rome — candidate options (re-verify lie-flat before booking)</h3>
     <div class="bonus-banner" id="bonus-banner"></div>
-    <div class="tabs"><button id="tab-jfk" class="on">New York (JFK)</button><button id="tab-ewr">Newark (EWR)</button><button id="tab-bos">Boston (BOS)</button></div>
     <div id="body"></div>
     <div id="europe-alt"></div>
   </div>
   <div id="ash-section" style="display:none"></div>
   <footer id="foot"></footer>
 </div>
-<script src="data.js?v=20260615o"></script>
+<script src="data.js?v=20260615p"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const mi=n=>n.toLocaleString('en-US');
@@ -188,13 +187,7 @@ function renderPlan(){
 if(DATA.bonus){$('#bonus-banner').innerHTML='🔥 <b>'+DATA.bonus.headline+'</b><br>'+DATA.bonus.body;}else{$('#bonus-banner').style.display='none';}
 $('#points-note').innerHTML='💳 '+DATA.points_note;
 $('#foot').textContent=DATA.footer;
-const tabs={jfk:renderJFK,ewr:()=>renderInfo(DATA.ewr_info,'🟡'),bos:()=>renderInfo(DATA.bos_info,'🛑')};
-Object.keys(tabs).forEach(k=>{
-  $('#tab-'+k).onclick=()=>{
-    Object.keys(tabs).forEach(j=>$('#tab-'+j).classList.toggle('on',j===k));
-    window.scrollTo(0,0); tabs[k]();
-  };
-});
+renderJFK();
 function renderAshley(){
   const a=DATA.ashley; if(!a)return; const s=$('#ash-section'); s.innerHTML='';
   const c=ce('div','card star');
