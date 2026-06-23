@@ -122,12 +122,14 @@ const DATA = {
   },
 
   europe_alt: {
-    headline: "🇪🇺 Other cities, from NYC — checked October 2026 AND May 2027",
+    headline: "🇪🇺 From NYC — what's actually confirmable lie-flat (verified, Oct 2026 + May 2027)",
     points: [
-      "🇪🇸 Spain / Madrid (the Iberia deal): Boston-only. From JFK there's no cheap Iberia business in EITHER month — October verified live on aa.com at 484,000+ AA miles round-trip per person; May shows nothing nonstop either. (May 2027 is near the edge of the booking window, so it's still firming up — but as of now, same story.) Dead end from NYC.",
-      "🇬🇧 London — the only city with confirmed nonstop lie-flat from NYC, in BOTH months: BA 777 ~45,000 Avios each way (either month), or Virgin A350/A330 — ~84k in October but just ~47,500 in May (May is the cheaper window). Catch either way: ~$700–1,000/person in UK taxes (~$1,400–2,000 cash for two).",
-      "🇫🇷 Paris · 🇵🇹 Lisbon · 🇪🇸 Barcelona: no nonstop lie-flat business award space from NYC in either month — only connections, which I can't confirm as lie-flat (the mixed-cabin trap zone).",
-      "Bottom line: October and May look the same from NYC — nothing beats the locked Rome plan (300k + ~CA$532, lie-flat confirmed). London is the only confirmable alternative (cheaper points in May, but UK-tax-heavy); the Iberia bargain needs Boston."
+      "🇮🇹 Rome — ❌ no lie-flat on cheap points. The 75k Aeroplan \"business\" awards are MIXED-CABIN: I checked the seat map and the whole transatlantic leg (JFK→Frankfurt) is in ECONOMY — business only on the 1-hour hop into Rome. And there's ZERO nonstop award space (ITA releases none). Confirmed dead from NYC.",
+      "🇬🇧 London — ✅ the ONLY confirmed lie-flat (nonstop = no mixed-cabin trap), both months: BA 777 ~45,000 Avios each way (~$996/person UK tax), or Virgin A350/A330 ~84k in October / ~47,500 in May (~$691 tax). Cheap points, heavy cash.",
+      "🇪🇸 Madrid — ❌ no cheap Iberia saver from NYC (verified on aa.com — 484,000+ dynamic only, both months). The Iberia bargain is Boston-only.",
+      "🇵🇹 Lisbon — ❌ no nonstop award space from NYC (verified on Aeroplan/TAP).",
+      "🇫🇷 Paris · 🇪🇸 Barcelona — ⚠️ only connecting awards show up; can't confirm lie-flat without an Air France / Iberia site check (mixed-cabin risk).",
+      "Bottom line: from New York, LONDON is the only city where you can get a CONFIRMED lie-flat business award on Amex points — cheap on points, heavy on UK taxes. Rome-on-cheap-points is a mixed-cabin trap; everything else is no award space. (Note: the Rome trips below are the trap-prone ones, kept only as candidates to re-verify.)"
     ]
   },
 
