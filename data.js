@@ -210,12 +210,12 @@ const DATA = {
   },
 
   europe_alt: {
-    headline: "🇪🇺 Other cities, from NYC — what I actually found (Oct 2026 / May 2027)",
+    headline: "🇪🇺 Other cities, from NYC — checked October 2026 AND May 2027",
     points: [
-      "🇪🇸 Spain / Madrid (the Iberia deal): It's REAL but Boston-only. From JFK, Madrid business is 484,000+ AA miles round-trip per person — verified live on aa.com — because Iberia releases no cheap saver space from New York. Not worth it from NYC.",
-      "🇬🇧 London — the ONLY confirmed nonstop lie-flat from NYC: BA 777 ~45,000 Avios, or Virgin A350 ~84k (Oct) / ~47,500 (May) each way. Cheap-ish points, BUT ~$700–1,000/person in UK taxes (~$1,400–2,000 cash for two). Cheap points, pricey cash.",
-      "🇫🇷 Paris · 🇵🇹 Lisbon · 🇪🇸 Barcelona: no nonstop lie-flat business award space showed from NYC — only connecting itineraries, which I can't confirm as lie-flat (the mixed-cabin trap zone). Would need a direct Air France / TAP check to confirm.",
-      "Bottom line: from New York, nothing beats the locked Rome plan (300k + ~CA$532, lie-flat confirmed). The Iberia bargain needs Boston."
+      "🇪🇸 Spain / Madrid (the Iberia deal): Boston-only. From JFK there's no cheap Iberia business in EITHER month — October verified live on aa.com at 484,000+ AA miles round-trip per person; May shows nothing nonstop either. (May 2027 is near the edge of the booking window, so it's still firming up — but as of now, same story.) Dead end from NYC.",
+      "🇬🇧 London — the only city with confirmed nonstop lie-flat from NYC, in BOTH months: BA 777 ~45,000 Avios each way (either month), or Virgin A350/A330 — ~84k in October but just ~47,500 in May (May is the cheaper window). Catch either way: ~$700–1,000/person in UK taxes (~$1,400–2,000 cash for two).",
+      "🇫🇷 Paris · 🇵🇹 Lisbon · 🇪🇸 Barcelona: no nonstop lie-flat business award space from NYC in either month — only connections, which I can't confirm as lie-flat (the mixed-cabin trap zone).",
+      "Bottom line: October and May look the same from NYC — nothing beats the locked Rome plan (300k + ~CA$532, lie-flat confirmed). London is the only confirmable alternative (cheaper points in May, but UK-tax-heavy); the Iberia bargain needs Boston."
     ]
   },
 
