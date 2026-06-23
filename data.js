@@ -7,95 +7,17 @@ const DATA = {
 
   points_note: "How to pay: the Aeroplan legs take Amex OR Chase at 1:1 — pool both of you into ONE Aeroplan account so the seats book together (300,000 Aeroplan covers the pure-Aeroplan round trips). For any Air France / KLM (Flying Blue) leg, use BEN'S AMEX — there's a live 25% bonus right now (see below) and Chase has no Flying Blue bonus. Book both passengers from Ben's Flying Blue account.",
 
-  correction: "Nothing is booked. Important: the Oct 12 → 20 flight we'd flagged turned out NOT to be lie-flat across the Atlantic when actually viewed — so it is no longer \"the pick,\" and the old ✓ marks below shouldn't be trusted. My cabin check wasn't reliable. Before booking ANY of these, re-confirm on the airline site that the long transatlantic leg is a true flat bed (not the short euro-business connector). Treat everything below as candidates to verify, not confirmed.",
+  correction: "Nothing is booked. The Oct 12 & Oct 13 outbounds and the Oct 20 return were all checked and were NOT lie-flat across the Atlantic (economy on the long leg) — so all three \"→ Oct 20\" trips have been removed. My earlier cabin check wasn't reliable. The Oct 26 options that remain use the same routing pattern, so don't trust them either until the long transatlantic leg is confirmed as a real flat bed on the airline site.",
 
   bonus: {
     headline: "25% Amex → Flying Blue transfer bonus — ends June 30, 2026",
     body: "Through June 30, every 1,000 Amex Membership Rewards points = 1,250 Flying Blue (Air France/KLM) miles — so the Flying Blue legs below cost about 20% fewer Amex points. AMEX ONLY (Chase's Flying Blue bonus already expired); automatic, no signup. To use it, transfer Ben's Amex → Flying Blue before June 30 — you can book the Oct/Nov award immediately after. Aeroplan legs are unaffected (pay 1:1 with Chase or Amex)."
   },
 
-  jfk_note: "Why so few? The DEPARTURE is flexible (three clean dates below — pick by trip length), but the RETURN is the scarce piece: across the whole Oct 3–Nov 4 window, the only clean, short-layover business return is Oct 20, and it has just 2 seats. I opened every Aeroplan date from Oct 6–28 live and dropped the rest — most cheap \"business\" fares are secretly economy across the Atlantic (the mixed-cabin trick). Book the Oct 20 return first.",
+  jfk_note: "Removed: the Oct 12, Oct 13 and Oct 14 → Oct 20 options — the Oct 12 and Oct 13 outbounds AND the Oct 20 return all turned out NOT lie-flat (economy on the long transatlantic leg, the mixed-cabin trap). What's left below (Oct 26 departures) is the same Aeroplan-via-European-hub pattern, so treat it with the same suspicion — confirm the long leg is an actual flat bed before trusting any of it.",
 
   // ----- JFK options (the real ones) -----
   trips: [
-    {
-      origin: "JFK", rank: 1,
-      depart: "2026-10-12", depart_dow: "Mon",
-      home:   "2026-10-20", home_dow: "Tue",
-      nights: 8,
-      out: {
-        program: "Aeroplan", miles: 75000, via: "Zürich", hub: "ZRH",
-        fee_cad: 108, status: "to-verify", lieflat: true,
-        flight: "LX 17 + WK 1726", time: "dep 16:15 → +1",
-        duration: "10h35 total · 1h10 in Zürich",
-        carriers: "Swiss (transatlantic) + Edelweiss",
-        aircraft: "Airbus A330-300 across the Atlantic", seats: 3
-      },
-      ret: {
-        program: "Aeroplan", miles: 75000, via: "Geneva", hub: "GVA",
-        fee_cad: 197, status: "to-verify", lieflat: true,
-        flight: "AZ 576 + LX 22", time: "dep 09:05 → arr 14:20",
-        duration: "11h15 total · 1h in Geneva",
-        carriers: "ITA (connector) + Swiss (transatlantic)",
-        aircraft: "Airbus A330-300 across the Atlantic", seats: 2
-      },
-      couple_miles: 300000, couple_fees_cad: 532, couple_fees_usd: 388,
-      programs: ["Aeroplan"], both_aeroplan: true,
-      warn: "The Oct 20 return has only 2 business seats left — exactly enough for the two of you, but zero margin. Book this one FIRST.",
-      amex_note: "150,000 points each → Aeroplan (Amex or Chase). CA$531.80 (≈US$388) total taxes for both — confirmed at checkout."
-    },
-    {
-      origin: "JFK", rank: 2,
-      depart: "2026-10-13", depart_dow: "Tue",
-      home:   "2026-10-20", home_dow: "Tue",
-      nights: 7,
-      out: {
-        program: "Aeroplan", miles: 75000, via: "Frankfurt", hub: "FRA",
-        fee_cad: 143, status: "to-verify", lieflat: true,
-        flight: "LH 401 + LH 230", time: "dep 15:40 → arr 09:05+1",
-        duration: "11h25 total · 1h50 in Frankfurt",
-        carriers: "Lufthansa (whole way)",
-        aircraft: "Airbus A340-600 across the Atlantic", seats: 4
-      },
-      ret: {
-        program: "Aeroplan", miles: 75000, via: "Geneva", hub: "GVA",
-        fee_cad: 197, status: "to-verify", lieflat: true,
-        flight: "AZ 576 + LX 22", time: "dep 09:05 → arr 14:20",
-        duration: "11h15 total · 1h in Geneva",
-        carriers: "ITA (connector) + Swiss (transatlantic)",
-        aircraft: "Airbus A330-300 across the Atlantic", seats: 2
-      },
-      couple_miles: 300000, couple_fees_cad: 679, couple_fees_usd: 496,
-      programs: ["Aeroplan"], both_aeroplan: true,
-      warn: "Shares the same Oct 20 return as the option above (only 2 seats) — you can take one or the other, not both.",
-      amex_note: "150,000 points each → Aeroplan (Amex or Chase). ~CA$679 (≈US$496) in taxes for both."
-    },
-    {
-      origin: "JFK", rank: 3,
-      depart: "2026-10-14", depart_dow: "Wed",
-      home:   "2026-10-20", home_dow: "Tue",
-      nights: 6,
-      out: {
-        program: "Aeroplan", miles: 75000, via: "Frankfurt", hub: "FRA",
-        fee_cad: 143, status: "to-verify", lieflat: true,
-        flight: "LH 401 + LH 230", time: "dep 15:40 → arr 09:05+1",
-        duration: "11h25 total · 1h50 in Frankfurt",
-        carriers: "Lufthansa (whole way)",
-        aircraft: "Airbus A340-600 across the Atlantic", seats: 6
-      },
-      ret: {
-        program: "Aeroplan", miles: 75000, via: "Geneva", hub: "GVA",
-        fee_cad: 197, status: "to-verify", lieflat: true,
-        flight: "AZ 576 + LX 22", time: "dep 09:05 → arr 14:20",
-        duration: "11h15 total · 1h in Geneva",
-        carriers: "ITA (connector) + Swiss (transatlantic)",
-        aircraft: "Airbus A330-300 across the Atlantic", seats: 2
-      },
-      couple_miles: 300000, couple_fees_cad: 679, couple_fees_usd: 496,
-      programs: ["Aeroplan"], both_aeroplan: true,
-      warn: "Same Oct 20 return again (2 seats). This one has the most OUTbound seats of the three (6) — but the 2-seat return is still the limiting factor.",
-      amex_note: "150,000 points each → Aeroplan (Amex or Chase). ~CA$679 (≈US$496) in taxes for both."
-    },
     {
       origin: "JFK", rank: 4,
       depart: "2026-10-26", depart_dow: "Mon",
