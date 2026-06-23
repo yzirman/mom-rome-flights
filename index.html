@@ -77,6 +77,7 @@
   .info ul{margin:0;padding-left:18px}
   .info li{margin:0 0 9px;color:var(--mut);font-size:13.5px;line-height:1.55}
   .info li b{color:var(--ink)}
+  .correction-banner{margin:16px 0 0;background:rgba(245,137,79,.12);border:1px solid rgba(245,137,79,.5);border-left:4px solid var(--warn);border-radius:10px;padding:13px 15px;font-size:13.5px;color:var(--ink);line-height:1.55}
   .book-banner{margin:14px 0 0;background:rgba(57,192,122,.10);border:1px solid rgba(57,192,122,.45);border-left:4px solid var(--good);border-radius:10px;padding:12px 14px;font-size:13.5px;color:var(--ink);line-height:1.55}
   .book-banner b{color:var(--good)}
   .bonus-banner{margin:10px 0 0;background:linear-gradient(90deg,rgba(245,196,81,.14),rgba(245,137,79,.10));border:1px solid rgba(245,196,81,.4);border-radius:10px;padding:12px 14px;font-size:13px;color:var(--ink);line-height:1.5}
@@ -92,7 +93,7 @@
 <div class="wrap">
   <header>
     <h1>✈️ Rome 2026 · business-class award trips</h1>
-    <p class="sub">Two trips · lie-flat across the Atlantic · checked live on the airlines' sites</p>
+    <p class="sub">Two trips · business class · ⚠️ nothing booked — re-confirm lie-flat before booking</p>
   </header>
   <div class="who"><button id="who-mom" class="on">Mom &amp; Ben → Rome</button><button id="who-ash">Ashley → Rome / Milan</button></div>
   <div id="mom-section">
@@ -107,7 +108,7 @@
   <div id="ash-section" style="display:none"></div>
   <footer id="foot"></footer>
 </div>
-<script src="data.js?v=20260615m"></script>
+<script src="data.js?v=20260615n"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const mi=n=>n.toLocaleString('en-US');
@@ -116,7 +117,7 @@ const fmtD=iso=>new Date(iso+'T00:00').toLocaleDateString('en-US',{weekday:'shor
 function legRow(dir,l){
   const verified=l.status==='verified';
   const vbadge=verified?'<span class="badge ver">✓ verified live</span>':'<span class="badge tov">⚠ verify at booking</span>';
-  const flat=l.lieflat?' <span class="badge flat">lie-flat</span>':'';
+  const flat=(l.lieflat&&verified)?' <span class="badge flat">lie-flat</span>':'';
   const fee=l.fee_cad!=null?('CA$'+l.fee_cad+'/pp'):(l.fee_usd!=null?('≈US$'+l.fee_usd+'/pp'):'');
   return `<div class="leg">
     <div class="top">
@@ -178,11 +179,11 @@ function renderInfo(info,icon){
   b.appendChild(c);
 }
 function renderPlan(){
-  const t=DATA.trips.find(x=>x.chosen); if(!t)return;
   const p=$('#plan'); p.innerHTML='';
+  if(DATA.correction) p.appendChild(ce('div','correction-banner','⚠️ '+DATA.correction));
+  const t=DATA.trips.find(x=>x.chosen); if(!t)return;
   p.appendChild(ce('h2','plan-h','📋 The plan — you’re booking this'));
   p.appendChild(card(t));
-  if(DATA.book_note) p.appendChild(ce('div','book-banner',DATA.book_note));
 }
 if(DATA.bonus){$('#bonus-banner').innerHTML='🔥 <b>'+DATA.bonus.headline+'</b><br>'+DATA.bonus.body;}else{$('#bonus-banner').style.display='none';}
 $('#points-note').innerHTML='💳 '+DATA.points_note;

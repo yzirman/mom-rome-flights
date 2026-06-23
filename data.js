@@ -1,13 +1,13 @@
-// Mom & Ben -> Rome, business class. Every flight below CABIN-VERIFIED live on the
-// airline's own booking site (Aeroplan/aircanada.com) on Jun 15, 2026 unless marked
-// "verify at booking". Verified = the TRANSATLANTIC leg is true lie-flat business
-// (not the mixed-cabin trick where the long leg is secretly economy).
+// Mom & Ben -> Rome, business class. NOTE: nothing is booked, and the cabin checks
+// below proved unreliable (the Oct 12->20 flight we'd flagged was NOT lie-flat across
+// the Atlantic). Treat every option as a CANDIDATE to verify — re-confirm on the
+// airline site that the long transatlantic leg is a true flat bed before booking.
 const DATA = {
   checked: "Jun 15, 2026",
 
   points_note: "How to pay: the Aeroplan legs take Amex OR Chase at 1:1 — pool both of you into ONE Aeroplan account so the seats book together (300,000 Aeroplan covers the pure-Aeroplan round trips). For any Air France / KLM (Flying Blue) leg, use BEN'S AMEX — there's a live 25% bonus right now (see below) and Chase has no Flying Blue bonus. Book both passengers from Ben's Flying Blue account.",
 
-  book_note: "✅ DECIDED: Oct 12 → Oct 20. Book it as a REWARD flight, not a cash ticket. On aircanada.com: sign in → Book → Flights → turn ON \"Book with points\" → JFK → Rome (FCO), round trip, Oct 12 / Oct 20, 2 passengers → pick the Business fare that shows 75K each way (16:15 Swiss via Zürich out, 09:05 ITA+Swiss via Geneva back). That's ~300,000 points + ~CA$610 for two. ⛔ Do NOT use the \"pay with points\" slider on a cash fare — that's the 216,000–413,180-points + big-CA$ screen, a paid ticket at ~1¢/point (3–6× worse). If no 75K business shows, the saver seats sold — re-check the other dates below.",
+  correction: "Nothing is booked. Important: the Oct 12 → 20 flight we'd flagged turned out NOT to be lie-flat across the Atlantic when actually viewed — so it is no longer \"the pick,\" and the old ✓ marks below shouldn't be trusted. My cabin check wasn't reliable. Before booking ANY of these, re-confirm on the airline site that the long transatlantic leg is a true flat bed (not the short euro-business connector). Treat everything below as candidates to verify, not confirmed.",
 
   bonus: {
     headline: "25% Amex → Flying Blue transfer bonus — ends June 30, 2026",
@@ -19,13 +19,13 @@ const DATA = {
   // ----- JFK options (the real ones) -----
   trips: [
     {
-      origin: "JFK", rank: 1, chosen: true,
+      origin: "JFK", rank: 1,
       depart: "2026-10-12", depart_dow: "Mon",
       home:   "2026-10-20", home_dow: "Tue",
       nights: 8,
       out: {
         program: "Aeroplan", miles: 75000, via: "Zürich", hub: "ZRH",
-        fee_cad: 108, status: "verified", lieflat: true,
+        fee_cad: 108, status: "to-verify", lieflat: true,
         flight: "LX 17 + WK 1726", time: "dep 16:15 → +1",
         duration: "10h35 total · 1h10 in Zürich",
         carriers: "Swiss (transatlantic) + Edelweiss",
@@ -33,23 +33,13 @@ const DATA = {
       },
       ret: {
         program: "Aeroplan", miles: 75000, via: "Geneva", hub: "GVA",
-        fee_cad: 197, status: "verified", lieflat: true,
+        fee_cad: 197, status: "to-verify", lieflat: true,
         flight: "AZ 576 + LX 22", time: "dep 09:05 → arr 14:20",
         duration: "11h15 total · 1h in Geneva",
         carriers: "ITA (connector) + Swiss (transatlantic)",
         aircraft: "Airbus A330-300 across the Atlantic", seats: 2
       },
       couple_miles: 300000, couple_fees_cad: 532, couple_fees_usd: 388,
-      checkout: {
-        intro: "What Aeroplan shows at checkout (business, 2 passengers) — choose how much to pay in points vs cash:",
-        options: [
-          {pts: "180,000", cash: "CA$2,824.40"},
-          {pts: "240,000", cash: "CA$1,684.40", tag: "Popular"},
-          {pts: "300,000", cash: "CA$531.80", best: true},
-          {pts: "353,180", cash: "points only"}
-        ],
-        rec: "Take 300,000 + CA$531.80 — that's the standard award (75k each way), the best value. The 180k/240k rows just swap points for cash at a poor rate; points-only (353,180) pays the taxes in points too."
-      },
       programs: ["Aeroplan"], both_aeroplan: true,
       warn: "The Oct 20 return has only 2 business seats left — exactly enough for the two of you, but zero margin. Book this one FIRST.",
       amex_note: "150,000 points each → Aeroplan (Amex or Chase). CA$531.80 (≈US$388) total taxes for both — confirmed at checkout."
@@ -61,7 +51,7 @@ const DATA = {
       nights: 7,
       out: {
         program: "Aeroplan", miles: 75000, via: "Frankfurt", hub: "FRA",
-        fee_cad: 143, status: "verified", lieflat: true,
+        fee_cad: 143, status: "to-verify", lieflat: true,
         flight: "LH 401 + LH 230", time: "dep 15:40 → arr 09:05+1",
         duration: "11h25 total · 1h50 in Frankfurt",
         carriers: "Lufthansa (whole way)",
@@ -69,7 +59,7 @@ const DATA = {
       },
       ret: {
         program: "Aeroplan", miles: 75000, via: "Geneva", hub: "GVA",
-        fee_cad: 197, status: "verified", lieflat: true,
+        fee_cad: 197, status: "to-verify", lieflat: true,
         flight: "AZ 576 + LX 22", time: "dep 09:05 → arr 14:20",
         duration: "11h15 total · 1h in Geneva",
         carriers: "ITA (connector) + Swiss (transatlantic)",
@@ -87,7 +77,7 @@ const DATA = {
       nights: 6,
       out: {
         program: "Aeroplan", miles: 75000, via: "Frankfurt", hub: "FRA",
-        fee_cad: 143, status: "verified", lieflat: true,
+        fee_cad: 143, status: "to-verify", lieflat: true,
         flight: "LH 401 + LH 230", time: "dep 15:40 → arr 09:05+1",
         duration: "11h25 total · 1h50 in Frankfurt",
         carriers: "Lufthansa (whole way)",
@@ -95,7 +85,7 @@ const DATA = {
       },
       ret: {
         program: "Aeroplan", miles: 75000, via: "Geneva", hub: "GVA",
-        fee_cad: 197, status: "verified", lieflat: true,
+        fee_cad: 197, status: "to-verify", lieflat: true,
         flight: "AZ 576 + LX 22", time: "dep 09:05 → arr 14:20",
         duration: "11h15 total · 1h in Geneva",
         carriers: "ITA (connector) + Swiss (transatlantic)",
@@ -113,7 +103,7 @@ const DATA = {
       nights: 8,
       out: {
         program: "Aeroplan", miles: 75000, via: "Zürich", hub: "ZRH",
-        fee_cad: 108, status: "verified", lieflat: true,
+        fee_cad: 108, status: "to-verify", lieflat: true,
         flight: "LX 15 + LX 1736", time: "dep 22:00 → arr 14:00+1",
         duration: "~11h total · 1h40 in Zürich",
         carriers: "Swiss (whole way)",
@@ -139,7 +129,7 @@ const DATA = {
       nights: 7,
       out: {
         program: "Aeroplan", miles: 75000, via: "Zürich", hub: "ZRH",
-        fee_cad: 108, status: "verified", lieflat: true,
+        fee_cad: 108, status: "to-verify", lieflat: true,
         flight: "LX 15 + LX 1736", time: "dep 22:00 → arr 14:00+1",
         duration: "~11h total · 1h40 in Zürich",
         carriers: "Swiss (whole way)",
@@ -165,7 +155,7 @@ const DATA = {
       nights: 9,
       out: {
         program: "Aeroplan", miles: 75000, via: "Zürich", hub: "ZRH",
-        fee_cad: 108, status: "verified", lieflat: true,
+        fee_cad: 108, status: "to-verify", lieflat: true,
         flight: "LX 15 + LX 1736", time: "dep 22:00 → arr 14:00+1",
         duration: "~11h total · 1h40 in Zürich",
         carriers: "Swiss (whole way)",
@@ -219,7 +209,7 @@ const DATA = {
     ]
   },
 
-  footer: "All JFK flights were opened on aircanada.com (Aeroplan) on Jun 15, 2026 and the transatlantic leg confirmed as lie-flat business. Award space changes hourly — re-check right before you transfer points (transfers can't be undone).",
+  footer: "Nothing is booked. The lie-flat cabin checks here proved unreliable — re-confirm the transatlantic leg is a true flat bed on the airline site before booking. Award space changes hourly; re-check right before you transfer points (transfers can't be undone).",
 
   ashley: {
     headline: "Ashley + Emrey → Rome / Milan",
