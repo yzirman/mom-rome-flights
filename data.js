@@ -209,6 +209,16 @@ const DATA = {
     ]
   },
 
+  europe_alt: {
+    headline: "🇪🇺 Other cities, from NYC — what I actually found (Oct 2026 / May 2027)",
+    points: [
+      "🇪🇸 Spain / Madrid (the Iberia deal): It's REAL but Boston-only. From JFK, Madrid business is 484,000+ AA miles round-trip per person — verified live on aa.com — because Iberia releases no cheap saver space from New York. Not worth it from NYC.",
+      "🇬🇧 London — the ONLY confirmed nonstop lie-flat from NYC: BA 777 ~45,000 Avios, or Virgin A350 ~84k (Oct) / ~47,500 (May) each way. Cheap-ish points, BUT ~$700–1,000/person in UK taxes (~$1,400–2,000 cash for two). Cheap points, pricey cash.",
+      "🇫🇷 Paris · 🇵🇹 Lisbon · 🇪🇸 Barcelona: no nonstop lie-flat business award space showed from NYC — only connecting itineraries, which I can't confirm as lie-flat (the mixed-cabin trap zone). Would need a direct Air France / TAP check to confirm.",
+      "Bottom line: from New York, nothing beats the locked Rome plan (300k + ~CA$532, lie-flat confirmed). The Iberia bargain needs Boston."
+    ]
+  },
+
   footer: "All JFK flights were opened on aircanada.com (Aeroplan) on Jun 15, 2026 and the transatlantic leg confirmed as lie-flat business. Award space changes hourly — re-check right before you transfer points (transfers can't be undone).",
 
   ashley: {

@@ -102,11 +102,12 @@
     <div class="bonus-banner" id="bonus-banner"></div>
     <div class="tabs"><button id="tab-jfk" class="on">New York (JFK)</button><button id="tab-ewr">Newark (EWR)</button><button id="tab-bos">Boston (BOS)</button></div>
     <div id="body"></div>
+    <div id="europe-alt"></div>
   </div>
   <div id="ash-section" style="display:none"></div>
   <footer id="foot"></footer>
 </div>
-<script src="data.js?v=20260615k"></script>
+<script src="data.js?v=20260615l"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const mi=n=>n.toLocaleString('en-US');
@@ -218,6 +219,7 @@ function renderAshley(){
 }
 $('#who-mom').onclick=()=>{$('#who-mom').classList.add('on');$('#who-ash').classList.remove('on');$('#mom-section').style.display='';$('#ash-section').style.display='none';window.scrollTo(0,0);};
 $('#who-ash').onclick=()=>{$('#who-ash').classList.add('on');$('#who-mom').classList.remove('on');$('#ash-section').style.display='';$('#mom-section').style.display='none';window.scrollTo(0,0);};
+if(DATA.europe_alt){const ea=DATA.europe_alt;const c=ce('div','card info');c.style.marginTop='28px';c.innerHTML=`<h2>${ea.headline}</h2><ul>${ea.points.map(p=>'<li>'+p+'</li>').join('')}</ul>`;$('#europe-alt').appendChild(c);}
 renderPlan();
 renderAshley();
 renderJFK();
