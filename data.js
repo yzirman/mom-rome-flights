@@ -138,16 +138,16 @@ const DATA = {
 
   rome_af: {
     headline: "🇮🇹 Rome on Air France — the real lie-flat options (checked live, logged in)",
-    sub: "NYC → Rome (FCO), business, one connection through Paris-CDG or Amsterdam. The long transatlantic leg is a flat bed; the second leg is a short hop. Prices are per person, one-way, + ~$361 taxes. Award space changes hourly — re-check before transferring points.",
-    note: "⚠️ IMPORTANT — 2 seats together: most October dates show only \"1 seat left\" in business at the cheapest price, which won't work for Mom + Ben needing 2 seats. May 2027 looked cleaner (a flat 152k across the week with no seat-count warnings). For an exact 2-passenger price you'll need to log back into Air France so I can re-run it for 2.",
+    sub: "NYC → Rome (FCO), business, one connection through Paris-CDG. The long transatlantic leg is an Air France flat bed; the second leg is a short hop. ✅ Re-run live for 2 PASSENGERS — 2 business seats together ARE available. Prices below are PER PERSON, one-way. Taxes ~$361/person ($722.80 for two). Award space changes hourly — re-check right before transferring points.",
+    note: "✅ 2 SEATS CONFIRMED. Searching for 2 passengers, Air France returns 2 business seats together on the AF 18:30 flight at the lowest fare. The cheapest day is Mon Oct 12 = 285,000 miles for two (142,500 each); Sat Oct 10 / Sun Oct 11 / Tue Oct 13 = 304,000 for two (152,000 each). All Shabbat-safe weekdays plus the weekend dates. Heads-up: this is ONE-WAY — a round trip for two is roughly 570,000–608,000 miles + ~$1,445 taxes, about 2× the ~300k-for-two budget. Worth it for guaranteed Italy lie-flat, but it is the pricey option vs. London.",
     flights: [
-      { air: "Air France", route: "JFK 01:00 → CDG → FCO 17:30", dur: "10h30", plane: "Airbus A350-900 (confirmed flat bed) across the Atlantic", miles: "232,000", seat: "1 seat left" },
-      { air: "Air France", route: "JFK 18:30 → CDG → FCO 11:25 +1", dur: "10h55", plane: "A350 transatlantic", miles: "152,000", seat: "1 seat left" },
-      { air: "KLM", route: "JFK 16:40 → AMS → FCO 09:35 +1", dur: "10h55", plane: "KLM widebody (777/787) transatlantic", miles: "232,000", seat: "available" },
-      { air: "KLM", route: "JFK 19:10 → AMS → FCO 11:45 +1", dur: "10h35", plane: "KLM widebody transatlantic", miles: "232,000", seat: "1 seat left" }
+      { air: "Air France", route: "JFK 18:30 → CDG → FCO 11:25 +1", dur: "10h55", plane: "AF flat-bed widebody across the Atlantic — LOWEST 2-seat fare", miles: "152,000", seat: "2 seats ✓" },
+      { air: "Air France", route: "JFK 01:00 → CDG → FCO 17:30", dur: "10h30", plane: "Airbus A350-900 (confirmed flat bed)", miles: "232,000", seat: "3 seats ✓" },
+      { air: "Air France", route: "JFK 21:30 → CDG → FCO 14:25 +1", dur: "10h55", plane: "AF flat-bed widebody", miles: "232,000", seat: "2+ seats ✓" },
+      { air: "KLM", route: "JFK 16:40 → AMS → FCO 09:35 +1", dur: "10h55", plane: "KLM widebody (777/787)", miles: "364,000", seat: "2 seats ✓" }
     ],
-    calendar: "Cheapest fare per day (lowest single flight): Sat Oct 10 = 152k · Sun Oct 11 = 152k · Mon Oct 12 = 142.5k · Tue Oct 13 = 152k · Wed Oct 14 = 152k · Thu Oct 15 = 364k. May 2027: a flat 152k every weekday that week.",
-    bottom: "So: a confirmed lie-flat path to Rome exists at ~152k each way (~608k for two round-trip). It's real and bookable — the catch is points cost (~2× the ~300k-for-two budget) and tight 2-seat availability on the cheap October dates. May 2027 is the better window for two seats together."
+    calendar: "Lowest fare PER PERSON, 2-passenger search: Sat Oct 10 = 152k · Sun Oct 11 = 152k · Mon Oct 12 = 142.5k (cheapest) · Tue Oct 13 = 152k · Wed Oct 14 = 152k · Thu Oct 15 = 232k. (Doubled, that's the per-two total: Mon Oct 12 = 285,000 for two; the rest 304,000 for two.) May 2027 is similar.",
+    bottom: "BOTTOM LINE: Two business seats together to Rome ARE bookable — best is Mon Oct 12 at 142,500 each (285,000 for two) one-way, on a confirmed Air France flat bed across the Atlantic. Round trip for two ≈ 570k–608k miles + ~$1,445 tax. It's the real lie-flat Italy option; the trade-off is points cost vs. London's 45k Avios."
   },
 
   footer: "Nothing is booked. The lie-flat cabin checks here proved unreliable — re-confirm the transatlantic leg is a true flat bed on the airline site before booking. Award space changes hourly; re-check right before you transfer points (transfers can't be undone).",
