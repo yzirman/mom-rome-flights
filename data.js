@@ -136,6 +136,20 @@ const DATA = {
     ]
   },
 
+  rome_af: {
+    headline: "🇮🇹 Rome on Air France — the real lie-flat options (checked live, logged in)",
+    sub: "NYC → Rome (FCO), business, one connection through Paris-CDG or Amsterdam. The long transatlantic leg is a flat bed; the second leg is a short hop. Prices are per person, one-way, + ~$361 taxes. Award space changes hourly — re-check before transferring points.",
+    note: "⚠️ IMPORTANT — 2 seats together: most October dates show only \"1 seat left\" in business at the cheapest price, which won't work for Mom + Ben needing 2 seats. May 2027 looked cleaner (a flat 152k across the week with no seat-count warnings). For an exact 2-passenger price you'll need to log back into Air France so I can re-run it for 2.",
+    flights: [
+      { air: "Air France", route: "JFK 01:00 → CDG → FCO 17:30", dur: "10h30", plane: "Airbus A350-900 (confirmed flat bed) across the Atlantic", miles: "232,000", seat: "1 seat left" },
+      { air: "Air France", route: "JFK 18:30 → CDG → FCO 11:25 +1", dur: "10h55", plane: "A350 transatlantic", miles: "152,000", seat: "1 seat left" },
+      { air: "KLM", route: "JFK 16:40 → AMS → FCO 09:35 +1", dur: "10h55", plane: "KLM widebody (777/787) transatlantic", miles: "232,000", seat: "available" },
+      { air: "KLM", route: "JFK 19:10 → AMS → FCO 11:45 +1", dur: "10h35", plane: "KLM widebody transatlantic", miles: "232,000", seat: "1 seat left" }
+    ],
+    calendar: "Cheapest fare per day (lowest single flight): Sat Oct 10 = 152k · Sun Oct 11 = 152k · Mon Oct 12 = 142.5k · Tue Oct 13 = 152k · Wed Oct 14 = 152k · Thu Oct 15 = 364k. May 2027: a flat 152k every weekday that week.",
+    bottom: "So: a confirmed lie-flat path to Rome exists at ~152k each way (~608k for two round-trip). It's real and bookable — the catch is points cost (~2× the ~300k-for-two budget) and tight 2-seat availability on the cheap October dates. May 2027 is the better window for two seats together."
+  },
+
   footer: "Nothing is booked. The lie-flat cabin checks here proved unreliable — re-confirm the transatlantic leg is a true flat bed on the airline site before booking. Award space changes hourly; re-check right before you transfer points (transfers can't be undone).",
 
   ashley: {
