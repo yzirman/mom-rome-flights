@@ -146,33 +146,35 @@ const DATA = {
       { air: "Air France", route: "JFK 21:30 → CDG → FCO 14:25 +1", dur: "10h55", plane: "AF flat-bed widebody", miles: "232,000", seat: "2+ seats ✓" },
       { air: "KLM", route: "JFK 16:40 → AMS → FCO 09:35 +1", dur: "10h55", plane: "KLM widebody (777/787)", miles: "364,000", seat: "2 seats ✓" }
     ],
+    bonus: "💳 Amex → Flying Blue 25% transfer bonus is LIVE through June 30, 2026 — 1,000 Amex points = 1,250 Flying Blue miles. So your real Amex cost is the miles ÷ 1.25 (the 'Amex' column below). Transfer Ben's Amex before June 30 to lock it in.",
     outbound: [
-      { date: "Mon Oct 12", each: "142,500", two: "285,000", tag: "cheapest" },
-      { date: "Sun Oct 11", each: "152,000", two: "304,000" },
-      { date: "Tue Oct 13", each: "152,000", two: "304,000" },
-      { date: "Wed Oct 14", each: "152,000", two: "304,000" }
+      { date: "Mon Oct 12", each: "142,500", two: "285,000", amex: "228,000", tag: "cheapest" },
+      { date: "Sun Oct 11", each: "152,000", two: "304,000", amex: "243,200" },
+      { date: "Tue Oct 13", each: "152,000", two: "304,000", amex: "243,200" },
+      { date: "Wed Oct 14", each: "152,000", two: "304,000", amex: "243,200" }
     ],
     returns: [
-      { date: "Wed Oct 21", each: "90,000", two: "180,000", tag: "cheapest" },
-      { date: "Tue Oct 20", each: "148,000", two: "296,000" },
-      { date: "Mon Oct 19", each: "148,000", two: "296,000" },
-      { date: "Thu Oct 22", each: "148,000", two: "296,000" }
+      { date: "Wed Oct 21", each: "90,000", two: "180,000", amex: "144,000", tag: "cheapest" },
+      { date: "Tue Oct 20", each: "148,000", two: "296,000", amex: "236,800" },
+      { date: "Mon Oct 19", each: "148,000", two: "296,000", amex: "236,800" },
+      { date: "Thu Oct 22", each: "148,000", two: "296,000", amex: "236,800" }
     ],
-    roundtrip: "🔁 BEST ROUND TRIP FOR TWO (9 nights, both weekday departures): out Mon Oct 12 (285,000) + back Wed Oct 21 (180,000) = 465,000 miles for two + ~$1,628 taxes (≈232,500 miles each round-trip). Typical non-bargain dates run ~600,000 for two.",
+    roundtrip: "🔁 BEST ROUND TRIP FOR TWO (9 nights, both weekday departures): out Mon Oct 12 + back Wed Oct 21 = 465,000 Flying Blue miles for two = ONLY ~372,000 Amex points for two after the 25% bonus + ~$1,628 taxes. Typical non-bargain dates ≈ 600,000 miles (~480,000 Amex) for two.",
     maycompare: "📅 OCTOBER vs MAY 2027: May has 2-seat space open every day, but it's a flat ~152,000 each (~304,000 for two) BOTH directions with no bargain days — so a May round trip is ~600,000 for two. October wins on value because of those two standout days (Oct 12 out, Oct 21 back). (May figure is from the per-person May award pricing pulled live; AF's 2-passenger calendar widget jammed on the re-run, but 1-passenger × 2 = the 2-passenger total exactly, as October confirmed.)",
-    bottom: "BOTTOM LINE: 2 business seats together to Rome ARE bookable, confirmed live. Best value = fly Mon Oct 12, return Wed Oct 21 → 465,000 miles for two round-trip + ~$1,628 tax, all on Air France flat beds across the Atlantic. It's the real lie-flat Italy option; the trade-off is points cost vs. London's 45k Avios (London is still ~5× cheaper on points)."
+    bottom: "BOTTOM LINE: 2 business seats together to Rome ARE bookable, confirmed live. Best value = fly Mon Oct 12, return Wed Oct 21 → 465,000 Flying Blue miles (~372,000 Amex points after the 25% bonus) for two round-trip + ~$1,628 tax, all on Air France flat beds across the Atlantic. It's the real lie-flat Italy option; the trade-off is points cost vs. London."
   },
 
   london: {
     headline: "🇬🇧 London — cheapest lie-flat option (nonstop, no stopover)",
-    sub: "NYC → London nonstop, business, lie-flat guaranteed (nonstop = no mixed-cabin trap). By far the cheapest on points; the cost is UK departure taxes. Prices per person, EACH WAY.",
+    sub: "NYC → London nonstop, business, lie-flat guaranteed (nonstop = no mixed-cabin trap). By far the cheapest on points; the cost is UK departure taxes. Prices per person, EACH WAY. 'Amex' = your real Amex cost after current transfer bonuses.",
+    bonus: "💳 Bonuses right now: Amex → Avios (British Airways / Qatar) = NO bonus, transfers 1:1. Amex → Virgin Atlantic = 30% bonus through July 31, 2026 (1,000 Amex = 1,300 Virgin points), so Virgin's real Amex cost is its points ÷ 1.30.",
     flights: [
-      { air: "British Airways", route: "JFK → London Heathrow (nonstop, ~7h)", plane: "777 / A380 flat bed", miles: "45,000 Avios", seat: "weekday dates: Oct 5, 6, 12, 13, 19, 20, 21" },
-      { air: "Virgin Atlantic", route: "JFK → London Heathrow (nonstop, ~7h)", plane: "A350 / A330 flat bed", miles: "47,500–84,000 pts", seat: "cheapest in May (47,500)" },
-      { air: "Qatar (Avios)", route: "JFK → London Heathrow (nonstop)", plane: "A380 flat bed", miles: "88,000 Avios", seat: "available" }
+      { air: "British Airways", route: "JFK → London Heathrow (nonstop, ~7h)", plane: "777 / A380 flat bed", miles: "45,000 Avios", amex: "45,000 Amex (1:1)", seat: "weekday: Oct 5, 6, 12, 13, 19, 20, 21" },
+      { air: "Virgin Atlantic", route: "JFK → London Heathrow (nonstop, ~7h)", plane: "A350 / A330 flat bed", miles: "47,500–84,000 pts", amex: "~36,500–64,600 Amex (30% bonus)", seat: "cheapest in May (47,500)" },
+      { air: "Qatar (Avios)", route: "JFK → London Heathrow (nonstop)", plane: "A380 flat bed", miles: "88,000 Avios", amex: "88,000 Amex (1:1)", seat: "available" }
     ],
     calendar: "Mom flies weekdays only — BA 45k dates above are all Shabbat-safe. From Boston (Ashley): BA A380 also 45,000 Avios, wide open.",
-    bottom: "BEST VALUE OVERALL: ~90,000 Avios round-trip per person on BA (≈180k for two) + ~$700–1,000/person UK tax. Nonstop, lie-flat, weekday dates for Mom. ~5× cheaper on points than Rome — the catch is just the high UK taxes."
+    bottom: "BEST VALUE OVERALL: BA at 45,000 Avios each way = 90,000 Amex points round-trip per person (≈180k for two, 1:1, no bonus). OR Virgin Atlantic in May at ~36,500 Amex each way after the 30% bonus — even cheaper on Amex. Either way nonstop, lie-flat, weekday dates for Mom + ~$700–1,000/person UK tax. Still ~half the Amex points of Rome."
   },
 
   footer: "Nothing is booked. Award space changes hourly — re-confirm the flight is a true lie-flat business seat on the airline site and re-check availability right before you transfer points (transfers can't be undone).",

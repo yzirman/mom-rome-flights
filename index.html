@@ -103,7 +103,7 @@
   <div id="ash-section" style="display:none"></div>
   <footer id="foot"></footer>
 </div>
-<script src="data.js?v=20260623m"></script>
+<script src="data.js?v=20260623n"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 
@@ -111,7 +111,8 @@ function dateTable(title,rows){
   const trs=rows.map(d=>`<tr style="border-top:1px solid var(--line)">
     <td style="padding:7px 10px;font-weight:700;color:var(--ink);white-space:nowrap">${d.date}${d.tag?` <span style="font-size:11px;font-weight:700;color:var(--good)">★ ${d.tag}</span>`:''}</td>
     <td style="padding:7px 10px;color:var(--mut);font-variant-numeric:tabular-nums;white-space:nowrap">${d.each} <span style="font-size:11px">each</span></td>
-    <td style="padding:7px 10px;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap">${d.two} <span style="font-size:11px;color:var(--mut)">for two</span></td></tr>`).join('');
+    <td style="padding:7px 10px;font-weight:600;color:var(--mut);font-variant-numeric:tabular-nums;white-space:nowrap">${d.two} <span style="font-size:11px">miles/two</span></td>
+    ${d.amex?`<td style="padding:7px 10px;font-weight:800;color:var(--good);font-variant-numeric:tabular-nums;white-space:nowrap">${d.amex} <span style="font-size:11px;color:var(--mut)">Amex/two ✦</span></td>`:''}</tr>`).join('');
   return `<div style="margin:12px 0 4px;font-size:12.5px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.4px">${title}</div>`
     +`<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;font-size:13.5px"><tbody>${trs}</tbody></table></div>`;
 }
@@ -121,9 +122,10 @@ function optionCard(r,mountId){
   const rows=r.flights.map(f=>`<tr style="border-top:1px solid var(--line)">
     <td style="padding:8px 10px;font-weight:700;color:var(--ink);vertical-align:top">${f.air}</td>
     <td style="padding:8px 10px;color:var(--ink)">${f.route}<div style="font-size:12px;color:var(--mut);margin-top:2px">${f.dur?f.dur+' · ':''}${f.plane}</div></td>
-    <td style="padding:8px 10px;white-space:nowrap;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;vertical-align:top">${f.miles}</td>
+    <td style="padding:8px 10px;white-space:nowrap;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;vertical-align:top">${f.miles}${f.amex?`<div style="font-size:11px;font-weight:700;color:var(--good);margin-top:2px">${f.amex}</div>`:''}</td>
     <td style="padding:8px 10px;font-size:12px;font-weight:700;vertical-align:top;color:${(f.seat||'').includes('1 seat')?'var(--warn)':'var(--good)'}">${f.seat||''}</td></tr>`).join('');
   c.innerHTML=`<h2>${r.headline}</h2><p style="color:var(--mut);font-size:13.5px">${r.sub}</p>`
+    +(r.bonus?`<p style="background:rgba(79,140,255,.10);border:1px solid rgba(79,140,255,.4);border-radius:8px;padding:10px 12px;font-size:13px;color:var(--ink);margin:10px 0">${r.bonus}</p>`:'')
     +`<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;margin:12px 0;font-size:13.5px"><tbody>${rows}</tbody></table></div>`
     +(r.outbound?dateTable('📅 Outbound · NYC → Rome — pick a date',r.outbound):'')
     +(r.returns?dateTable('📅 Return · Rome → NYC — pick a date',r.returns):'')
