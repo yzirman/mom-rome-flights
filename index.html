@@ -13,6 +13,7 @@
   header{padding:34px 0 6px}
   h1{margin:0 0 4px;font-size:26px;letter-spacing:-.5px}
   .sub{color:var(--mut);font-size:14px;margin:0}
+  .optnote{color:var(--mut);font-size:12.5px;line-height:1.6;margin:18px 2px 0}
   .grid{display:grid;gap:14px}@media(min-width:680px){.grid.two{grid-template-columns:1fr 1fr}}
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:15px}
   .card.star{border-color:rgba(245,196,81,.45);box-shadow:0 0 0 1px rgba(245,196,81,.16) inset}
@@ -93,56 +94,51 @@
 <div class="wrap">
   <header>
     <h1>✈️ Business-class award trips · the options</h1>
-    <p class="sub">Confirmed lie-flat options on Amex points · nothing booked — re-check availability before transferring</p>
+    <p class="sub">Each option below: the flight, when it leaves, and what it costs in points. All lie-flat business · nothing booked.</p>
   </header>
   <div class="who"><button id="who-mom" class="on">Mom &amp; Ben</button><button id="who-ash">Ashley + Emrey</button></div>
   <div id="mom-section">
-    <div id="london"></div>
-    <div id="rome-af"></div>
+    <div id="mom-opts"></div>
+    <p class="optnote" id="mom-note"></p>
   </div>
-  <div id="ash-section" style="display:none"></div>
+  <div id="ash-section" style="display:none">
+    <div id="ash-opts"></div>
+    <p class="optnote" id="ash-note"></p>
+  </div>
   <footer id="foot"></footer>
 </div>
-<script src="data.js?v=20260623q"></script>
+<script src="data.js?v=20260623r"></script>
 <script>
-const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+const $=s=>document.querySelector(s);
 
-function dateTable(title,rows){
-  const trs=rows.map(d=>`<tr style="border-top:1px solid var(--line)">
-    <td style="padding:7px 10px;font-weight:700;color:var(--ink);white-space:nowrap">${d.date}${d.tag?` <span style="font-size:11px;font-weight:700;color:var(--good)">★ ${d.tag}</span>`:''}</td>
-    <td style="padding:7px 10px;color:var(--mut);font-variant-numeric:tabular-nums;white-space:nowrap">${d.each} <span style="font-size:11px">each</span></td>
-    <td style="padding:7px 10px;font-weight:600;color:var(--mut);font-variant-numeric:tabular-nums;white-space:nowrap">${d.two} <span style="font-size:11px">miles/two</span></td>
-    ${d.amex?`<td style="padding:7px 10px;font-weight:800;color:var(--good);font-variant-numeric:tabular-nums;white-space:nowrap">${d.amex} <span style="font-size:11px;color:var(--mut)">Amex/two ✦</span></td>`:''}</tr>`).join('');
-  return `<div style="margin:12px 0 4px;font-size:12.5px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.4px">${title}</div>`
-    +`<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;font-size:13.5px"><tbody>${trs}</tbody></table></div>`;
+function literalCard(o){
+  const badge=o.badge?`<span style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--gold);background:rgba(245,196,81,.16);padding:2px 8px;border-radius:5px">${o.badge}</span>`:'';
+  return `<div class="card" style="margin-top:14px">
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px">
+      <span style="font-size:17px;font-weight:800;color:var(--ink)">${o.flag} ${o.title}</span>
+      <span style="font-size:12.5px;color:var(--mut)">· ${o.tag}</span>
+      ${badge}
+    </div>
+    <div style="font-size:14px;color:var(--ink);margin:4px 0">🛫 ${o.out}</div>
+    ${o.back?`<div style="font-size:14px;color:var(--ink);margin:4px 0">🛬 ${o.back}</div>`:''}
+    ${o.when?`<div style="font-size:13px;color:var(--mut);margin:4px 0">📅 ${o.when}</div>`:''}
+    <div style="font-size:13px;color:var(--mut);margin:4px 0">💺 ${o.plane}</div>
+    <div style="margin:11px 0 7px;padding:11px 13px;background:var(--card2);border:1px solid var(--line);border-radius:10px">
+      <div style="font-size:16px;font-weight:800;color:var(--ink)">💰 ${o.cost}</div>
+      <div style="font-size:13.5px;font-weight:700;color:var(--good);margin-top:4px">${o.amex}</div>
+      <div style="font-size:12.5px;color:var(--mut);margin-top:2px">${o.tax}</div>
+    </div>
+    <div style="font-size:13px;color:var(--mut)">🎫 ${o.seats}</div>
+  </div>`;
 }
-function optionCard(r,mountId){
-  if(!r)return;
-  const c=ce('div','card info');c.style.marginTop='28px';
-  const rows=r.flights.map(f=>`<tr style="border-top:1px solid var(--line)">
-    <td style="padding:8px 10px;font-weight:700;color:var(--ink);vertical-align:top">${f.air}</td>
-    <td style="padding:8px 10px;color:var(--ink)">${f.route}<div style="font-size:12px;color:var(--mut);margin-top:2px">${f.dur?f.dur+' · ':''}${f.plane}</div></td>
-    <td style="padding:8px 10px;white-space:nowrap;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;vertical-align:top">${f.miles}${f.amex?`<div style="font-size:11px;font-weight:700;color:var(--good);margin-top:2px">${f.amex}</div>`:''}</td>
-    <td style="padding:8px 10px;font-size:12px;font-weight:700;vertical-align:top;color:${/1 seat|✗|economy|verify|trap/i.test(f.seat||'')?'var(--warn)':'var(--good)'}">${f.seat||''}</td></tr>`).join('');
-  c.innerHTML=`<h2>${r.headline}</h2><p style="color:var(--mut);font-size:13.5px">${r.sub}</p>`
-    +(r.bonus?`<p style="background:rgba(79,140,255,.10);border:1px solid rgba(79,140,255,.4);border-radius:8px;padding:10px 12px;font-size:13px;color:var(--ink);margin:10px 0">${r.bonus}</p>`:'')
-    +`<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;margin:12px 0;font-size:13.5px"><tbody>${rows}</tbody></table></div>`
-    +(r.outbound?dateTable('📅 Outbound · NYC → Rome — pick a date',r.outbound):'')
-    +(r.returns?dateTable('📅 Return · Rome → NYC — pick a date',r.returns):'')
-    +(r.calendar?`<p style="font-size:13px;color:var(--mut);margin:8px 0">${r.calendar}</p>`:'')
-    +(r.roundtrip?`<p style="background:rgba(57,192,122,.10);border:1px solid rgba(57,192,122,.4);border-radius:8px;padding:10px 12px;font-size:13.5px;color:var(--ink);font-weight:600;margin:10px 0">${r.roundtrip}</p>`:'')
-    +(r.maycompare?`<p style="font-size:13px;color:var(--mut);margin:8px 0">${r.maycompare}</p>`:'')
-    +(r.note?`<p class="warn" style="font-size:13px">${r.note}</p>`:'')
-    +`<p style="font-weight:700;color:var(--ink);margin-top:12px;font-size:14px">${r.bottom}</p>`;
-  $(mountId).appendChild(c);
+function renderOpts(arr,mountId,noteId,note){
+  $(mountId).innerHTML=arr.map(literalCard).join('');
+  if(note) $(noteId).textContent=note;
 }
-optionCard(DATA.london,'#london');
-optionCard(DATA.rome_af,'#rome-af');
-optionCard(DATA.ashley,'#ash-section');
+renderOpts(DATA.mom_opts,'#mom-opts','#mom-note',DATA.mom_note);
+renderOpts(DATA.ash_opts,'#ash-opts','#ash-note',DATA.ash_note);
 $('#foot').textContent=DATA.footer;
 
-function renderAshley(){}
-renderAshley();
 $('#who-mom').onclick=()=>{$('#who-mom').classList.add('on');$('#who-ash').classList.remove('on');$('#mom-section').style.display='';$('#ash-section').style.display='none';window.scrollTo(0,0);};
 $('#who-ash').onclick=()=>{$('#who-ash').classList.add('on');$('#who-mom').classList.remove('on');$('#ash-section').style.display='';$('#mom-section').style.display='none';window.scrollTo(0,0);};
 
