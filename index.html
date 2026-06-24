@@ -103,10 +103,18 @@
   <div id="ash-section" style="display:none"></div>
   <footer id="foot"></footer>
 </div>
-<script src="data.js?v=20260623j"></script>
+<script src="data.js?v=20260623k"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 
+function dateTable(title,rows){
+  const trs=rows.map(d=>`<tr style="border-top:1px solid var(--line)">
+    <td style="padding:7px 10px;font-weight:700;color:var(--ink);white-space:nowrap">${d.date}${d.tag?` <span style="font-size:11px;font-weight:700;color:var(--good)">★ ${d.tag}</span>`:''}</td>
+    <td style="padding:7px 10px;color:var(--mut);font-variant-numeric:tabular-nums;white-space:nowrap">${d.each} <span style="font-size:11px">each</span></td>
+    <td style="padding:7px 10px;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap">${d.two} <span style="font-size:11px;color:var(--mut)">for two</span></td></tr>`).join('');
+  return `<div style="margin:12px 0 4px;font-size:12.5px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.4px">${title}</div>`
+    +`<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;font-size:13.5px"><tbody>${trs}</tbody></table></div>`;
+}
 function optionCard(r,mountId){
   if(!r)return;
   const c=ce('div','card info');c.style.marginTop='28px';
@@ -117,6 +125,8 @@ function optionCard(r,mountId){
     <td style="padding:8px 10px;font-size:12px;font-weight:700;vertical-align:top;color:${(f.seat||'').includes('1 seat')?'var(--warn)':'var(--good)'}">${f.seat||''}</td></tr>`).join('');
   c.innerHTML=`<h2>${r.headline}</h2><p style="color:var(--mut);font-size:13.5px">${r.sub}</p>`
     +`<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;margin:12px 0;font-size:13.5px"><tbody>${rows}</tbody></table></div>`
+    +(r.outbound?dateTable('📅 Outbound · NYC → Rome — pick a date',r.outbound):'')
+    +(r.returns?dateTable('📅 Return · Rome → NYC — pick a date',r.returns):'')
     +(r.calendar?`<p style="font-size:13px;color:var(--mut);margin:8px 0">${r.calendar}</p>`:'')
     +(r.roundtrip?`<p style="background:rgba(57,192,122,.10);border:1px solid rgba(57,192,122,.4);border-radius:8px;padding:10px 12px;font-size:13.5px;color:var(--ink);font-weight:600;margin:10px 0">${r.roundtrip}</p>`:'')
     +(r.maycompare?`<p style="font-size:13px;color:var(--mut);margin:8px 0">${r.maycompare}</p>`:'')
