@@ -137,12 +137,12 @@ const DATA = {
   },
 
   rome_af: {
-    headline: "🇮🇹 Rome on Air France — the real lie-flat options (checked live, logged in)",
-    sub: "NYC → Rome (FCO), business, one connection through Paris-CDG. The long transatlantic leg is an Air France flat bed; the second leg is a short hop. ✅ Re-run live for 2 PASSENGERS — 2 business seats together ARE available. Prices below are PER PERSON, one-way. Taxes ~$361/person ($722.80 for two). Award space changes hourly — re-check right before transferring points.",
-    note: "✅ 2 SEATS CONFIRMED. Searching for 2 passengers, Air France returns 2 business seats together on the AF 18:30 flight at the lowest fare. All dates shown are weekday departures (no Friday/Saturday — Shabbat-safe for Mom). Best value round trip = ~465,000 miles for two (Oct 12 out + Oct 21 back); other date pairings run closer to ~600,000 for two. Worth it for guaranteed Italy lie-flat, but it is the pricey option vs. London on points.",
+    headline: "🇮🇹 Rome — Air France, lie-flat via Paris",
+    sub: "NYC → Rome (FCO), business, one stop at Paris-CDG. Air France flat bed across the Atlantic, short hop into Rome. 2 business seats together available, weekday departures. Prices per person, one-way; taxes ~$361/person ($722.80 for two).",
+    note: "Lowest 2-seat fare is the AF 18:30 departure. All dates shown are weekday (no Friday/Saturday). Award space changes daily — re-check before transferring.",
     flights: [
-      { air: "Air France", route: "JFK 18:30 → CDG → FCO 11:25 +1", dur: "10h55", plane: "AF flat-bed widebody across the Atlantic — LOWEST 2-seat fare", miles: "152,000", seat: "2 seats ✓" },
-      { air: "Air France", route: "JFK 01:00 → CDG → FCO 17:30", dur: "10h30", plane: "Airbus A350-900 (confirmed flat bed)", miles: "232,000", seat: "3 seats ✓" },
+      { air: "Air France", route: "JFK 18:30 → CDG → FCO 11:25 +1", dur: "10h55", plane: "A350 flat bed across the Atlantic · lowest 2-seat fare", miles: "152,000", seat: "2 seats ✓" },
+      { air: "Air France", route: "JFK 01:00 → CDG → FCO 17:30", dur: "10h30", plane: "Airbus A350-900 flat bed", miles: "232,000", seat: "3 seats ✓" },
       { air: "Air France", route: "JFK 21:30 → CDG → FCO 14:25 +1", dur: "10h55", plane: "AF flat-bed widebody", miles: "232,000", seat: "2+ seats ✓" },
       { air: "KLM", route: "JFK 16:40 → AMS → FCO 09:35 +1", dur: "10h55", plane: "KLM widebody (777/787)", miles: "364,000", seat: "2 seats ✓" }
     ],
@@ -159,14 +159,14 @@ const DATA = {
       { date: "Mon Oct 19", each: "148,000", two: "296,000", amex: "236,800" },
       { date: "Thu Oct 22", each: "148,000", two: "296,000", amex: "236,800" }
     ],
-    roundtrip: "🔁 BEST ROUND TRIP FOR TWO (9 nights, both weekday departures): out Mon Oct 12 + back Wed Oct 21 = 465,000 Flying Blue miles for two = ONLY ~372,000 Amex points for two after the 25% bonus + ~$1,628 taxes. Typical non-bargain dates ≈ 600,000 miles (~480,000 Amex) for two.",
-    maycompare: "📅 OCTOBER vs MAY 2027: May has 2-seat space open every day, but it's a flat ~152,000 each (~304,000 for two) BOTH directions with no bargain days — so a May round trip is ~600,000 for two. October wins on value because of those two standout days (Oct 12 out, Oct 21 back). (May figure is from the per-person May award pricing pulled live; AF's 2-passenger calendar widget jammed on the re-run, but 1-passenger × 2 = the 2-passenger total exactly, as October confirmed.)",
-    bottom: "BOTTOM LINE: 2 business seats together to Rome ARE bookable, confirmed live. Best value = fly Mon Oct 12, return Wed Oct 21 → 465,000 Flying Blue miles (~372,000 Amex points after the 25% bonus) for two round-trip + ~$1,628 tax, all on Air France flat beds across the Atlantic. It's the real lie-flat Italy option; the trade-off is points cost vs. London."
+    roundtrip: "🔁 Best round-trip pairing for two (9 nights, weekday departures): out Mon Oct 12 + back Wed Oct 21 = 465,000 Flying Blue miles (~372,000 Amex after the 25% bonus) + ~$1,628 taxes. Most other date pairs ≈ 600,000 miles for two.",
+    maycompare: "📅 May 2027: 2 seats open every day at a flat ~152,000 each (~304,000 for two) in both directions — round trip ≈ 600,000 for two. October is cheaper because of the Oct 12 / Oct 21 standout days.",
+    bottom: "Lie-flat into Rome on Amex points: ~465,000 Flying Blue miles for two round-trip (~372,000 Amex after the 25% bonus) + ~$1,628 tax via Paris-CDG — best on Oct 12 out / Oct 21 back. Higher points cost than London, but lands directly in Italy."
   },
 
   london: {
     headline: "🇬🇧 London — cheapest lie-flat option (nonstop, no stopover)",
-    sub: "NYC → London nonstop, business, lie-flat guaranteed (nonstop = no mixed-cabin trap). By far the cheapest on points; the cost is UK departure taxes. Prices per person, EACH WAY. 'Amex' = your real Amex cost after current transfer bonuses.",
+    sub: "NYC → London nonstop, business, lie-flat (nonstop = no mixed-cabin risk). Cheapest European lie-flat on points; cost is UK departure taxes. Prices per person, EACH WAY. 'Amex' = real Amex cost after current transfer bonuses.",
     bonus: "💳 Bonuses right now: Amex → Avios (British Airways / Qatar) = NO bonus, transfers 1:1. Amex → Virgin Atlantic = 30% bonus through July 31, 2026 (1,000 Amex = 1,300 Virgin points), so Virgin's real Amex cost is its points ÷ 1.30.",
     flights: [
       { air: "British Airways", route: "JFK → London Heathrow (nonstop, ~7h)", plane: "777 / A380 flat bed", miles: "45,000 Avios", amex: "45,000 Amex (1:1)", seat: "weekday: Oct 5, 6, 12, 13, 19, 20, 21" },
@@ -174,24 +174,23 @@ const DATA = {
       { air: "Qatar (Avios)", route: "JFK → London Heathrow (nonstop)", plane: "A380 flat bed", miles: "88,000 Avios", amex: "88,000 Amex (1:1)", seat: "available" }
     ],
     calendar: "Mom flies weekdays only — BA 45k dates above are all Shabbat-safe. From Boston (Ashley): BA A380 also 45,000 Avios, wide open.",
-    bottom: "BEST VALUE OVERALL: BA at 45,000 Avios each way = 90,000 Amex points round-trip per person (≈180k for two, 1:1, no bonus). OR Virgin Atlantic in May at ~36,500 Amex each way after the 30% bonus — even cheaper on Amex. Either way nonstop, lie-flat, weekday dates for Mom + ~$700–1,000/person UK tax. Still ~half the Amex points of Rome."
+    bottom: "Cheapest European lie-flat on points: BA at 45,000 Avios each way = 90,000 Amex round-trip per person (180k for two, 1:1). Virgin Atlantic in May ~36,500 Amex each way after the 30% bonus. Nonstop, lie-flat, weekday dates + ~$700–1,000/person UK tax. About half the Amex points of Rome."
   },
 
   footer: "Nothing is booked. Award space changes hourly — re-confirm the flight is a true lie-flat business seat on the airline site and re-check availability right before you transfer points (transfers can't be undone).",
 
   ashley: {
-    headline: "Ashley + Emrey → Italy (broad search · any day · 5–12 nights · Oct 2026)",
-    sub: "2 in lie-flat business across the Atlantic, 2 seats together. No Shabbat limit — any day works. Live award space pulled today (Oct 2026, 2+ business seats). Prices are PER PERSON, EACH WAY. NONSTOP = guaranteed lie-flat; 1-stop = needs a seat-map check before trusting.",
-    bonus: "💳 Amex → Aeroplan = 1:1, no bonus (Amex cost = miles shown). Air France/KLM legs use Flying Blue with the LIVE 25% bonus (miles ÷ 1.25). The 45–55k Alaska/United results the search returned are NOT Amex partners — excluded.",
+    headline: "Ashley + Emrey → Italy (any day · 5–12 nights · Oct 2026)",
+    sub: "2 in lie-flat business across the Atlantic, 2 seats together, any day of week. All options below are lie-flat. Prices per person, each way.",
+    bonus: "💳 Amex → Aeroplan = 1:1 (no bonus). Amex → Emirates = 1:1. Air France legs use Flying Blue with the 25% bonus (miles ÷ 1.25).",
     flights: [
       { air: "Swiss · Aeroplan", route: "JFK → Zürich — NONSTOP (~3.5h train to Milan)", plane: "A330-300 flat bed", miles: "60,000 Aeroplan", amex: "60,000 Amex (1:1)", seat: "3 seats ✓ lie-flat" },
       { air: "Swiss · Aeroplan", route: "JFK → Geneva — NONSTOP (gateway to N. Italy)", plane: "A330-300 flat bed", miles: "60,000 Aeroplan", amex: "60,000 Amex (1:1)", seat: "2 seats ✓ lie-flat" },
       { air: "Swiss · Aeroplan", route: "EWR → Zürich — NONSTOP", plane: "A330-300 flat bed", miles: "60,000 Aeroplan", amex: "60,000 Amex (1:1)", seat: "2 seats ✓ lie-flat" },
       { air: "Emirates · Amex→Emirates", route: "JFK → Milan — NONSTOP (into Italy)", plane: "A380 flat bed (top-tier business)", miles: "100,000 Emirates", amex: "100,000 Amex (1:1)", seat: "✓ lie-flat" },
-      { air: "Air France · Flying Blue", route: "JFK → Rome (1 stop · Paris-CDG)", plane: "AF A350 flat bed across the Atlantic (business both legs)", miles: "152,000 Flying Blue", amex: "~121,600 Amex (25% bonus)", seat: "2+ seats ✓ lie-flat (verified)" },
-      { air: "❌ Aeroplan 75k Italy", route: "BOS / ATL / IAD / EWR → Rome / Milan (1 stop, Euro hub)", plane: "MIXED-CABIN TRAP — transatlantic leg books in ECONOMY (seat-map verified: BOS→Munich = Economy Class, even on the A380). NOT lie-flat.", miles: "75,000 Aeroplan", amex: "—", seat: "✗ economy ocean" }
+      { air: "Air France · Flying Blue", route: "JFK → Rome (1 stop · Paris-CDG)", plane: "AF A350 flat bed across the Atlantic, business both legs", miles: "152,000 Flying Blue", amex: "~121,600 Amex (25% bonus)", seat: "2+ seats ✓ lie-flat" }
     ],
-    note: "🔎 VERIFIED on Aeroplan (logged in): the cheap 75k Aeroplan 'business' to Italy is the mixed-cabin trap — I pulled the seat map and the Boston→Munich transatlantic leg books in ECONOMY CLASS (business only on the short Munich→Rome hop). Same trap as Mom's. So it's struck out above. The NONSTOP rows can't have this problem (no connection), and the Air France→Rome routing is AF business end-to-end (verified flat-bed A350), so those are the real lie-flat choices. Award space moves daily — re-check before transferring.",
-    bottom: "BOTTOM LINE for Ashley (after verification): the 75k Aeroplan Italy deal is a mirage — economy across the ocean. Real lie-flat choices: (1) CHEAPEST — 60,000 Aeroplan nonstop to Zürich/Geneva (~240,000 Amex for two round-trip) + a short train into Italy; (2) INTO ITALY — Air France→Rome via Paris at ~121,600 Amex each way after the 25% bonus (verified A350 flat bed), or Emirates A380 nonstop to Milan at 100,000 Amex each way. No mixed-cabin risk on any of these."
+    note: "Switzerland nonstops are the cheapest lie-flat (short train into Italy). To land in Italy directly: Emirates A380 to Milan, or Air France business via Paris to Rome. Aeroplan's 75k Italy 'business' awards route the transatlantic leg in economy, so they're not lie-flat and aren't listed. Award space changes daily — re-check before transferring.",
+    bottom: "Lie-flat options for Ashley: cheapest is 60,000 Aeroplan nonstop to Zürich/Geneva (~240,000 Amex for two round-trip) + a short train into Italy. To land in Italy directly: Air France → Rome via Paris ~121,600 Amex each way (after the 25% bonus), or Emirates A380 nonstop to Milan 100,000 Amex each way."
   }
 };
