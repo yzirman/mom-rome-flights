@@ -103,7 +103,7 @@
   <div id="ash-section" style="display:none"></div>
   <footer id="foot"></footer>
 </div>
-<script src="data.js?v=20260623n"></script>
+<script src="data.js?v=20260623o"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 
@@ -138,26 +138,10 @@ function optionCard(r,mountId){
 }
 optionCard(DATA.london,'#london');
 optionCard(DATA.rome_af,'#rome-af');
+optionCard(DATA.ashley,'#ash-section');
 $('#foot').textContent=DATA.footer;
 
-function renderAshley(){
-  const a=DATA.ashley; if(!a)return; const s=$('#ash-section'); s.innerHTML='';
-  const c=ce('div','card star');
-  const col=(label,rows)=>`<div><div class="ash-h">${label}</div>`+
-    rows.map(x=>`<div class="ash-row"><b>${x.w}</b><span>${x.a}</span></div>`).join('')+`</div>`;
-  const opt=t=>`<div class="ash-opt${t.star?' star':''}">
-    <div class="ash-opt-h"><span class="tag ${t.tagcls}">${t.tag}</span><span class="ash-opt-route">${t.route}</span></div>
-    <div class="ash-opt-d">${t.depart} → ${t.home} · ${t.nights} nights</div>
-    <div class="vline"><b style="color:var(--mut)">OUT</b> · ${t.out}</div>
-    <div class="vline"><b style="color:var(--mut)">BACK</b> · ${t.ret}</div>
-    <div class="ash-opt-p">${t.pts} · ${t.cash}</div></div>`;
-  c.innerHTML=`<div class="thead"><div class="route">${a.headline}</div></div>`
-    +`<p class="ash-sub">${a.sub}</p>`
-    +`<div class="amex">💳 ${a.play}</div>`
-    +`<div class="ash-sech">Round-trips to pick from</div>`
-    +`<div class="ash-opt-grid">${a.trips.map(opt).join('')}</div>`;
-  s.appendChild(c);
-}
+function renderAshley(){}
 renderAshley();
 $('#who-mom').onclick=()=>{$('#who-mom').classList.add('on');$('#who-ash').classList.remove('on');$('#mom-section').style.display='';$('#ash-section').style.display='none';window.scrollTo(0,0);};
 $('#who-ash').onclick=()=>{$('#who-ash').classList.add('on');$('#who-mom').classList.remove('on');$('#ash-section').style.display='';$('#mom-section').style.display='none';window.scrollTo(0,0);};

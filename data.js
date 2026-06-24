@@ -180,45 +180,20 @@ const DATA = {
   footer: "Nothing is booked. Award space changes hourly — re-confirm the flight is a true lie-flat business seat on the airline site and re-check availability right before you transfer points (transfers can't be undone).",
 
   ashley: {
-    headline: "Ashley + Emrey → Rome / Milan",
-    sub: "2 in lie-flat business · flexible dates — pick from the map below",
-    play: "The play: Amex Membership Rewards → Aeroplan = 75,000 miles each way in lie-flat business (Lufthansa / Swiss widebody via Frankfurt, Zürich or Munich). ≈ 300,000 Amex points for the two of you + ~CA$530–700 taxes. Delta One is ruled out on points — ~513,000 SkyMiles round-trip per person (~1M+ for two), and the Delta One \"sale\" is summer-only (Jun–Aug).",
-    trips: [
-      {tag: "★ Most seats", tagcls: "best", star: true, route: "JFK ⇄ Rome", depart: "Mon Oct 26", home: "Mon Nov 2", nights: 7,
-       out: "Swiss A330 via Zürich · 7 seats", ret: "ITA + Swiss via Geneva · 5 seats", pts: "300,000 · Amex → Aeroplan", cash: "~CA$600 / two"},
-      {tag: "Boston — home", tagcls: "alt", route: "BOS ⇄ Rome", depart: "Tue Oct 13", home: "Tue Oct 20", nights: 7,
-       out: "Lufthansa 747 via Frankfurt · 3 seats", ret: "ITA + Swiss via Zürich · 2 seats", pts: "300,000 · Amex → Aeroplan", cash: "~CA$600 / two"},
-      {tag: "Early Oct", tagcls: "alt", route: "JFK ⇄ Rome", depart: "Tue Oct 13", home: "Wed Oct 21", nights: 8,
-       out: "Lufthansa A340 via Frankfurt · 4 seats", ret: "Swiss via Zürich · 2 seats", pts: "300,000 · Amex → Aeroplan", cash: "~CA$600 / two"},
-      {tag: "Mid Oct", tagcls: "alt", route: "JFK ⇄ Rome", depart: "Mon Oct 19", home: "Tue Oct 27", nights: 8,
-       out: "Swiss via Zürich · 4 seats", ret: "ITA + Swiss via Geneva · 3 seats", pts: "300,000 · Amex → Aeroplan", cash: "~CA$600 / two"},
-      {tag: "Chicago", tagcls: "alt", route: "ORD ⇄ Rome", depart: "Mon Oct 26", home: "Tue Nov 3", nights: 8,
-       out: "Lufthansa via Munich · 7 seats", ret: "ITA + Lufthansa via Frankfurt · 9 seats", pts: "300,000 · Amex → Aeroplan", cash: "~CA$600 / two"},
-      {tag: "✨ A380 splurge", tagcls: "over", route: "JFK ⇄ Milan", depart: "Thu Oct 15", home: "Thu Oct 22", nights: 7,
-       out: "Emirates A380 nonstop · 7 seats", ret: "Emirates A380 nonstop · 7 seats", pts: "400,000 · Amex → Emirates", cash: "~US$1,700 / two"}
+    headline: "Ashley + Emrey → Italy (broad search · any day · 5–12 nights · Oct 2026)",
+    sub: "2 in lie-flat business across the Atlantic, 2 seats together. No Shabbat limit — any day works. Live award space pulled today (Oct 2026, 2+ business seats). Prices are PER PERSON, EACH WAY. NONSTOP = guaranteed lie-flat; 1-stop = needs a seat-map check before trusting.",
+    bonus: "💳 Amex → Aeroplan has NO transfer bonus (1:1), so the Amex cost = the miles shown. (Flying Blue at 25% / Virgin at 30% don't help here — Italy's cheap space is Star Alliance via Aeroplan.) The 45–55k Alaska/United options the search also returned are NOT Amex partners, so they're excluded.",
+    flights: [
+      { air: "Swiss · Aeroplan", route: "JFK → Zürich — NONSTOP (~3.5h train to Milan)", plane: "A330-300 flat bed", miles: "60,000 Aeroplan", amex: "60,000 Amex (1:1)", seat: "3 seats ✓ lie-flat" },
+      { air: "Swiss · Aeroplan", route: "JFK → Geneva — NONSTOP (gateway to N. Italy)", plane: "A330-300 flat bed", miles: "60,000 Aeroplan", amex: "60,000 Amex (1:1)", seat: "2 seats ✓ lie-flat" },
+      { air: "Swiss · Aeroplan", route: "EWR → Zürich — NONSTOP", plane: "A330-300 flat bed", miles: "60,000 Aeroplan", amex: "60,000 Amex (1:1)", seat: "2 seats ✓ lie-flat" },
+      { air: "Lufthansa · Aeroplan", route: "BOS → Rome (1 stop · Frankfurt)", plane: "A380 transatlantic + A320 — verify A380 leg is business", miles: "75,000 Aeroplan", amex: "75,000 Amex (1:1)", seat: "4 seats · verify" },
+      { air: "Star Alliance · Aeroplan", route: "ATL → Rome (1 stop · Euro hub)", plane: "A330 widebody transatlantic — verify lie-flat", miles: "75,000 Aeroplan", amex: "75,000 Amex (1:1)", seat: "8 seats · verify" },
+      { air: "Star Alliance · Aeroplan", route: "IAD → Rome / Milan (1 stop)", plane: "A340-600 transatlantic — verify lie-flat", miles: "75,000 Aeroplan", amex: "75,000 Amex (1:1)", seat: "9 seats · verify" },
+      { air: "Star Alliance · Aeroplan", route: "EWR → Rome / Milan / Venice / Naples (1 stop)", plane: "A330 transatlantic — verify lie-flat", miles: "75,000 Aeroplan", amex: "75,000 Amex (1:1)", seat: "3–5 seats · verify" },
+      { air: "Emirates · Amex→Emirates", route: "JFK → Milan — NONSTOP (splurge)", plane: "A380 flat bed (top-tier business)", miles: "100,000 Emirates", amex: "100,000 Amex (1:1)", seat: "✓ lie-flat" }
     ],
-    out_label: "Outbound · US → Rome (FCO) / Milan (MXP)",
-    out: [
-      {w: "Oct 4–6", a: "EWR, IAD, JFK"},
-      {w: "Oct 11–14", a: "BOS, JFK, EWR, IAD"},
-      {w: "Oct 18–21", a: "BOS, JFK, EWR, IAD, ORD"},
-      {w: "Oct 25–28", a: "ATL, JFK, EWR, IAD, ORD"},
-      {w: "Nov 1–4", a: "EWR, ORD"}
-    ],
-    ret_label: "Return · Rome / Milan → US",
-    ret: [
-      {w: "Oct 1–8", a: "JFK, IAD"},
-      {w: "Oct 12–15", a: "BOS, JFK, EWR, IAD, ORD"},
-      {w: "Oct 20–22", a: "BOS, JFK, EWR, IAD, ORD"},
-      {w: "Oct 27–29", a: "ATL, JFK, EWR, IAD"},
-      {w: "Nov 2–4", a: "BOS, JFK, EWR, IAD, ORD, ATL"}
-    ],
-    gateways: "Gateways: JFK, EWR, Boston, Washington (IAD), Chicago (ORD), Atlanta — Lufthansa / Swiss widebody via Frankfurt, Zürich or Munich. Pick (almost) any outbound + any return ~7–12 days later; both legs at 75k.",
-    extras: [
-      "✈️ Emirates A380, JFK → Milan nonstop — 100k business (Amex → Emirates), Oct 15/16. A spectacular plane if he wants something special.",
-      "🇫🇷 Flying Blue via Paris — 90k, and the 25% Amex bonus (ends June 30) drops it to ~72k effective.",
-      "🚫 Detroit doesn't work on points (Delta hub, no Star-partner space) — position to Chicago (ORD) or JFK and start the award there."
-    ],
-    caveat: "Same trap as Mom's trip: a cheap \"business\" fare can hide an economy transatlantic leg. The Lufthansa / Swiss widebody routings above are the reliably-clean ones — confirm the long leg is lie-flat at booking. Award space moves daily; this map is as of Jun 15."
+    note: "✅ The NONSTOP rows are confirmed lie-flat (no connection = no mixed-cabin trap). ⚠️ The 75k Italy rows are 1-stop via a European hub — same routing family that hid an economy transatlantic leg on Mom's trip, so I still need to seat-map-verify each one is a true flat bed across the ocean. Log into Aeroplan (aircanada.com) and I'll confirm the BOS→Rome A380 and the others one by one. Award space moves daily — re-check before transferring.",
+    bottom: "BOTTOM LINE for Ashley: cheapest GUARANTEED lie-flat = 60,000 Aeroplan nonstop to Zürich/Geneva (120k each round-trip, ~240,000 Amex for the two of you) + a short train into Italy. Cheapest into an Italian airport = 75,000 Aeroplan (1-stop, ~300,000 Amex for two — pending the lie-flat seat-map check). All 1:1 on Amex (no Aeroplan bonus). Emirates A380 nonstop to Milan is the 100k splurge."
   }
 };
