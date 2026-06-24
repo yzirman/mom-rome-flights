@@ -152,7 +152,19 @@ const DATA = {
     bottom: "BOTTOM LINE: 2 business seats together to Rome ARE bookable, confirmed live. Best value = fly Mon Oct 12, return Wed Oct 21 → 465,000 miles for two round-trip + ~$1,628 tax, all on Air France flat beds across the Atlantic. It's the real lie-flat Italy option; the trade-off is points cost vs. London's 45k Avios (London is still ~5× cheaper on points)."
   },
 
-  footer: "Nothing is booked. The lie-flat cabin checks here proved unreliable — re-confirm the transatlantic leg is a true flat bed on the airline site before booking. Award space changes hourly; re-check right before you transfer points (transfers can't be undone).",
+  london: {
+    headline: "🇬🇧 London — cheapest lie-flat option (nonstop, no stopover)",
+    sub: "NYC → London nonstop, business, lie-flat guaranteed (nonstop = no mixed-cabin trap). By far the cheapest on points; the cost is UK departure taxes. Prices per person, EACH WAY.",
+    flights: [
+      { air: "British Airways", route: "JFK → London Heathrow (nonstop, ~7h)", plane: "777 / A380 flat bed", miles: "45,000 Avios", seat: "weekday dates: Oct 5, 6, 12, 13, 19, 20, 21" },
+      { air: "Virgin Atlantic", route: "JFK → London Heathrow (nonstop, ~7h)", plane: "A350 / A330 flat bed", miles: "47,500–84,000 pts", seat: "cheapest in May (47,500)" },
+      { air: "Qatar (Avios)", route: "JFK → London Heathrow (nonstop)", plane: "A380 flat bed", miles: "88,000 Avios", seat: "available" }
+    ],
+    calendar: "Mom flies weekdays only — BA 45k dates above are all Shabbat-safe. From Boston (Ashley): BA A380 also 45,000 Avios, wide open.",
+    bottom: "BEST VALUE OVERALL: ~90,000 Avios round-trip per person on BA (≈180k for two) + ~$700–1,000/person UK tax. Nonstop, lie-flat, weekday dates for Mom. ~5× cheaper on points than Rome — the catch is just the high UK taxes."
+  },
+
+  footer: "Nothing is booked. Award space changes hourly — re-confirm the flight is a true lie-flat business seat on the airline site and re-check availability right before you transfer points (transfers can't be undone).",
 
   ashley: {
     headline: "Ashley + Emrey → Rome / Milan",

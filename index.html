@@ -92,103 +92,42 @@
 <body>
 <div class="wrap">
   <header>
-    <h1>✈️ Rome 2026 · business-class award trips</h1>
-    <p class="sub">Two trips · business class · ⚠️ nothing booked — re-confirm lie-flat before booking</p>
+    <h1>✈️ Business-class award trips · the options</h1>
+    <p class="sub">Confirmed lie-flat options on Amex points · nothing booked — re-check availability before transferring</p>
   </header>
-  <div class="who"><button id="who-mom" class="on">Mom &amp; Ben → Rome</button><button id="who-ash">Ashley → Rome / Milan</button></div>
+  <div class="who"><button id="who-mom" class="on">Mom &amp; Ben</button><button id="who-ash">Ashley + Emrey</button></div>
   <div id="mom-section">
-    <div id="plan"></div>
-    <div class="note" id="points-note"></div>
-    <h3 class="section-h">Rome — candidate options (re-verify lie-flat before booking)</h3>
-    <div class="bonus-banner" id="bonus-banner"></div>
-    <div id="body"></div>
-    <div id="europe-alt"></div>
+    <div id="london"></div>
     <div id="rome-af"></div>
   </div>
   <div id="ash-section" style="display:none"></div>
   <footer id="foot"></footer>
 </div>
-<script src="data.js?v=20260623i"></script>
+<script src="data.js?v=20260623j"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
-const mi=n=>n.toLocaleString('en-US');
-const fmtD=iso=>new Date(iso+'T00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
 
-function legRow(dir,l){
-  const verified=l.status==='verified';
-  const vbadge=verified?'<span class="badge ver">✓ verified live</span>':'<span class="badge tov">⚠ verify at booking</span>';
-  const flat=(l.lieflat&&verified)?' <span class="badge flat">lie-flat</span>':'';
-  const fee=l.fee_cad!=null?('CA$'+l.fee_cad+'/pp'):(l.fee_usd!=null?('≈US$'+l.fee_usd+'/pp'):'');
-  return `<div class="leg">
-    <div class="top">
-      <div><span class="dir">${dir}</span> <span class="prog">${l.program}</span>
-        <span style="color:var(--mut);font-size:12.5px">· via ${l.via} (${l.hub})</span></div>
-      <div class="mi">${mi(l.miles)} mi/pp<br>${fee}</div>
-    </div>
-    <div class="vline">${vbadge} <b>${l.seats} seat${l.seats>1?'s':''} left</b> · ${l.flight} · ${l.time}</div>
-    <div class="vline">✈ ${l.carriers} · ${l.aircraft}${flat}</div>
-    <div class="vline" style="font-size:12px">${l.duration}</div>
-  </div>`;
+function optionCard(r,mountId){
+  if(!r)return;
+  const c=ce('div','card info');c.style.marginTop='28px';
+  const rows=r.flights.map(f=>`<tr style="border-top:1px solid var(--line)">
+    <td style="padding:8px 10px;font-weight:700;color:var(--ink);vertical-align:top">${f.air}</td>
+    <td style="padding:8px 10px;color:var(--ink)">${f.route}<div style="font-size:12px;color:var(--mut);margin-top:2px">${f.dur?f.dur+' · ':''}${f.plane}</div></td>
+    <td style="padding:8px 10px;white-space:nowrap;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;vertical-align:top">${f.miles}</td>
+    <td style="padding:8px 10px;font-size:12px;font-weight:700;vertical-align:top;color:${(f.seat||'').includes('1 seat')?'var(--warn)':'var(--good)'}">${f.seat||''}</td></tr>`).join('');
+  c.innerHTML=`<h2>${r.headline}</h2><p style="color:var(--mut);font-size:13.5px">${r.sub}</p>`
+    +`<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;margin:12px 0;font-size:13.5px"><tbody>${rows}</tbody></table></div>`
+    +(r.calendar?`<p style="font-size:13px;color:var(--mut);margin:8px 0">${r.calendar}</p>`:'')
+    +(r.roundtrip?`<p style="background:rgba(57,192,122,.10);border:1px solid rgba(57,192,122,.4);border-radius:8px;padding:10px 12px;font-size:13.5px;color:var(--ink);font-weight:600;margin:10px 0">${r.roundtrip}</p>`:'')
+    +(r.maycompare?`<p style="font-size:13px;color:var(--mut);margin:8px 0">${r.maycompare}</p>`:'')
+    +(r.note?`<p class="warn" style="font-size:13px">${r.note}</p>`:'')
+    +`<p style="font-weight:700;color:var(--ink);margin-top:12px;font-size:14px">${r.bottom}</p>`;
+  $(mountId).appendChild(c);
 }
-function card(t){
-  const c=ce('div','card'+((t.chosen||t.rank===1)?' star':'')+(t.over400?' over':''));
-  const tag=t.chosen?'<span class="tag best">✅ Booking this</span>'
-          :t.rank===1?'<span class="tag best">★ Best — book first</span>'
-          :t.over400?'<span class="tag over">Pricier backup</span>'
-          :(t.both_aeroplan?'<span class="tag alt">Alternate date</span>':'<span class="tag alt">Backup · more seats</span>');
-  const feeBig=t.couple_fees_cad!=null?('CA$'+mi(t.couple_fees_cad)):('≈US$'+mi(t.couple_fees_usd));
-  const feeSub=t.couple_fees_cad!=null?('≈US$'+mi(t.couple_fees_usd)+' for two'):'taxes + surcharges for two';
-  const bp=t.bonus_points;
-  const ptsLabel=bp?'Amex/Chase points · two':'Points for two';
-  const ptsBig=bp?mi(bp):mi(t.couple_miles);
-  const ptsSub=bp?`<div class="small bonus">✓ 25% Amex→Flying Blue bonus</div><div class="pts-was">vs ${mi(t.couple_miles)} at 1:1</div>`:'';
-  c.innerHTML=`<div class="thead"><div class="route">${tag}<br>${fmtD(t.depart)} → ${fmtD(t.home)}</div>
-      <div class="nts">${t.nights} nights<br>in Rome</div></div>`
-    +legRow('OUT',t.out)+legRow('BACK',t.ret)
-    +(t.warn?`<div class="warn">${t.warn}</div>`:'')
-    +`<div class="total">
-        <div><div class="small">${ptsLabel}</div><div class="big">${ptsBig}</div>${ptsSub}</div>
-        <div style="text-align:right"><div class="small">Cash for two</div><div class="big">${feeBig}</div><div class="small">${feeSub}</div></div>
-      </div>
-      <div class="amex">💳 ${t.amex_note}</div>`
-    +checkoutBlock(t.checkout);
-  return c;
-}
-function checkoutBlock(co){
-  if(!co)return '';
-  const rows=co.options.map(o=>`<div class="co-opt${o.best?' best':''}">
-      <span class="co-pts">${o.pts}</span>
-      <span class="co-cash">${o.cash==='points only'?'points only':'+ '+o.cash}</span>
-      ${o.best?'<span class="co-flag">✓ take this</span>':(o.tag?`<span class="co-flag pop">${o.tag}</span>`:'')}
-    </div>`).join('');
-  return `<div class="checkout"><div class="co-intro">🎟️ ${co.intro}</div>
-    <div class="co-grid">${rows}</div>
-    <div class="co-rec">${co.rec}</div></div>`;
-}
-function renderJFK(){
-  const b=$('#body');b.innerHTML='';
-  if(DATA.jfk_note) b.appendChild(ce('div','note gold','📌 '+DATA.jfk_note));
-  const g=ce('div','grid two');
-  DATA.trips.filter(t=>t.origin==='JFK'&&!t.chosen).sort((a,b)=>a.rank-b.rank).forEach(t=>g.appendChild(card(t)));
-  b.appendChild(g);
-}
-function renderInfo(info,icon){
-  const b=$('#body');b.innerHTML='';
-  const c=ce('div','card info');
-  c.innerHTML=`<h2>${icon} ${info.headline}</h2><ul>${info.points.map(p=>'<li>'+p+'</li>').join('')}</ul>`;
-  b.appendChild(c);
-}
-function renderPlan(){
-  const p=$('#plan'); p.innerHTML='';
-  if(DATA.correction) p.appendChild(ce('div','correction-banner','⚠️ '+DATA.correction));
-  const t=DATA.trips.find(x=>x.chosen); if(!t)return;
-  p.appendChild(ce('h2','plan-h','📋 The plan — you’re booking this'));
-  p.appendChild(card(t));
-}
-if(DATA.bonus){$('#bonus-banner').innerHTML='🔥 <b>'+DATA.bonus.headline+'</b><br>'+DATA.bonus.body;}else{$('#bonus-banner').style.display='none';}
-$('#points-note').innerHTML='💳 '+DATA.points_note;
+optionCard(DATA.london,'#london');
+optionCard(DATA.rome_af,'#rome-af');
 $('#foot').textContent=DATA.footer;
-renderJFK();
+
 function renderAshley(){
   const a=DATA.ashley; if(!a)return; const s=$('#ash-section'); s.innerHTML='';
   const c=ce('div','card star');
@@ -204,21 +143,13 @@ function renderAshley(){
     +`<p class="ash-sub">${a.sub}</p>`
     +`<div class="amex">💳 ${a.play}</div>`
     +`<div class="ash-sech">Round-trips to pick from</div>`
-    +`<div class="ash-opt-grid">${a.trips.map(opt).join('')}</div>`
-    +`<div class="ash-sech">Or browse all dates</div>`
-    +`<div class="ash-grid">${col(a.out_label,a.out)}${col(a.ret_label,a.ret)}</div>`
-    +`<div class="vline" style="margin-top:10px">${a.gateways}</div>`
-    +a.extras.map(e=>`<div class="note" style="margin-top:7px">${e}</div>`).join('')
-    +`<div class="warn" style="margin-top:9px">${a.caveat}</div>`;
+    +`<div class="ash-opt-grid">${a.trips.map(opt).join('')}</div>`;
   s.appendChild(c);
 }
+renderAshley();
 $('#who-mom').onclick=()=>{$('#who-mom').classList.add('on');$('#who-ash').classList.remove('on');$('#mom-section').style.display='';$('#ash-section').style.display='none';window.scrollTo(0,0);};
 $('#who-ash').onclick=()=>{$('#who-ash').classList.add('on');$('#who-mom').classList.remove('on');$('#ash-section').style.display='';$('#mom-section').style.display='none';window.scrollTo(0,0);};
-if(DATA.europe_alt){const ea=DATA.europe_alt;const c=ce('div','card info');c.style.marginTop='28px';c.innerHTML=`<h2>${ea.headline}</h2><ul>${ea.points.map(p=>'<li>'+p+'</li>').join('')}</ul>`;$('#europe-alt').appendChild(c);}
-if(DATA.rome_af){const r=DATA.rome_af;const c=ce('div','card info');c.style.marginTop='28px';const rows=r.flights.map(f=>`<tr style="border-top:1px solid var(--line)"><td style="padding:8px 10px;font-weight:700;color:var(--ink);vertical-align:top">${f.air}</td><td style="padding:8px 10px;color:var(--ink)">${f.route}<div style="font-size:12px;color:var(--mut);margin-top:2px">${f.dur} · ${f.plane}</div></td><td style="padding:8px 10px;white-space:nowrap;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;vertical-align:top">${f.miles} mi</td><td style="padding:8px 10px;white-space:nowrap;font-size:12px;font-weight:700;vertical-align:top;color:${f.seat.includes('1 seat')?'var(--warn)':'var(--good)'}">${f.seat}</td></tr>`).join('');c.innerHTML=`<h2>${r.headline}</h2><p style="color:var(--mut);font-size:13.5px">${r.sub}</p><div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;margin:12px 0;font-size:13.5px"><tbody>${rows}</tbody></table></div><p style="font-size:13px;color:var(--mut);margin:8px 0">${r.calendar}</p>${r.roundtrip?`<p style="background:rgba(57,192,122,.10);border:1px solid rgba(57,192,122,.4);border-radius:8px;padding:10px 12px;font-size:13.5px;color:var(--ink);font-weight:600;margin:10px 0">${r.roundtrip}</p>`:''}${r.maycompare?`<p style="font-size:13px;color:var(--mut);margin:8px 0">${r.maycompare}</p>`:''}<p class="warn" style="font-size:13px">${r.note}</p><p style="font-weight:700;color:var(--ink);margin-top:12px;font-size:14px">${r.bottom}</p>`;$('#rome-af').appendChild(c);}
-renderPlan();
-renderAshley();
-renderJFK();
+
 </script>
 </body>
 </html>
