@@ -103,7 +103,7 @@
   <div id="ash-section" style="display:none"></div>
   <footer id="foot"></footer>
 </div>
-<script src="data.js?v=20260623o"></script>
+<script src="data.js?v=20260623p"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 
@@ -123,7 +123,7 @@ function optionCard(r,mountId){
     <td style="padding:8px 10px;font-weight:700;color:var(--ink);vertical-align:top">${f.air}</td>
     <td style="padding:8px 10px;color:var(--ink)">${f.route}<div style="font-size:12px;color:var(--mut);margin-top:2px">${f.dur?f.dur+' · ':''}${f.plane}</div></td>
     <td style="padding:8px 10px;white-space:nowrap;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;vertical-align:top">${f.miles}${f.amex?`<div style="font-size:11px;font-weight:700;color:var(--good);margin-top:2px">${f.amex}</div>`:''}</td>
-    <td style="padding:8px 10px;font-size:12px;font-weight:700;vertical-align:top;color:${(f.seat||'').includes('1 seat')?'var(--warn)':'var(--good)'}">${f.seat||''}</td></tr>`).join('');
+    <td style="padding:8px 10px;font-size:12px;font-weight:700;vertical-align:top;color:${/1 seat|✗|economy|verify|trap/i.test(f.seat||'')?'var(--warn)':'var(--good)'}">${f.seat||''}</td></tr>`).join('');
   c.innerHTML=`<h2>${r.headline}</h2><p style="color:var(--mut);font-size:13.5px">${r.sub}</p>`
     +(r.bonus?`<p style="background:rgba(79,140,255,.10);border:1px solid rgba(79,140,255,.4);border-radius:8px;padding:10px 12px;font-size:13px;color:var(--ink);margin:10px 0">${r.bonus}</p>`:'')
     +`<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;margin:12px 0;font-size:13.5px"><tbody>${rows}</tbody></table></div>`
