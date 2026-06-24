@@ -148,7 +148,6 @@ const DATA = {
     ],
     outbound: [
       { date: "Mon Oct 12", each: "142,500", two: "285,000", tag: "cheapest" },
-      { date: "Sat Oct 10", each: "152,000", two: "304,000" },
       { date: "Sun Oct 11", each: "152,000", two: "304,000" },
       { date: "Tue Oct 13", each: "152,000", two: "304,000" },
       { date: "Wed Oct 14", each: "152,000", two: "304,000" }
