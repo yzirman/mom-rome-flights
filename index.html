@@ -108,7 +108,7 @@
   <div id="ash-section" style="display:none"></div>
   <footer id="foot"></footer>
 </div>
-<script src="data.js?v=20260623f"></script>
+<script src="data.js?v=20260623g"></script>
 <script>
 const $=s=>document.querySelector(s),ce=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
 const mi=n=>n.toLocaleString('en-US');
@@ -215,7 +215,7 @@ function renderAshley(){
 $('#who-mom').onclick=()=>{$('#who-mom').classList.add('on');$('#who-ash').classList.remove('on');$('#mom-section').style.display='';$('#ash-section').style.display='none';window.scrollTo(0,0);};
 $('#who-ash').onclick=()=>{$('#who-ash').classList.add('on');$('#who-mom').classList.remove('on');$('#ash-section').style.display='';$('#mom-section').style.display='none';window.scrollTo(0,0);};
 if(DATA.europe_alt){const ea=DATA.europe_alt;const c=ce('div','card info');c.style.marginTop='28px';c.innerHTML=`<h2>${ea.headline}</h2><ul>${ea.points.map(p=>'<li>'+p+'</li>').join('')}</ul>`;$('#europe-alt').appendChild(c);}
-if(DATA.rome_af){const r=DATA.rome_af;const c=ce('div','card info');c.style.marginTop='28px';const rows=r.flights.map(f=>`<tr><td style="padding:6px 10px;font-weight:600">${f.air}</td><td style="padding:6px 10px">${f.route}<div style="font-size:12px;opacity:.7">${f.dur} · ${f.plane}</div></td><td style="padding:6px 10px;white-space:nowrap;font-weight:700">${f.miles} mi</td><td style="padding:6px 10px;white-space:nowrap;font-size:12px;color:${f.seat.includes('1 seat')?'#c0392b':'#1a7f37'}">${f.seat}</td></tr>`).join('');c.innerHTML=`<h2>${r.headline}</h2><p style="opacity:.85">${r.sub}</p><div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;margin:12px 0"><tbody>${rows}</tbody></table></div><p style="font-size:13px;opacity:.8;margin:8px 0">${r.calendar}</p><p style="background:#fff5f5;border-left:3px solid #c0392b;padding:10px 12px;border-radius:4px;font-size:14px">${r.note}</p><p style="font-weight:600;margin-top:10px">${r.bottom}</p>`;$('#rome-af').appendChild(c);}
+if(DATA.rome_af){const r=DATA.rome_af;const c=ce('div','card info');c.style.marginTop='28px';const rows=r.flights.map(f=>`<tr style="border-top:1px solid var(--line)"><td style="padding:8px 10px;font-weight:700;color:var(--ink);vertical-align:top">${f.air}</td><td style="padding:8px 10px;color:var(--ink)">${f.route}<div style="font-size:12px;color:var(--mut);margin-top:2px">${f.dur} · ${f.plane}</div></td><td style="padding:8px 10px;white-space:nowrap;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;vertical-align:top">${f.miles} mi</td><td style="padding:8px 10px;white-space:nowrap;font-size:12px;font-weight:700;vertical-align:top;color:${f.seat.includes('1 seat')?'var(--warn)':'var(--good)'}">${f.seat}</td></tr>`).join('');c.innerHTML=`<h2>${r.headline}</h2><p style="color:var(--mut);font-size:13.5px">${r.sub}</p><div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;margin:12px 0;font-size:13.5px"><tbody>${rows}</tbody></table></div><p style="font-size:13px;color:var(--mut);margin:8px 0">${r.calendar}</p><p class="warn" style="font-size:13px">${r.note}</p><p style="font-weight:700;color:var(--ink);margin-top:12px;font-size:14px">${r.bottom}</p>`;$('#rome-af').appendChild(c);}
 renderPlan();
 renderAshley();
 renderJFK();
