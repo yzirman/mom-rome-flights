@@ -138,83 +138,59 @@ const DATA = {
 
   mom_opts: [
     {
-      flag: "🇬🇧", title: "London — British Airways", tag: "nonstop, round-trip", badge: "Cheapest — best value",
-      out: "OUT: JFK → London-Heathrow · NONSTOP ~7h · pick a weekday (e.g. Mon Oct 12)",
-      back: "BACK: London-Heathrow → JFK · NONSTOP ~8h · weekday (e.g. Wed Oct 21)",
-      when: "Weekday departures available Oct 5, 6, 12, 13, 19, 20, 21 (all Shabbat-safe)",
-      plane: "Lie-flat business both ways · Boeing 777 / A380 · 2 seats together",
-      cost: "180,000 Avios total — 45,000 each way × 2 people, round-trip",
-      amex: "180,000 Amex (transfers 1:1 to British Airways Avios, no bonus)",
-      tax: "+ ~$2,000 total for two (UK departure tax is the pricey part, ~$1,000/person)",
-      total: "≈ $3,800 all-in for two — 180k Amex @ 1¢ ($1,800) + ~$2,000 UK tax",
-      seats: "Business seats confirmed available on these weekday dates"
+      flag: "🇮🇹", title: "Milan — Emirates A380", tag: "nonstop, round-trip", badge: "Best pick — nicest plane",
+      out: "OUT: EK 206 · JFK 10:20 PM → Milan-Malpensa 12:15 PM next day · NONSTOP, 7h 55m · A380",
+      back: "BACK: EK 205 · Milan-Malpensa 3:00 PM → JFK 6:55 PM same day · NONSTOP, 8h 55m · A380",
+      when: "Example weekday dates: out Mon Oct 12, back Mon Oct 26 (both Shabbat-safe; dates flexible)",
+      plane: "Lie-flat business both ways on the Emirates A380 (the big double-decker) · 2 seats together · genuine flat bed, no mixed-cabin trap",
+      cost: "400,000 Emirates miles total — 100,000 each way × 2 people, round-trip",
+      amex: "400,000 Amex (transfers 1:1 to Emirates Skywards · no bonus available right now)",
+      tax: "+ ~$1,740 total for two",
+      total: "≈ $5,740 all-in for two — 400k Amex @ 1¢ ($4,000) + ~$1,740 tax  ·  (same flights cost $9,328 in cash)",
+      seats: "Confirmed live: 7 business seats available — easy to get 2 together. Lands in Milan; Rome is a 1-hour hop or ~3h fast train."
     },
     {
-      flag: "🇬🇧", title: "London — Virgin Atlantic", tag: "nonstop, round-trip · May 2027",
-      out: "OUT: JFK → London-Heathrow · NONSTOP ~7h · weekday in May 2027",
-      back: "BACK: London-Heathrow → JFK · NONSTOP ~8h · weekday in May 2027",
-      when: "Cheapest in May 2027 (47,500 pts each way); October runs ~84,000 each way",
-      plane: "Lie-flat business both ways · A350 / A330 · 2 seats together",
-      cost: "190,000 Virgin points total — 47,500 each way × 2 people (May)",
-      amex: "~146,000 Amex total (after the 30% Amex→Virgin bonus, ends July 31, 2026)",
-      tax: "+ ~$2,000 total for two (UK departure tax)",
-      total: "≈ $3,300 all-in for two in May — 146k Amex @ 1¢ ($1,460) + ~$2,000 UK tax",
-      seats: "Business seats available"
-    },
-    {
-      flag: "🇮🇹", title: "Rome — Air France", tag: "1 stop in Paris, round-trip", badge: "Actually lands in Rome",
-      out: "OUT: JFK → Paris-CDG → Rome · weekday (e.g. Mon Oct 12 eve → arrive Tue)",
+      flag: "🇮🇹", title: "Rome — Air France", tag: "1 stop in Paris, round-trip", badge: "Lands right in Rome",
+      out: "OUT: JFK → Paris-CDG → Rome · weekday (e.g. Mon Oct 12 evening → arrive Tue)",
       back: "BACK: Rome → Paris-CDG → JFK · weekday (e.g. Wed Oct 21)",
       when: "Lots of Shabbat-safe weekday space Oct 12–22 · 5–9 business seats most dates",
-      plane: "Lie-flat A350 across the Atlantic (true flat bed — NOT the economy trap), short hop CDG → Rome · 2 seats together",
+      plane: "Lie-flat A350 across the Atlantic (true flat bed — NOT the economy trap), then a short hop CDG → Rome · 2 seats together",
       cost: "608,000 Flying Blue miles total — ~152,000 each way × 2 people, round-trip",
-      amex: "~486,000 Amex total (after the 25% Amex→Flying Blue bonus, ends June 30, 2026)",
+      amex: "~486,000 Amex total (after the 25% Amex→Flying Blue bonus — but transfer before June 30, 2026)",
       tax: "+ ~$1,600 total for two (~$400 each direction)",
       total: "≈ $6,460 all-in for two — 486k Amex @ 1¢ ($4,864) + ~$1,600 tax",
       seats: "2 lie-flat business seats together"
     }
   ],
-  mom_note: "Mom flies weekdays only (no Friday/Saturday) — every option above is a complete Shabbat-safe round trip with 2 seats together. London is far cheaper because Rome from NYC has no discounted 'saver' award space (it prices at the dynamic ~152k each way), while London is a flat 45k each way. The cheap 75k 'business' awards to Rome are the mixed-cabin trap (economy across the Atlantic) — verified and excluded. Bonuses: 25% Amex→Flying Blue ends June 30, 2026; 30% Amex→Virgin ends July 31, 2026. Prices move daily — the final total is confirmed on the airline's booking screen before you transfer.",
+  mom_note: "Mom flies weekdays only (no Friday/Saturday) — both options are complete Shabbat-safe round trips with 2 seats together. Emirates to Milan is the pick: the nicest plane (A380), cheapest, and a true nonstop lie-flat — Milan is a quick hop or train from Rome. If it has to land in Rome, Air France is the one (lie-flat across the ocean; the 25% Flying Blue bonus that helps it expires June 30, 2026). The cheap 75k 'business' awards to Rome are the mixed-cabin trap (economy across the Atlantic) — verified across every North American gateway and excluded. There is NO nonstop lie-flat award to Rome itself for 2 seats in October — that's why Milan wins. Prices move daily; the final total confirms on the airline's booking screen before you transfer.",
 
   ash_opts: [
     {
-      flag: "🇨🇭", title: "Zürich — Swiss", tag: "nonstop, round-trip · Aeroplan", badge: "Cheapest by far",
-      out: "OUT: JFK → Zürich · NONSTOP ~8h · any day",
-      back: "BACK: Zürich → JFK · NONSTOP ~9h · any day · then a ~3.5h train into Milan",
-      when: "Any day · also EWR → Zürich and JFK → Geneva at the same price",
-      plane: "Lie-flat business both ways · Swiss A330-300 · 2 seats together",
-      cost: "240,000 Aeroplan miles total — 60,000 each way × 2 people, round-trip",
-      amex: "240,000 Amex (transfers 1:1 to Aeroplan, no bonus)",
-      tax: "+ ~$320 total for two (low European taxes)",
-      total: "≈ $2,720 all-in for two — 240k Amex @ 1¢ ($2,400) + ~$320 tax (+ short train into Italy)",
-      seats: "2 business seats (Geneva shows 2 nonstop; Zürich often 1 nonstop + more on the 1-stop)"
+      flag: "🇮🇹", title: "Milan — Emirates A380", tag: "nonstop, round-trip", badge: "Best pick — nicest plane",
+      out: "OUT: EK 206 · JFK 10:20 PM → Milan-Malpensa 12:15 PM next day · NONSTOP, 7h 55m · A380",
+      back: "BACK: EK 205 · Milan-Malpensa 3:00 PM → JFK 6:55 PM same day · NONSTOP, 8h 55m · A380",
+      when: "Any day (no Shabbat constraint) · dates fully flexible",
+      plane: "Lie-flat business both ways on the Emirates A380 (the big double-decker) · 2 seats together · genuine flat bed, no mixed-cabin trap",
+      cost: "400,000 Emirates miles total — 100,000 each way × 2 people, round-trip",
+      amex: "400,000 Amex (transfers 1:1 to Emirates Skywards · no bonus available right now)",
+      tax: "+ ~$1,740 total for two",
+      total: "≈ $5,740 all-in for two — 400k Amex @ 1¢ ($4,000) + ~$1,740 tax  ·  (same flights cost $9,328 in cash)",
+      seats: "Confirmed live: 7 business seats available — easy to get 2 together. Lands in Milan; Rome is a 1-hour hop or ~3h fast train."
     },
     {
-      flag: "🇮🇹", title: "Rome — Air France", tag: "1 stop in Paris, round-trip", badge: "Lands in Rome",
+      flag: "🇮🇹", title: "Rome — Air France", tag: "1 stop in Paris, round-trip", badge: "Lands right in Rome",
       out: "OUT: JFK → Paris-CDG → Rome · any day",
       back: "BACK: Rome → Paris-CDG → JFK · any day",
       when: "Wide-open business space across October, both legs business",
       plane: "Lie-flat A350 across the Atlantic, short hop CDG → Rome · 2 seats together",
       cost: "608,000 Flying Blue miles total — ~152,000 each way × 2 people, round-trip",
-      amex: "~486,000 Amex total (after the 25% Amex→Flying Blue bonus, ends June 30, 2026)",
+      amex: "~486,000 Amex total (after the 25% Amex→Flying Blue bonus — transfer before June 30, 2026)",
       tax: "+ ~$1,600 total for two",
       total: "≈ $6,460 all-in for two — 486k Amex @ 1¢ ($4,864) + ~$1,600 tax",
       seats: "2 lie-flat business seats together"
-    },
-    {
-      flag: "🇮🇹", title: "Milan — Emirates", tag: "nonstop, round-trip", badge: "Nonstop to Italy",
-      out: "OUT: JFK → Milan-Malpensa · NONSTOP ~8h · any day",
-      back: "BACK: Milan-Malpensa → JFK · NONSTOP ~9h · any day",
-      when: "Any day · 7 business seats showing — easy to get 2 together",
-      plane: "Lie-flat business both ways · Emirates A380 (the big one) · 2 seats together",
-      cost: "400,000 Emirates miles total — 100,000 each way × 2 people, round-trip",
-      amex: "400,000 Amex (transfers 1:1 to Emirates Skywards, no bonus)",
-      tax: "+ ~$1,740 total for two (Emirates passes higher fuel surcharges)",
-      total: "≈ $5,740 all-in for two — 400k Amex @ 1¢ ($4,000) + ~$1,740 tax",
-      seats: "Business seats available (7 showing)"
     }
   ],
-  ash_note: "Ashley + Emrey can fly any day — every option above is a complete round trip with 2 seats together. Zürich is the runaway value (nonstop, ~$2,720, just add a short scenic train into Italy). Rome and Milan land you straight in Italy but cost more. The cheap 75k Aeroplan routings to Italy put the transatlantic leg in economy (the mixed-cabin trap), so they're excluded. Prices move daily — confirm the final total on the airline's booking screen before transferring.",
+  ash_note: "Ashley + Emrey can fly any day — both options are complete round trips with 2 seats together. Emirates to Milan is the pick: nonstop A380, the nicest plane, cheapest, true lie-flat (Milan is a quick hop or train from Rome). Air France lands right in Rome but costs more. The cheap 75k 'business' awards to Italy are the mixed-cabin trap (economy across the Atlantic), so they're excluded. Prices move daily — confirm the final total on the airline's booking screen before transferring.",
 
   footer: "Nothing is booked. Every option is a full round-trip for two, lie-flat business, on points transferable from Amex. Points are valued at 1¢ each so you can compare total dollar cost. Award space and prices change daily — re-confirm the seats are true lie-flat business and re-check the price on the airline site right before you transfer points (transfers can't be undone)."
 };
